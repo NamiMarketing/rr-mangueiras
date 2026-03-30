@@ -1,0 +1,122 @@
+.categorias {
+  width: 100%;
+  padding: 11rem 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 800;
+  color: var(--dark-blue);
+  text-transform: uppercase;
+  margin-bottom: 7.5rem;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  padding: 0rem 4rem 1rem 0 !important;
+}
+
+.customScrollbar {
+  margin: 3rem auto 5rem;
+  width: calc(100% - 100px);
+  max-width: 800px;
+  height: 6px;
+  background: #c6c6c6;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.customScrollbar :global(.swiper-scrollbar-drag) {
+  background: var(--dark-blue);
+  border-radius: 4px;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.imageContainer {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: var(--dark-blue);
+  max-width: 160px;
+}
+
+.navButtonNext {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--dark-blue);
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButtonNext:hover {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.navButtonNext :global(.swiper-button-disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Hide Swiper default nav */
+.categorias :global(.swiper-button-next),
+.categorias :global(.swiper-button-prev) {
+  display: none !important;
+}
+
+.buttonContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}

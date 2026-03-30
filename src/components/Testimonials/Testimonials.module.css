@@ -1,0 +1,130 @@
+.testimonials {
+  width: 100%;
+  padding: 13rem 5rem 13rem 10rem;
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30rem;
+  width: 36rem;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  font-size: 4.4rem;
+  line-height: 5rem;
+  font-weight: 800;
+  color: var(--medium-blue);
+  text-align: left;
+}
+
+.sidebar h2 span {
+  color: var(--yellow);
+}
+
+.paginationContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.paginationContainer :global(.swiper-pagination-bullet) {
+  width: 10px;
+  height: 10px;
+  background-color: var(--gray);
+  opacity: 1;
+  transition: background-color 0.3s ease;
+  margin: 0 !important;
+}
+
+.paginationContainer :global(.swiper-pagination-bullet-active) {
+  background-color: var(--medium-blue);
+}
+
+.swiperContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.slide {
+  width: 40rem !important;
+  height: 30rem !important;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 4.6rem 4.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100%;
+  text-align: left;
+}
+
+.card p {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  color: var(--black);
+}
+
+.card strong {
+  font-size: 2.4rem;
+  color: var(--dark-blue);
+  margin-top: auto;
+}
+
+.navButtonPrev,
+.navButtonNext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--medium-blue);
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.navButtonPrev:hover,
+.navButtonNext:hover {
+  opacity: 0.7;
+}
+
+.navButtonPrev :global(.swiper-button-disabled),
+.navButtonNext :global(.swiper-button-disabled) {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+
+  .swiperContainer {
+    width: 100%;
+  }
+}

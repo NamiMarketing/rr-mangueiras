@@ -1,0 +1,31 @@
+{
+  "name": "rr-mangueiras",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@sanity/image-url": "^2.0.3",
+    "@sanity/vision": "^5.17.1",
+    "next": "16.2.1",
+    "next-sanity": "^12.1.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sanity": "^5.17.1",
+    "styled-components": "^6.3.12",
+    "swiper": "^12.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.1",
+    "typescript": "^5"
+  }
+}
