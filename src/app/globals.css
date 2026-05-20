@@ -3,6 +3,7 @@
   --background-secondary: #191a32;
   --dark-blue: #191a32;
   --medium-blue: #003340;
+  --light-blue: #335c66;
   --yellow: #f8bb00;
   --gray: #878787;
   --white: #ffffff;
@@ -61,7 +62,32 @@ a {
 }
 
 .yellowButton:hover{
-  background-color: var(--white);
-  color: var(--yellow);
-  border: 2px solid var(--yellow);
+  filter: brightness(0.7);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+  .yellowButton {
+    padding: 1.5rem 2.5rem;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .yellowButton {
+    padding: 1.2rem 1.4rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
 }

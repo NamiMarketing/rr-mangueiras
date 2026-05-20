@@ -15,6 +15,7 @@ import Categorias from "@/components/Categorias/Categorias";
 import competitivo from "@/img/competitivo.png";
 import marcas from "@/img/marcas.png";
 import atendimento from "@/img/atendimento.png";
+import tradicao from "@/img/tradicao.png";
 
 export default function Home() {
   return (
@@ -33,6 +34,22 @@ export default function Home() {
       <Categorias />
 
       <Destaques />
+
+      <section className={styles.tradicao}>
+        <div className={styles.tradicaoContent}>
+          <div className={styles.tradicaoText}>
+            <h2>Tradição e qualidade em mangueiras e terminais hidráulicos <span className={styles.textHighlight}>desde 2007.</span></h2>
+            <p>
+              A RR Mangueiras, empresa paranaense sediada em Curitiba, é especializada no fornecimento de mangueiras hidráulicas, terminais e conexões para aplicações industriais.
+              <br /><br />
+              Desde 2007, atua oferecendo produtos de baixa, média, alta e super alta pressão, com foco em qualidade, segurança e desempenho para diferentes demandas do setor industrial.
+            </p>
+          </div>
+          <div className={styles.tradicaoImage}>
+            <Image src={tradicao} alt="Foto da Fachada da RR Mangueiras" />
+          </div>
+        </div>
+      </section>
 
       <section className={styles.escolher}>
         <div className={styles.escolherTitle}>
