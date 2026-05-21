@@ -61,7 +61,7 @@ export default function Categorias() {
           }}
           scrollbar={{ draggable: true, el: '#categorias-scrollbar', hide: false }}
           breakpoints={{
-            320: { slidesPerView: 2, spaceBetween: 10 },
+            320: { slidesPerView: 3, spaceBetween: 10 },
             576: { slidesPerView: 3, spaceBetween: 15 },
             768: { slidesPerView: 4, spaceBetween: 20 },
             1024: { slidesPerView: 6, spaceBetween: 20 },

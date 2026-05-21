@@ -63,7 +63,7 @@
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .destaques {
     padding: 8rem 3rem 0;
   }
@@ -75,13 +75,13 @@
   }
 
   .card {
-    max-width: 300px;
+    max-width: 90%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .destaques {
-    padding: 6rem 2rem 0;
+    padding: 4.6rem 2rem 0;
   }
 
   .title {
@@ -91,7 +91,7 @@
   }
 
   .card {
-    max-width: 250px;
+    max-width: 90%;
   }
 
   .swiper {

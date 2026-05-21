@@ -16,6 +16,7 @@ import competitivo from "@/img/competitivo.png";
 import marcas from "@/img/marcas.png";
 import atendimento from "@/img/atendimento.png";
 import tradicao from "@/img/tradicao.png";
+import tradicaoUp from "@/img/tradicao-up.png"
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       <Destaques />
 
       <section className={styles.tradicao}>
+        <Image src={tradicaoUp} className={styles.tradicaoUp}></Image>
         <div className={styles.tradicaoContent}>
           <div className={styles.tradicaoText}>
             <h2>Tradição e qualidade em mangueiras e terminais hidráulicos <span className={styles.textHighlight}>desde 2007.</span></h2>

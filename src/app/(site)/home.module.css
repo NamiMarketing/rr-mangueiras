@@ -37,15 +37,22 @@
 }
 
 .tradicao{
-    padding: 16rem 0 0;
+    padding: 0rem 0 0;
     width: 85%;
     max-width: 1400px;
-    margin: auto;
+    margin: 16rem auto 0;
     position: relative;
+    .tradicaoUp{
+        position: absolute;
+        top: -95px;
+        right: -17px;
+        width: 218px;
+        height: 140px;
+    }
     .tradicaoContent{
         display: flex;
         align-items: center;
-        gap: 14rem;
+        gap: 10rem;
         border-radius: 30px;
         justify-content: space-between;
         background: linear-gradient(108.2deg, #003340 1.18%, #003340 20.84%, #191A32 66.16%);
@@ -241,7 +248,7 @@
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .hero {
         aspect-ratio: 1/1;
         .heroBox {
@@ -367,7 +374,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 700px) {
     .hero {
         aspect-ratio: 36/40;
         .heroBox {
