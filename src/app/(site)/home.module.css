@@ -229,6 +229,9 @@
         left: 0;
         top: 0;
     }
+    .preFooterMobile{
+        display: none;
+    }
     .preFooterText{
         position: absolute;
         color: var(--white);
@@ -267,6 +270,7 @@
     .tradicao {
         padding: 8rem 0 0;
         width: 95%;
+        
         .tradicaoContent {
             flex-direction: column;
             gap: 3rem;
@@ -401,42 +405,145 @@
     .tradicao {
         padding: 5rem 0 0;
         width: 90%;
+        .tradicaoUp{
+            top: 14px;
+            right: -7px;
+            width: 100px;
+            height: auto;
+        }
         .tradicaoContent {
+            gap: 4rem;
             .tradicaoText {
-                padding-left: 2rem;
-                padding-right: 2rem;
+                padding-left: 3rem;
+                padding-right: 3rem;
+                gap: 4rem;
                 h2 {
                     font-size: 2rem;
                 }
                 p {
-                    font-size: 1.4rem;
+                    font-size: 1.6rem;
+                }
+            }
+            .tradicaoImage {
+                width: 100%;
+                aspect-ratio: 317/300;
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 0 0 20px 20px;
                 }
             }
         }
     }
-
+    
     .escolher {
-        .escolherTitle h2 {
-            font-size: 2rem;
-            line-height: 2.6rem;
+        padding: 6rem 0rem 0;
+        gap: 3rem;
+        .escolherTitle{
+            h2 {
+                font-size: 2.2rem;
+                line-height: 2.4rem;
+                width: 20rem
+            }
+        }
+        .escolherGrid {
+            flex-direction: column;
+            gap: 3.5rem;
+            .escolherCard {
+                width: 24rem;
+                align-items: center;
+                gap: 1.6rem;
+                img{
+                    max-height: 65px;
+                    width: auto;
+                }
+                .escolherCardText {
+                    gap: 1.6rem;
+                    h4 {
+                        font-size: 1.8rem;
+                        text-align: center;
+                        margin: auto;
+                    }
+                    p {
+                        text-align: center;
+                        font-size: 1.6rem;
+                        line-height: 2.2rem;
+                    }
+                }
+            }
         }
     }
-
+    
     .unidades {
+        gap: 3rem;
+        padding: 4rem 0rem 6rem;
+        border-radius: 20px 20px 0 0;
         .unidadesTitle {
+            gap: 2rem;
+            h2 {                
+                font-size: 1.4rem;
+            }
             p {
-                font-size: 2rem;
+                font-size: 2.2rem;
                 line-height: 2.6rem;
+                width: 32rem;
             }
         }
         .unidadesContent {
             .unidadesCard {
-                max-width: 100%;
+                max-width: 90%;
+                border-radius: 20px;
+                img{
+                    aspect-ratio: 316/250;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    border-radius: 20px 20px 0 0;
+                }
+                .unidadesCardText {
+                    padding: 4rem 2.4rem;
+                    height: auto;
+                    min-height: 20rem;
+                    background: linear-gradient(180deg, #191A32 0%, #003340 100%);
+                    p {
+                        font-size: 1.6rem;
+                        line-height: 2.2rem;
+                        width: 100%;
+                    }
+                    .cardIcons {
+                        justify-content: center;
+                        gap: 8px;
+                        img{
+                            width: 22px;
+                            height: 22px;
+                        }
+                    }
+                }
+                button {
+                    padding: 1rem 2.5rem;
+                    letter-spacing: 1px;
+                    font-size: 1.6rem;
+                    top: 277px
+                }
             }
         }
     }
 
     .preFooter {
+        aspect-ratio: 36/28;
+        .preFooterImage{
+            display: none;
+        }
+        .preFooterMobile{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+        }
         .preFooterText {
             left: 1.5rem;
             right: 1.5rem;

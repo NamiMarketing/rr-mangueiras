@@ -44,3 +44,63 @@
     display: flex;
     gap: 1rem;
 }
+
+@media screen and (max-width: 1200px){
+    .container{
+        margin: 5rem auto 8rem auto;
+    }
+    .containerCard{
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+    .containerCard:nth-child(even){
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+    .text{
+        padding: 3rem;
+    }
+    
+}
+
+@media screen and (max-width: 700px){
+    .container{
+        margin: 6rem auto;
+        width: 90%;
+    }
+    .text{
+     padding: 4rem 2rem 3rem;
+     h1{
+         font-size: 2rem;
+         line-height: 2rem;
+     }
+     p{
+         font-size: 1.6rem;
+         line-height: 2.2rem;
+     }
+     h5{
+         font-size: 1.5rem;
+         line-height: 2rem;
+     }
+     .icons{
+        gap: 8px;
+        img{
+            width: 24px;
+            height: 24px;
+        }
+     }
+    }
+    .containerCard{
+        background: linear-gradient(106.21deg, #003340 2.33%, #191A32 64.45%);
+        .image{
+            width: 100%;
+            height: auto;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

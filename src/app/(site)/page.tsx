@@ -4,6 +4,7 @@ import Link from "next/link";
 import banner from "@/img/banner.png";
 import heroLogo from "@/img/hero-logo.png";
 import preFooter from "@/img/pre-footer.png";
+import preFooterMobile from "@/img/pre-footermob.png";
 import curitiba from "@/img/curitiba.png";
 import colombo from "@/img/colombo.png";
 import pontaGrossa from "@/img/ponta-grossa.png";
@@ -37,7 +38,7 @@ export default function Home() {
       <Destaques />
 
       <section className={styles.tradicao}>
-        <Image src={tradicaoUp} className={styles.tradicaoUp}></Image>
+        <Image src={tradicaoUp} className={styles.tradicaoUp} alt="Logo" />
         <div className={styles.tradicaoContent}>
           <div className={styles.tradicaoText}>
             <h2>Tradição e qualidade em mangueiras e terminais hidráulicos <span className={styles.textHighlight}>desde 2007.</span></h2>
@@ -142,6 +143,8 @@ export default function Home() {
       </section>
 
       <section className={styles.preFooter}>
+        
+        <Image src={preFooterMobile} alt="Logo" className={styles.preFooterMobile} />
         <Image src={preFooter} alt="Logo" className={styles.preFooterImage} />
         <div className={styles.preFooterText}>
           <h2>Qualidade, agilidade e atendimento especializado para quem não pode parar.</h2>

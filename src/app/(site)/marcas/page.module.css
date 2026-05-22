@@ -11,7 +11,7 @@
         font-size: 3rem;
         font-weight: 800;
         margin-bottom: 10rem;
-        color: var(--dark-blue);
+        color: var(--medium-blue);
         letter-spacing: 0.6px;
         text-transform: uppercase;
     }
@@ -21,5 +21,34 @@
         justify-content: center;
         gap: 4.5rem;
         align-items: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 5rem 0 10rem;
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5rem;
+        }
+        .logos {
+            gap: 2.5rem;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 5.7rem 0 6rem;
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 4.5rem;
+        }
+        .logos {
+            gap: 3.5rem;
+        }
+        img{
+            zoom: 0.7;
+        }
     }
 }

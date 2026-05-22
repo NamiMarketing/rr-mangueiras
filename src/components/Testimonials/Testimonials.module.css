@@ -115,7 +115,7 @@
   cursor: not-allowed;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .container {
     flex-direction: column;
     align-items: flex-start;
@@ -130,9 +130,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .testimonials {
-    padding: 8rem 3rem;
+    padding: 7rem 0rem;
   }
 
   .sidebar {
@@ -176,12 +176,15 @@
 
 @media (max-width: 480px) {
   .testimonials {
-    padding: 6rem 2rem;
+    padding: 7rem 2.2rem 5rem;
   }
 
   .sidebar {
     gap: 2rem;
     margin-bottom: 2.5rem;
+    .paginationContainer{
+      display: none;
+    }
   }
 
   .sidebar h2 {
