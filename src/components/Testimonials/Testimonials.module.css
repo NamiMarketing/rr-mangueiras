@@ -65,10 +65,6 @@
   overflow: hidden;
 }
 
-.slide {
-  height: 30rem !important;
-}
-
 .card {
   background-color: var(--white);
   border-radius: 20px;

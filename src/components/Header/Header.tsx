@@ -3,11 +3,27 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import logoHeader from '../../img/logo.png';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const router = useRouter();
+
+  const handleSearch = () => {
+    const term = searchValue.trim();
+    if (term) {
+      router.push(`/produtos?q=${encodeURIComponent(term)}`);
+    } else {
+      router.push('/produtos');
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') handleSearch();
+  };
 
   return (
     <>
@@ -33,8 +49,11 @@ export default function Header() {
                 type="text"
                 placeholder=""
                 className={styles.searchInput}
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
-              <button className={styles.searchButton} aria-label="Buscar">
+              <button className={styles.searchButton} aria-label="Buscar" onClick={handleSearch}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>

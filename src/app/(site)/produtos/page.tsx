@@ -31,11 +31,22 @@ export const metadata = {
     "Conheça nossa linha completa de mangueiras hidráulicas, conexões e componentes industriais.",
 };
 
-export default async function ProdutosPage() {
-  const [categorias, produtos] = await Promise.all([
+export default async function ProdutosPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const [categorias, produtos, params] = await Promise.all([
     client.fetch(CATEGORIAS_QUERY),
     client.fetch(PRODUTOS_QUERY),
+    searchParams,
   ]);
 
-  return <ProdutosClient categorias={categorias} produtos={produtos} />;
+  return (
+    <ProdutosClient
+      categorias={categorias}
+      produtos={produtos}
+      initialSearch={params.q ?? ""}
+    />
+  );
 }

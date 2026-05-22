@@ -22,7 +22,7 @@ export default function Contato() {
                         <Link href="https://maps.app.goo.gl/TaNhLqkLpfQFHYZV6" target="_blank">
                             <Image src={address} alt="Endereço" />
                         </Link>
-                        <Link href="https://wa.me/554135693191" target="_blank">
+                        <Link href="https://api.whatsapp.com/send?phone=554135693191&text=Estava%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">
                             <Image src={whatsapp} alt="WhatsApp" />
                         </Link>
                     </div>
@@ -44,7 +44,7 @@ export default function Contato() {
                         <Link href="https://maps.app.goo.gl/rWtE35kC6qXUky4z6" target="_blank">
                             <Image src={address} alt="Endereço" />
                         </Link>
-                        <Link href="https://wa.me/554136065101" target="_blank">
+                        <Link href="https://api.whatsapp.com/send?phone=554136065101&text=Estava%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">
                             <Image src={whatsapp} alt="WhatsApp" />
                         </Link>
                     </div>
@@ -66,7 +66,7 @@ export default function Contato() {
                         <Link href="https://maps.app.goo.gl/qTeYcuagnENrkwyr8" target="_blank">
                             <Image src={address} alt="Endereço" />
                         </Link>
-                        <Link href="https://wa.me/554232271903" target="_blank">
+                        <Link href="https://api.whatsapp.com/send?phone=554232271903&text=Estava%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">
                             <Image src={whatsapp} alt="WhatsApp" />
                         </Link>
                     </div>

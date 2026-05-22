@@ -7,9 +7,9 @@ import Image from 'next/image';
 import whatsappIcon from '@/img/icons/whats.png';
 
 const LOJAS = [
-  { nome: 'Curitiba',     whatsapp: 'https://wa.me/554135693191' },
-  { nome: 'Colombo',      whatsapp: 'https://wa.me/554136065101' },
-  { nome: 'Ponta Grossa', whatsapp: 'https://wa.me/554232271903' },
+  { nome: 'Curitiba',     whatsapp: 'https://api.whatsapp.com/send?phone=554135693191&text=Estava%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.' },
+  { nome: 'Colombo',      whatsapp: 'https://api.whatsapp.com/send?phone=554136065101&text=Estava%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.' },
+  { nome: 'Ponta Grossa', whatsapp: 'https://api.whatsapp.com/send?phone=554232271903&text=Estava%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.' },
 ];
 
 function WhatsAppIcon() {

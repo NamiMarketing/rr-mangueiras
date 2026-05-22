@@ -11,23 +11,28 @@ import "swiper/css/pagination";
 const testimonials = [
   {
     id: 1,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
-    author: "João Oliveira",
+    text: "Recomendo!! Tem uma variedade enorme de mangueiras e conexões, adaptadores de tudo que é jeito. Local agradável, vendedores atenciosos que não medem esforços para dar uma solução a cada situação. Alguns lugares vendem peças, nessa loja eles vendem soluções. Voltarei muitas vezes.",
+    author: "Claudio Pereira",
   },
   {
     id: 2,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
-    author: "Maria Silva",
+    text: "Atendimento e proatividade da equipe é algo a ser destacado. Sempre prontos a resolver e ajudar. Parabéns a todo time. Indico com certeza.",
+    author: "Cleimar Piveta",
   },
   {
     id: 3,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
-    author: "Carlos Santos",
+    text: "Preço justo. Resolvem o problema sem burocracia. Atendimento nota 10",
+    author: "Leandro Fernandes",
   },
   {
     id: 4,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
-    author: "Ana Souza",
+    text: "Atendimento sem igual, sempre excelente. E encontro tudo o que preciso.",
+    author: "André Rehme",
+  },
+  {
+    id: 5,
+    text: "Empresa muito confiável e com materiais de qualidade. Somos grandes parceiros de negócios há alguns anos.",
+    author: "Enerpel Teleinformática",
   },
 ];
 

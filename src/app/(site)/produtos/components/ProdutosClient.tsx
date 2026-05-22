@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../produtos.module.css";
@@ -21,8 +21,8 @@ interface Produto {
   _id: string;
   nome: string;
   slug: { current: string };
-  marca: string;
-  tipo: string;
+  marca?: string;
+  tipo?: string;
   descricao?: string;
   imagem: any;
   categoria: {
@@ -35,14 +35,20 @@ interface Produto {
 interface ProdutosClientProps {
   categorias: Categoria[];
   produtos: Produto[];
+  initialSearch: string;
 }
 
 export default function ProdutosClient({
   categorias,
   produtos,
+  initialSearch,
 }: ProdutosClientProps) {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(initialSearch);
   const [selectedCategoria, setSelectedCategoria] = useState("");
+
+  useEffect(() => {
+    setSearchTerm(initialSearch);
+  }, [initialSearch]);
 
   const selectCategoria = (categoriaId: string) => {
     setSelectedCategoria((prev) => (prev === categoriaId ? "" : categoriaId));
@@ -59,8 +65,9 @@ export default function ProdutosClient({
         const term = searchTerm.toLowerCase();
         const matchesSearch =
           produto.nome.toLowerCase().includes(term) ||
-          produto.marca.toLowerCase().includes(term) ||
-          (produto.tipo && produto.tipo.toLowerCase().includes(term));
+          (produto.marca ?? "").toLowerCase().includes(term) ||
+          (produto.tipo ?? "").toLowerCase().includes(term) ||
+          produto.categoria.nome.toLowerCase().includes(term);
         if (!matchesSearch) return false;
       }
 
