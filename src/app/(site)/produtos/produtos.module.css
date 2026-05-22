@@ -256,8 +256,7 @@
   background: var(--white);
   border-radius: 20px;
   border: 1px solid var(--dark-blue);
-  cursor: default;
-  pointer-events: none;
+  cursor: pointer;
   text-decoration: none;
   display: block;
   padding: 2rem;

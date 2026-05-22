@@ -84,10 +84,23 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
             <span>{produto.categoria.nome}</span>
           </div>
 
+         
+
           <h1 className={styles.productTitle}>
             {produto.nome} {produto.tipo} {produto.marca}
           </h1>
-
+          <div className={styles.imageWrapperMobile}>
+            {produto.imagem && (
+              <Image
+                src={urlFor(produto.imagem).width(600).height(600).url()}
+                alt={produto.nome}
+                width={600}
+                height={600}
+                className={styles.productMainImage}
+                priority
+              />
+            )}
+          </div>
           {produto.descricao && (
             <p className={styles.productDescription}>{produto.descricao}</p>
           )}
@@ -95,7 +108,7 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
       </div>
 
       {/* TABS */}
-      <ProdutoTabs descricao={produto.descricao} />
+      {/* <ProdutoTabs descricao={produto.descricao} /> */}
 
       {/* RELATED PRODUCTS */}
       {relatedProducts && relatedProducts.length > 0 && (
