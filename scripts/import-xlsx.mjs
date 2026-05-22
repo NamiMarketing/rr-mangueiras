@@ -179,13 +179,27 @@ async function main() {
       const slug = slugify(slugText);
 
       const existing = await client.fetch(
-        `*[_type == "produto" && slug.current == $slug][0]{ _id }`,
+        `*[_type == "produto" && slug.current == $slug][0]{ _id, imagem }`,
         { slug }
       );
 
       if (existing) {
-        console.log(`  ⏭️  Já existe. Pulando.`);
-        skippedCount++;
+        if (existing.imagem || !nomeImagem) {
+          console.log(`  ⏭️  Já existe. Pulando.`);
+          skippedCount++;
+          continue;
+        }
+        // Existe mas sem imagem — atualiza só a imagem
+        const assetId = await uploadImagem(nomeImagem);
+        if (assetId) {
+          await client.patch(existing._id).set({
+            imagem: { _type: "image", asset: { _type: "reference", _ref: assetId } },
+          }).commit();
+          console.log(`  🖼️  Imagem adicionada: ${nomeImagem}`);
+          successCount++;
+        } else {
+          skippedCount++;
+        }
         continue;
       }
 
