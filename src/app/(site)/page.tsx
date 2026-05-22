@@ -13,6 +13,7 @@ import whatsapp from "@/img/icons/whatsapp.png";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Destaques from "@/components/Destaques/Destaques";
 import Categorias from "@/components/Categorias/Categorias";
+import WhatsAppModal from "@/components/WhatsAppModal/WhatsAppModal";
 import competitivo from "@/img/competitivo.png";
 import marcas from "@/img/marcas.png";
 import atendimento from "@/img/atendimento.png";
@@ -27,9 +28,9 @@ export default function Home() {
         <div className={styles.heroBox}>
           <Image src={heroLogo} alt="Logo" />
           <p>Linha completa em mangueiras hidráulicas, conexões e componentes industriais.</p>
-          <Link href="/contato">
+          <WhatsAppModal>
             <button className="yellowButton">Falar com um especialista</button>
-          </Link>
+          </WhatsAppModal>
         </div>
       </section>
 

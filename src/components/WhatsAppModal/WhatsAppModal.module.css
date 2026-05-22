@@ -1,0 +1,75 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: linear-gradient(180deg, #191A32 0%, #003340 100%);
+  border-radius: 20px;
+  padding: 4rem 5rem;
+  width: 90%;
+  max-width: 38rem;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: var(--white, #ffffff);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.closeBtn:hover {
+  color: var(--yellow, #f8bb00);
+}
+
+.title {
+  color: var(--white, #ffffff);
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin-bottom: 3rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.item:hover {
+  opacity: 0.8;
+}
+
+.nome {
+  color: var(--white, #ffffff);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

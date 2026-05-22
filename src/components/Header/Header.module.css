@@ -96,11 +96,7 @@
   gap: 1.8rem;
 }
 
-.mobileActions .searchButton {
-  position: static;
-}
-
-.hamburger {
+.mobileIconButton {
   background: none;
   border: none;
   color: var(--white, #ffffff);
@@ -112,63 +108,8 @@
   transition: color 0.2s ease;
 }
 
-.hamburger:hover {
+.mobileIconButton:hover {
   color: var(--yellow, #f8bb00);
-}
-
-/* Mobile nav dropdown */
-.mobileNav {
-  display: flex;
-  flex-direction: column;
-  padding: 0 2rem 2rem;
-  gap: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.mobileNavLink {
-  color: var(--white, #ffffff);
-  font-weight: 700;
-  font-size: 1.8rem;
-  padding: 1.6rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: color 0.2s ease;
-}
-
-.mobileNavLink:hover {
-  color: var(--yellow, #f8bb00);
-}
-
-.mobileSearchContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-top: 1.8rem;
-}
-
-.mobileSearchContainer .searchButton {
-  position: absolute;
-  right: 15px;
-}
-
-.mobileSearchInput {
-  background-color: rgba(255, 255, 255, 0.12);
-  border: none;
-  border-radius: 25px;
-  padding: 1.4rem 4.5rem 1.4rem 1.7rem;
-  color: var(--white, #ffffff);
-  width: 100%;
-  font-size: 1.5rem;
-  line-height: 100%;
-  outline: none;
-  transition: background-color 0.2s ease;
-}
-
-.mobileSearchInput:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.mobileSearchInput::placeholder {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 1200px) {
@@ -201,5 +142,59 @@
 
   .logoContainer {
     width: 7.5rem;
+  }
+  /* Full screen overlay */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, #191A32 0%, #003340 100%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 13rem
+  }
+
+  .overlayTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.2rem;
+  }
+
+  .overlayLogo {
+    width: 7rem;
+    a {
+      width: 100%;
+      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .overlayNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .overlayLink {
+    color: var(--white, #ffffff);
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: color 0.2s ease;
+  }
+
+  .overlayLink:hover {
+    color: var(--yellow, #f8bb00);
+  }
+
+  .overlayBottom {
+    display: flex;
+    justify-content: center;
   }
 }
