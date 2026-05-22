@@ -10,11 +10,12 @@
  *   [2] Grande Grupo   → categoria (mapeado para os nomes do Sanity)
  *   [3] Grupo          → tipo
  *   [4] Sub Grupo      → subcategoria
+ *   [5] Imagem         → nome do arquivo em scripts/produtos/ (ex: mangueira-azul.jpg)
  */
 
 import { createClient } from "@sanity/client";
-import { readFileSync } from "fs";
-import { resolve } from "path";
+import { readFileSync, existsSync, readdirSync } from "fs";
+import { resolve, extname } from "path";
 import { config } from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -25,6 +26,7 @@ const XLSX = require("xlsx");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const IMAGES_DIR = resolve(__dirname, "produtos");
 config({ path: resolve(__dirname, "..", ".env") });
 
 const PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
@@ -74,6 +76,34 @@ function slugify(text) {
     .replace(/^-+|-+$/g, "");
 }
 
+const MIME_TYPES = {
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".png": "image/png",
+  ".webp": "image/webp",
+};
+
+function encontrarArquivo(nome) {
+  const arquivos = readdirSync(IMAGES_DIR);
+  return arquivos.find((f) => extname(f) && f.slice(0, f.lastIndexOf(".")) === nome) || null;
+}
+
+async function uploadImagem(nome) {
+  const nomeArquivo = encontrarArquivo(nome);
+  if (!nomeArquivo) {
+    console.warn(`  ⚠️  Imagem não encontrada: scripts/produtos/${nome}.*`);
+    return null;
+  }
+  const ext = extname(nomeArquivo).toLowerCase();
+  const mimeType = MIME_TYPES[ext] || "image/jpeg";
+  const fileBuffer = readFileSync(resolve(IMAGES_DIR, nomeArquivo));
+  const asset = await client.assets.upload("image", fileBuffer, {
+    filename: nomeArquivo,
+    contentType: mimeType,
+  });
+  return asset._id;
+}
+
 async function getOrCreateCategoria(nomeCategoria) {
   const existing = await client.fetch(
     `*[_type == "categoria" && nome == $nome][0]{ _id }`,
@@ -121,6 +151,7 @@ async function main() {
     const grandeGrupo  = (row[2] || "").toString().trim().toUpperCase();
     const tipo         = (row[3] || "").toString().trim();
     const subcategoria = (row[4] || "").toString().trim();
+    const nomeImagem   = (row[5] || "").toString().trim();
 
     const nomeCategoria = CATEGORIA_MAP[grandeGrupo];
 
@@ -168,6 +199,14 @@ async function main() {
       };
 
       if (subcategoria) doc.subcategoria = subcategoria;
+
+      if (nomeImagem) {
+        const assetId = await uploadImagem(nomeImagem);
+        if (assetId) {
+          doc.imagem = { _type: "image", asset: { _type: "reference", _ref: assetId } };
+          console.log(`  🖼️  Imagem: ${nomeImagem}`);
+        }
+      }
 
       await client.create(doc);
       console.log(`  ✅ Importado!`);

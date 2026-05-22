@@ -46,11 +46,7 @@
 .searchBox input::placeholder {
   color: var(--gray);
 }
-
 .searchIcon {
-  color: var(--gray);
-  font-size: 1.6rem;
-  cursor: pointer;
   flex-shrink: 0;
 }
 
@@ -60,13 +56,6 @@
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 2rem;
-}
-
-.categoriasIcon {
-  display: flex;
-  align-items: center;
-  font-size: 1.8rem;
-  color: var(--dark-blue);
 }
 
 .categoriasTitle {
@@ -82,10 +71,10 @@
   cursor: pointer;
   border: none;
   background: none;
-  font-family: inherit;
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-family: inherit;
 }
 
 /* Selected count badge */
@@ -232,7 +221,7 @@
   color: var(--dark-blue);
 }
 
-.catalogoButton {
+.catalogoButtonDesktop {
   background: var(--yellow);
   color: var(--white);
   border: none;
@@ -249,8 +238,11 @@
   align-items: center;
 }
 
-.catalogoButton:hover {
+.catalogoButtonDesktop:hover {
   filter: brightness(0.7);
+}
+.catalogoButtonMobile {
+  display: none;
 }
 
 /* Product Grid */
@@ -264,7 +256,8 @@
   background: var(--white);
   border-radius: 20px;
   border: 1px solid var(--dark-blue);
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
   text-decoration: none;
   display: block;
   padding: 2rem;
@@ -334,41 +327,113 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .productGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .produtosPage {
     flex-direction: column;
-    padding: 2rem 1.6rem;
+    padding: 5rem 1.6rem;
+    gap: 2rem;
+  }
+  .searchLabel {
+    font-size: 1.5rem;
+  }
+  .searchBox {
+    padding: 1.3rem 2rem;
+    width: 75%;
+  }
+  .searchBox input {
+    font-size: 1.5rem;
+  }
+  .searchIcon {
+    svg{
+      width: 14px;
+      height: 14px;
+    }
+  }
+  .selecionados {
+    width: 60%;
+    padding: 1.2rem 2rem;
+    border-radius: 25px;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
   }
 
+  .selecionadosLeft {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .selecionadosBadge {
+      width: 20px;
+      height: 20px;
+      font-size: 1.5rem;
+    }
+  }
   .sidebar {
     width: 100%;
     min-width: unset;
   }
+  .categoriasList {
+    padding: 1rem 2rem 2rem;
+  }
+  .categoriaButton {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    cursor: pointer;
+  }
 
   .productGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
+    gap: 8px;
+  }
+  .mainContent {
+    margin-top: 0rem;
   }
 
   .mainTitle {
-    font-size: 2.4rem;
+    font-size: 2rem;
+  }
+  .catalogoButtonDesktop {
+    display: none;
+  }
+  .catalogoButtonMobile {
+    display: block;
+    background: var(--yellow);
+    color: var(--white);
+    border: none;
+    padding: 1.3rem 1.6rem;
+    border-radius: 25px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
   }
 
   .mainHeader {
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 3.6rem;
+    margin-bottom: 3.3rem;
     align-items: flex-start;
+  }
+  .productCard {
+    padding: 1rem;
+  }
+  .productName {
+    font-size: 1.6rem;
+  }
+  .productBrand {
+    font-size: 1.6rem;
   }
 }
 
-@media (max-width: 480px) {
-  .productGrid {
-    grid-template-columns: 1fr;
-  }
-}
+
