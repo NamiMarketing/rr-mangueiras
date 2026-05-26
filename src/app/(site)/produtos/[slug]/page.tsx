@@ -29,6 +29,13 @@ const RELATED_QUERY = `*[_type == "produto" && categoria._ref == $categoriaId &&
   imagem
 }`;
 
+export async function generateStaticParams() {
+  const slugs = await client.fetch<{ slug: string }[]>(
+    `*[_type == "produto"]{ "slug": slug.current }`
+  );
+  return slugs.map(({ slug }) => ({ slug }));
+}
+
 interface ProdutoPageProps {
   params: Promise<{ slug: string }>;
 }

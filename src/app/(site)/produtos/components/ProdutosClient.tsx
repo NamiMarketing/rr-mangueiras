@@ -142,11 +142,11 @@ export default function ProdutosClient({
       {/* MAIN CONTENT */}
       <section className={styles.mainContent}>
         <div className={styles.mainHeader}>
-          <a href="#" className={styles.catalogoButtonMobile}>
+          <a href="https://drive.google.com/uc?export=download&id=1STYogTyF24iZyXe6QbtIapGr4oPc4htJ" className={styles.catalogoButtonMobile}>
             Baixar Catálogo Digital
           </a>
           <h1 className={styles.mainTitle}>Produtos</h1>
-          <a href="#" className={styles.catalogoButtonDesktop}>
+          <a href="https://drive.google.com/uc?export=download&id=1STYogTyF24iZyXe6QbtIapGr4oPc4htJ" className={styles.catalogoButtonDesktop}>
             Baixar Catálogo Digital
           </a>
         </div>

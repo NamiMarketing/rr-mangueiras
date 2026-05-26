@@ -89,7 +89,7 @@ export default function Categorias() {
       </div>
       
       <div className={styles.buttonContainer}>
-        <Link href="/produtos">
+        <Link href="https://drive.google.com/uc?export=download&id=1STYogTyF24iZyXe6QbtIapGr4oPc4htJ">
           <button className="yellowButton">VER CATÁLOGO COMPLETO</button>
         </Link>
       </div>
