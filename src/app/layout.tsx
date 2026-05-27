@@ -6,6 +6,9 @@ const figtree = Figtree({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "RR Mangueiras",
   description: "RR Mangueiras - Conexões Hidráulicas e Industrial",
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({

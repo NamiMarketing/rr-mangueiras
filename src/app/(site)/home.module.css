@@ -110,9 +110,9 @@
         gap: 11rem;
         justify-content: center;
         .escolherCard{
-            display: flex;
-            flex-direction: column;
-            gap: 6rem;
+            display: grid;
+            grid-template-rows: 105px auto auto;
+            gap: 3rem;
             width: 28rem;
             .escolherCardText{
                 display: flex;
@@ -452,6 +452,8 @@
             flex-direction: column;
             gap: 3.5rem;
             .escolherCard {
+                display:flex;
+                flex-direction: column;
                 width: 24rem;
                 align-items: center;
                 gap: 1.6rem;

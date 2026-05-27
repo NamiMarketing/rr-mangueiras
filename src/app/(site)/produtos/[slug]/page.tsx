@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./produto.module.css";
 import ProdutoTabs from "./components/ProdutoTabs";
+import WhatsAppModal from "@/components/WhatsAppModal/WhatsAppModal";
 
 const PRODUTO_QUERY = `*[_type == "produto" && slug.current == $slug][0] {
   _id,
@@ -109,6 +110,9 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
           {produto.descricao && (
             <p className={styles.productDescription}>{produto.descricao}</p>
           )}
+          <WhatsAppModal>
+            <button className="yellowButton">Falar com um especialista</button>
+          </WhatsAppModal>
         </div>
       </div>
 
