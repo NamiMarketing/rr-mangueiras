@@ -20,7 +20,7 @@
 
 .location {
   flex: 1;
-  a{
+  >a{
     margin-top: 2rem;
     width: 4rem;
     height: 4rem;
@@ -156,6 +156,7 @@
     font-size: 1.6rem;
     line-height: 2.2rem;
     margin-bottom: 1rem;
+    
   }
   .credits {
     font-size: 1.4rem;
