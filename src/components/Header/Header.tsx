@@ -43,7 +43,7 @@ export default function Header() {
           <nav className={styles.nav}>
             <Link href="/produtos" className={styles.navLink}>PRODUTOS</Link>
             <Link href="/contato" className={styles.navLink}>CONTATO</Link>
-            <Link href="/marcas" className={styles.navLink}>MARCAS</Link>
+            {/* <Link href="/marcas" className={styles.navLink}>MARCAS</Link> */}
             <div className={styles.searchContainer}>
               <input
                 type="text"
@@ -110,7 +110,7 @@ export default function Header() {
           <nav className={styles.overlayNav}>
             <Link href="/produtos" className={styles.overlayLink} onClick={() => setIsOpen(false)}>PRODUTOS</Link>
             <Link href="/contato" className={styles.overlayLink} onClick={() => setIsOpen(false)}>CONTATO</Link>
-            <Link href="/marcas" className={styles.overlayLink} onClick={() => setIsOpen(false)}>MARCAS</Link>
+            {/* <Link href="/marcas" className={styles.overlayLink} onClick={() => setIsOpen(false)}>MARCAS</Link> */}
           </nav>
 
           <div className={styles.overlayBottom}>

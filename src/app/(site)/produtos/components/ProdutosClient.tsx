@@ -21,7 +21,6 @@ interface Produto {
   _id: string;
   nome: string;
   slug: { current: string };
-  marca?: string;
   tipo?: string;
   descricao?: string;
   imagem: any;
@@ -65,7 +64,6 @@ export default function ProdutosClient({
         const term = searchTerm.toLowerCase();
         const matchesSearch =
           produto.nome.toLowerCase().includes(term) ||
-          (produto.marca ?? "").toLowerCase().includes(term) ||
           (produto.tipo ?? "").toLowerCase().includes(term) ||
           produto.categoria.nome.toLowerCase().includes(term);
         if (!matchesSearch) return false;
@@ -177,7 +175,6 @@ export default function ProdutosClient({
                 </div>
                 <div className={styles.productInfo}>
                   <p className={styles.productName}>{produto.nome}</p>
-                  <p className={styles.productBrand}>{produto.marca}</p>
                 </div>
               </Link>
             ))

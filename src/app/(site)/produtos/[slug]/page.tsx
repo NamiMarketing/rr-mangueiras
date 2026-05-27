@@ -10,7 +10,6 @@ const PRODUTO_QUERY = `*[_type == "produto" && slug.current == $slug][0] {
   _id,
   nome,
   slug,
-  marca,
   tipo,
   descricao,
   imagem,
@@ -25,7 +24,6 @@ const RELATED_QUERY = `*[_type == "produto" && categoria._ref == $categoriaId &&
   _id,
   nome,
   slug,
-  marca,
   imagem
 }`;
 
@@ -50,7 +48,7 @@ export async function generateMetadata({ params }: ProdutoPageProps) {
 
   return {
     title: `${produto.nome} | RR Mangueiras`,
-    description: produto.descricao || `${produto.nome} - ${produto.marca}`,
+    description: produto.descricao || `${produto.nome}`,
   };
 }
 
@@ -152,7 +150,6 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
                   </div>
                   <div className={styles.relatedInfo}>
                     <p className={styles.relatedName}>{related.nome}</p>
-                    <p className={styles.relatedBrand}>{related.marca}</p>
                   </div>
                 </Link>
               )
