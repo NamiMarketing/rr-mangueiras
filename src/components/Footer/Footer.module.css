@@ -9,7 +9,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 3rem;
 }
 
 .locationsGrid {
@@ -20,6 +20,17 @@
 
 .location {
   flex: 1;
+  a{
+    margin-top: 2rem;
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .locationTitle {
@@ -42,6 +53,7 @@
 .bottomSection {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .logoContainer {
