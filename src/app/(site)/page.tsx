@@ -42,11 +42,16 @@ export default function Home() {
         <Image src={tradicaoUp} className={styles.tradicaoUp} alt="Logo" />
         <div className={styles.tradicaoContent}>
           <div className={styles.tradicaoText}>
-            <h2>Tradição e qualidade em mangueiras e terminais hidráulicos <span className={styles.textHighlight}>desde 2007.</span></h2>
+            <h2>Tradição e qualidade em mangueiras e terminais hidráulicos.</h2>
             <p>
-              A RR Mangueiras, empresa paranaense sediada em Curitiba, é especializada no fornecimento de mangueiras hidráulicas, terminais e conexões para aplicações industriais.
-              <br /><br />
-              Desde 2007, atua oferecendo produtos de baixa, média, alta e super alta pressão, com foco em qualidade, segurança e desempenho para diferentes demandas do setor industrial.
+              Há três décadas no mercado, a RR Mangueiras trabalha com foco na plena satisfação dos seus clientes. Para isso tem empenhado esforços constantes visando oferecer produtos de inquestionável qualidade e atendimento cordial e assertivo.
+              <br/><br/>
+              Com experientes profissionais na atuação industrial e linha completa de produtos para M.R.O - Manutenção, Reparo e Operação, a empresa vem consolidando a sua presença no mercado, cada vez mais competitivo.
+              <br/><br/>
+              Equipes técnicas adequadamente capacitadas, que atuam interna e externamente, têm proporcionado aos clientes a segurança necessária na decisão correta das compras realizadas. As estruturas técnica, comercial e operacional da RR Mangueiras estão aptas a desenvolver soluções sob medida nos segmentos industriais das empresas do agronegócio, alimentícias, papeleiras, madeireiras, mineradoras, químicas, farmacêuticas e automotivas, com fortes parcerias construídas no mercado de manutenção industrial.
+              <br/><br/>
+              Fortalecer relacionamentos é o desafio diário da empresa. É a força que a move no contínuo aprimoramento da sua estrutura física e do seu potencial humano.
+              
             </p>
           </div>
           <div className={styles.tradicaoImage}>
@@ -71,7 +76,7 @@ export default function Home() {
             <Image src={marcas} alt="ícone melhores marcas" />
             <div className={styles.escolherCardText}>
               <h4>Melhores marcas</h4>
-              <p>Peças e acessórios de fabricantes confiáveis do mercado.</p>
+              <p>Produtos de fabricantes confiáveis do mercado.</p>
             </div>
           </div>
           <div className={styles.escolherCard}>

@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
             <p className={styles.locationText}>
               <Link href="tel:+554135693191">
-                (41) 3569-3191 - Administrativo
+                (41) 3569-3191
               </Link>
             </p>
             <p className={styles.locationText}>
@@ -38,7 +38,7 @@ export default function Footer() {
             </p>
             <p className={styles.locationText}>
               <Link href="tel:+554136055101">
-              (41) 3606-5101 - Administrativo
+              (41) 3606-5101
               </Link>
             </p>
             <p className={styles.locationText}>
@@ -61,7 +61,7 @@ export default function Footer() {
             </p>
             <p className={styles.locationText}>
               <Link href="tel:+554132271903">
-              (42) 3227-1903 - Administrativo
+              (42) 3227-1903
               </Link>
             </p>
             <p className={styles.locationText}>
