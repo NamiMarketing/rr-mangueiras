@@ -82,8 +82,7 @@ export default function Contato() {
                     <Link href="mailto:vendas.pontagrossa@rrmangueiras.com.br">
                         <h5>vendas.pontagrossa@rrmangueiras.com.br</h5>
                     </Link>
-                    <h5>Segunda-Sexta: 08:00 - 18:00 <br/>
-                        Sábado: 08:00 - 12:00</h5>
+                    <h5>Segunda-Sexta: 08:00 - 18:00 </h5>
                     <div className={styles.icons}>
                         <Link href="https://maps.app.goo.gl/qTeYcuagnENrkwyr8" target="_blank">
                             <Image src={address} alt="Endereço" />

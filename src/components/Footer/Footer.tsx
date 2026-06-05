@@ -65,8 +65,7 @@ export default function Footer() {
               </Link>
             </p>
             <p className={styles.locationText}>
-              Segunda-Sexta: 08:00 - 18:00<br/>
-              Sábado: 08:00 - 12:00
+              Segunda-Sexta: 08:00 - 18:00
             </p>
             <Link target="_blank" href="https://www.instagram.com/rr_mangueiraspg">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
