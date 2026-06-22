@@ -1,7 +1,7 @@
 import { client } from "@/sanity/client";
 import ProdutosClient from "./components/ProdutosClient";
 
-const CATEGORIAS_QUERY = `*[_type == "categoria"] | order(nome asc) {
+const CATEGORIAS_QUERY = `*[_type == "categoria"] | order(ordem asc, nome asc) {
   _id,
   nome,
   subcategorias[] {
@@ -37,11 +37,5 @@ export default async function ProdutosPage() {
     client.fetch(PRODUTOS_QUERY),
   ]);
 
-  return (
-    <ProdutosClient
-      categorias={categorias}
-      produtos={produtos}
-      initialSearch=""
-    />
-  );
+  return <ProdutosClient categorias={categorias} produtos={produtos} />;
 }

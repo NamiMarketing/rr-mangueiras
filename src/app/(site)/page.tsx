@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import banner from "@/img/banner.png";
 import heroLogo from "@/img/hero-logo.png";
-import preFooter from "@/img/pre-footer.png";
-import preFooterMobile from "@/img/pre-footermob.png";
 import curitiba from "@/img/curitiba.png";
 import colombo from "@/img/colombo.png";
 import pontaGrossa from "@/img/ponta-grossa.png";
@@ -34,24 +32,20 @@ export default function Home() {
         </div>
       </section>
 
-      <Categorias />
-
       <Destaques />
+
+      <Categorias />
 
       <section className={styles.tradicao}>
         <Image src={tradicaoUp} className={styles.tradicaoUp} alt="Logo" />
         <div className={styles.tradicaoContent}>
           <div className={styles.tradicaoText}>
-            <h2>Tradição e qualidade em mangueiras e terminais hidráulicos.</h2>
+
             <p>
-              Há três décadas no mercado, a RR Mangueiras trabalha com foco na plena satisfação dos seus clientes. Para isso tem empenhado esforços constantes visando oferecer produtos de inquestionável qualidade e atendimento cordial e assertivo.
-              <br/><br/>
-              Com experientes profissionais na atuação industrial e linha completa de produtos para M.R.O - Manutenção, Reparo e Operação, a empresa vem consolidando a sua presença no mercado, cada vez mais competitivo.
-              <br/><br/>
-              Equipes técnicas adequadamente capacitadas, que atuam interna e externamente, têm proporcionado aos clientes a segurança necessária na decisão correta das compras realizadas. As estruturas técnica, comercial e operacional da RR Mangueiras estão aptas a desenvolver soluções sob medida nos segmentos industriais das empresas do agronegócio, alimentícias, papeleiras, madeireiras, mineradoras, químicas, farmacêuticas e automotivas, com fortes parcerias construídas no mercado de manutenção industrial.
-              <br/><br/>
-              Fortalecer relacionamentos é o desafio diário da empresa. É a força que a move no contínuo aprimoramento da sua estrutura física e do seu potencial humano.
-              
+              <b>A RR Mangueiras é uma empresa paranaense especializada na comercialização de mangueiras hidráulicas e industriais, conexões, terminais e válvulas para os mais variados segmentos do mercado.</b>
+
+<br/><br/>
+Atuamos com mangueiras de baixa, média, alta e super pressão há mais de três décadas,  mantendo parcerias com marcas líderes do setor e um portfólio amplo para atender desde a manutenção do dia a dia até as aplicações industriais mais exigentes.
             </p>
           </div>
           <div className={styles.tradicaoImage}>
@@ -187,14 +181,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.preFooter}>
-        
-        <Image src={preFooterMobile} alt="Logo" className={styles.preFooterMobile} />
-        <Image src={preFooter} alt="Logo" className={styles.preFooterImage} />
-        <div className={styles.preFooterText}>
-          <h2>Qualidade, agilidade e atendimento especializado para quem não pode parar.</h2>
-        </div>
-      </section>
     </main>
   );
 }

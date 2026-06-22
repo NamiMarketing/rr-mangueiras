@@ -1,6 +1,9 @@
 .header {
   background-color: var(--background-secondary, #191a32);
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .container {
@@ -9,13 +12,13 @@
   justify-content: space-between;
   margin: 0 auto;
   padding: 2rem 10rem;
-  height: 12rem;
+  height: 10rem;
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
-  width: 15rem;
+  width: 11rem;
   a{
     width: 100%;
     height: auto;

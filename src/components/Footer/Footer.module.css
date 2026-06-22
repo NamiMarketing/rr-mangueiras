@@ -9,28 +9,25 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 6rem;
 }
 
 .locationsGrid {
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .location {
   flex: 1;
-  >a{
-    margin-top: 2rem;
-    width: 4rem;
-    height: 4rem;
-    display: block;
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.locationInfo {
+  display: flex;
+  flex-direction: column;
 }
 
 .locationTitle {
@@ -48,6 +45,19 @@
   color: var(--white, #ffffff);
   font-weight: 500;
   margin-bottom: 1.2rem;
+}
+
+.locationText:last-child {
+  margin-bottom: 0;
+}
+
+.locationMap {
+  margin-top: auto;
+  width: 100%;
+  height: 30rem;
+  border: 0;
+  border-radius: 20px;
+  display: block;
 }
 
 .bottomSection {
@@ -76,11 +86,7 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 3rem;
-}
-
-.socialIconsMobile {
-  display: none;
+  gap: 4rem;
 }
 
 .socialIcons {
@@ -92,6 +98,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.socialIcons a:hover {
+  opacity: 0.85;
 }
 
 .socialIcons svg {
@@ -114,10 +125,10 @@
     flex-wrap: wrap;
   }
   .location {
-    margin-bottom: 2rem;
+    min-width: 28rem;
   }
   .container {
-    gap: 4rem;
+    gap: 5rem;
   }
 }
 
@@ -127,17 +138,13 @@
   }
   .locationsGrid {
     flex-direction: column;
-    gap: 4rem;
-  }
-  .location {
-    margin-bottom: 0;
-    svg{
-      width: 3rem;
-      height: 3rem;
-    }
+    gap: 4.5rem;
   }
   .container {
-    gap: 3.5rem;
+    gap: 4rem;
+  }
+  .locationMap {
+    height: 24rem;
   }
   .bottomSection {
     flex-direction: column;
@@ -145,9 +152,11 @@
     gap: 4.4rem;
   }
   .socialAndCredits {
-    align-items: flex-start;
+    width: 100%;
+    align-items: center;
+    gap: 3rem;
   }
-  .locationTitle{
+  .locationTitle {
     font-size: 1.6rem;
     line-height: 1.6rem;
     margin-bottom: 2rem;
@@ -156,26 +165,13 @@
     font-size: 1.6rem;
     line-height: 2.2rem;
     margin-bottom: 1rem;
-    
   }
   .credits {
     font-size: 1.4rem;
   }
-  .socialIcons {
-    display: none;
-  }
-  .socialIconsMobile {
-    display: flex;
-    gap: 1.4rem;
-    align-self: flex-start;
-    a{
-      width: 3.3rem;
-      height: 3.3rem;
-      svg{
-        width: 100%;
-        height: 100%;
-      }
-    }
+  .socialIcons svg {
+    width: 4rem;
+    height: 4rem;
   }
   .logoContainer {
     width: 23rem;

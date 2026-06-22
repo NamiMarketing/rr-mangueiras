@@ -26,13 +26,11 @@ export const produto = defineType({
       name: 'marca',
       title: 'Marca',
       type: 'string',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'tipo',
       title: 'Tipo',
       type: 'string',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'codigo',

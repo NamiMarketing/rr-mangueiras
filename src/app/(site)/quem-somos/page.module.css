@@ -1,0 +1,337 @@
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    101.58deg,
+    rgba(16, 17, 31, 0.55) 2%,
+    rgba(25, 26, 50, 0.3) 40%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.heroContent h1 {
+  color: var(--white);
+  font-size: 4.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+
+.heroContent a {
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: color 0.2s ease;
+}
+
+.heroContent a:hover {
+  color: var(--yellow);
+}
+
+/* ===== Intro ===== */
+.intro {
+  position: relative;
+  background: linear-gradient(191.8deg, var(--medium-blue) 16%, var(--dark-blue) 110%);
+  width: 100%;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.introCurve {
+  position: absolute;
+  top: 8rem;
+  bottom: 8rem;
+  left: 0;
+  right: 0;
+  background-image: url("../../../img/quem-somos/curva.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+.introInner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3rem;
+}
+
+.introLead,
+.introBody {
+  max-width: 52.5rem;
+  color: var(--white);
+}
+
+.introLead {
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  letter-spacing: 0.02em;
+}
+
+.introBody {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+}
+
+/* ===== Equipe / quote ===== */
+.equipe {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.equipeImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.equipeOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(20, 31, 44, 0.85) 0%, rgba(35, 52, 75, 0.45) 45%, rgba(35, 52, 75, 0.1) 100%),
+    rgba(0, 0, 0, 0.3);
+}
+
+.equipeContent {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.5rem;
+  padding: 0 1rem;
+}
+
+.equipeContent p {
+  max-width: 52.5rem;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3.2rem;
+}
+
+.equipeContent h2 {
+  max-width: 52.5rem;
+  color: var(--white);
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+}
+
+/* ===== Por que escolher ===== */
+.escolher {
+  background-color: var(--background);
+  width: 100%;
+}
+
+.escolherInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10rem 1rem;
+}
+
+.escolherTitle {
+  color: var(--medium-blue);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 12rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9rem 12rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardIcon {
+  height: 8rem;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.cardIcon img {
+  width: auto;
+  height: 8rem;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.card h4 {
+  color: var(--medium-blue);
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 2.8rem;
+  text-transform: uppercase;
+  margin-bottom: 2.4rem;
+}
+
+.card p {
+  color: var(--dark-blue);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .heroContent,
+  .equipeContent,
+  .introInner,
+  .escolherInner {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .escolherTitle {
+    margin-bottom: 8rem;
+  }
+
+  .grid {
+    gap: 7rem 6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem 5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .heroContent,
+  .equipeContent,
+  .introInner,
+  .escolherInner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .heroContent h1 {
+    font-size: 3.2rem;
+  }
+
+  .introCurve {
+    display: none;
+  }
+
+  .introInner {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    align-items: stretch;
+    gap: 2.4rem;
+  }
+
+  .introLead {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+
+  .introBody {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+  }
+
+  .equipe {
+    height: auto;
+    min-height: 42rem;
+  }
+
+  .equipeContent {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    gap: 2.4rem;
+  }
+
+  .equipeContent p {
+    font-size: 1.7rem;
+    line-height: 2.6rem;
+  }
+
+  .equipeContent h2 {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+  }
+
+  .escolherInner {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .escolherTitle {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .card h4 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .card p {
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+  }
+}

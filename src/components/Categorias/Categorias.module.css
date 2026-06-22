@@ -80,9 +80,9 @@
   max-width: 160px;
 }
 
-.navButtonNext {
+.navButtonNext,
+.navButtonPrev {
   position: absolute;
-  right: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 50px;
@@ -99,14 +99,24 @@
   transition: all 0.2s ease;
 }
 
-.navButtonNext:hover {
+.navButtonNext {
+  right: 0;
+}
+
+.navButtonPrev {
+  left: 0;
+}
+
+.navButtonNext:hover,
+.navButtonPrev:hover {
   background-color: var(--yellow);
   color: var(--white);
 }
 
-.navButtonNext :global(.swiper-button-disabled) {
-  opacity: 0.5;
-  cursor: not-allowed;
+.navButtonNext:global(.swiper-button-disabled),
+.navButtonPrev:global(.swiper-button-disabled) {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Hide Swiper default nav */
@@ -142,7 +152,8 @@
     margin: 2rem auto 4rem;
   }
 
-  .navButtonNext {
+  .navButtonNext,
+  .navButtonPrev {
     width: 40px;
     height: 40px;
   }
@@ -179,7 +190,8 @@
     height: 8px;
   }
 
-  .navButtonNext {
+  .navButtonNext,
+  .navButtonPrev {
     width: 35px;
     height: 35px;
     svg {

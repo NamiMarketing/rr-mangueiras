@@ -1,6 +1,7 @@
 .hero{
     position: relative;
     aspect-ratio: 1440/600;
+    max-height: 65vh;
     width: 100%;
     .heroImage{
         width: 100%;
@@ -39,7 +40,7 @@
 .tradicao{
     padding: 0rem 0 0;
     width: 85%;
-    max-width: 1400px;
+    max-width: 880px;
     margin: 16rem auto 0;
     position: relative;
     .tradicaoUp{
@@ -52,7 +53,7 @@
     .tradicaoContent{
         display: flex;
         align-items: center;
-        gap: 10rem;
+        gap: 4rem;
         border-radius: 30px;
         justify-content: space-between;
         background: linear-gradient(108.2deg, #003340 1.18%, #003340 20.84%, #191A32 66.16%);
@@ -61,7 +62,7 @@
             flex-direction: column;
             flex: 1;
             gap: 3rem;
-            padding-left: 8.5rem;
+            padding-left: 6em;
             justify-content: space-around;
             h2{
                 font-size: 3rem;
@@ -82,11 +83,16 @@
                 letter-spacing: 0.4px;
                 color: var(--white);
                 text-align: left;
-                width: 52rem;
+                max-width: 38rem;
             }
         }
         .tradicaoImage{
             display: flex;
+            img{
+                height: 46rem;
+                width: auto;
+                object-fit: cover;
+            }
         }
     }
 }
@@ -255,6 +261,7 @@
 @media (max-width: 1200px) {
     .hero {
         aspect-ratio: 1/1;
+        max-height: none;
         .heroBox {
             left: 2rem;
             right: 2rem;

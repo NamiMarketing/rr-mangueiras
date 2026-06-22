@@ -10,40 +10,30 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
-import abracadeiras from "@/img/categorias/abraçadeiras.png";
-import adaptadores from "@/img/categorias/adaptadores.png";
-import automotiva from "@/img/categorias/automotiva.png";
-import conexoes from "@/img/categorias/conexões.png";
-import correias from "@/img/categorias/correias.png";
-import engates from "@/img/categorias/engates.png";
-import filtroY from "@/img/categorias/filtro-y.png";
-import lencolBorracha from "@/img/categorias/lencol-borracha.png";
-import lubrificacao from "@/img/categorias/lubrificacao.png";
-import mangueiras from "@/img/categorias/mangueiras.png";
-import manometros from "@/img/categorias/manometros.png";
-import registros from "@/img/categorias/registros.png";
-import terminais from "@/img/categorias/terminais.png";
-import tubosFlexiveis from "@/img/categorias/tubos-flexiveis.png";
-import tubos from "@/img/categorias/tubos.png";
-import valvulas from "@/img/categorias/valvulas.png";
+import abracadeiras from "@/img/categorias/abracadeiras-home.png";
+import puc from "@/img/categorias/puc.png";
+import tubosConexoes from "@/img/categorias/tubos-conexoes.png";
+import linhaPneumatica from "@/img/categorias/linha-pneumatica.png";
+import linhaHidraulica from "@/img/categorias/linha-hidraulica.png";
+import linhaIndustrial from "@/img/categorias/linha-industrial.png";
+import linhaAlimenticia from "@/img/categorias/linha-alimenticia.png";
+import mangueiras from "@/img/categorias/mangueiras-home.png";
+import valvulas from "@/img/categorias/valvulas-home.png";
+import engate from "@/img/categorias/engate.png";
+import arComprimido from "@/img/categorias/ar-comprimido.png";
 
 const categoriasData = [
   { id: 1, title: "Abraçadeiras", image: abracadeiras },
-  { id: 2, title: "Adaptadores", image: adaptadores },
-  { id: 3, title: "Conexões", image: conexoes },
-  { id: 4, title: "Correias", image: correias },
-  { id: 5, title: "Engates", image: engates },
-  { id: 6, title: "Estética automotiva", image: automotiva },
-  { id: 7, title: "Filtro Y", image: filtroY },
-  { id: 8, title: "Lençol de borracha", image: lencolBorracha },
-  { id: 9, title: "Lubrificação", image: lubrificacao },
-  { id: 10, title: "Mangueiras", image: mangueiras },
-  { id: 11, title: "Manômetros", image: manometros },
-  { id: 12, title: "Registros", image: registros },
-  { id: 13, title: "Terminais hidráulicos", image: terminais },
-  { id: 14, title: "Tubos", image: tubos },
-  { id: 15, title: "Tubos metálicos flexíveis", image: tubosFlexiveis },
-  { id: 16, title: "Válvulas", image: valvulas },
+  { id: 2, title: "PUC", image: puc },
+  { id: 3, title: "Tubos e Conexões", image: tubosConexoes },
+  { id: 4, title: "Linha Pneumática", image: linhaPneumatica },
+  { id: 5, title: "Linha Hidráulica", image: linhaHidraulica },
+  { id: 6, title: "Linha Industrial", image: linhaIndustrial },
+  { id: 7, title: "Linha Alimentícia", image: linhaAlimenticia },
+  { id: 8, title: "Mangueiras", image: mangueiras },
+  { id: 9, title: "Válvulas", image: valvulas },
+  { id: 10, title: "Engate", image: engate },
+  { id: 11, title: "Ar Comprimido", image: arComprimido },
 ];
 
 export default function Categorias() {
@@ -79,6 +69,12 @@ export default function Categorias() {
             </SwiperSlide>
           ))}
           
+          <div className={styles.navButtonPrev} id="categorias-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+
           <div className={styles.navButtonNext} id="categorias-next">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -89,8 +85,8 @@ export default function Categorias() {
       </div>
       
       <div className={styles.buttonContainer}>
-        <Link href="https://drive.google.com/uc?export=download&id=1STYogTyF24iZyXe6QbtIapGr4oPc4htJ">
-          <button className="yellowButton">VER CATÁLOGO COMPLETO</button>
+        <Link href="/produtos">
+          <button className="yellowButton">VER TODOS OS PRODUTOS</button>
         </Link>
       </div>
     </section>
