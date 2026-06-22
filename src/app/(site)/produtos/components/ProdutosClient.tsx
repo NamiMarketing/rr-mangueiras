@@ -13,6 +13,7 @@ import destaqueEngates from "@/img/produtos/destaque-engates.png";
 import destaqueMangueiraKpuc from "@/img/produtos/destaque-mangueira-kpuc.png";
 import destaqueGalvanizado from "@/img/produtos/destaque-galvanizado.png";
 import destaqueAcoInox from "@/img/produtos/destaque-aco-inox.png";
+import destaquePneumatica from "@/img/produtos/destaque-pneumatica.png"; 
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -28,10 +29,11 @@ interface Destaque {
 // nome de uma categoria do CMS para filtrar ao clicar (ignorado se não houver).
 const DESTAQUES: Destaque[] = [
   { image: destaqueAbracadeiras, alt: "Abraçadeiras", categoria: "Abraçadeiras" },
+   { image: destaquePneumatica, alt: "Pneumática", categoria: "Pneumática" },
   { image: destaqueEngates, alt: "Engates", categoria: "Engates" },
   { image: destaqueMangueiraKpuc, alt: "Mangueira KPU-C", categoria: "PUC" },
   { image: destaqueGalvanizado, alt: "Galvanizado", categoria: "Tubos e Conexões" },
-  { image: destaqueAcoInox, alt: "Aço Inox", categoria: "Tubos e Conexões" },
+  { image: destaqueAcoInox, alt: "Aço Inox", categoria: "Tubos e Conexões" }
 ];
 
 interface Subcategoria {

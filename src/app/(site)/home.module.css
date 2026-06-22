@@ -1,7 +1,7 @@
 .hero{
     position: relative;
     aspect-ratio: 1440/600;
-    max-height: 65vh;
+    max-height: 55vh;
     width: 100%;
     .heroImage{
         width: 100%;
