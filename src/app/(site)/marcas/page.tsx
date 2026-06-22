@@ -6,6 +6,9 @@ import logo3 from "@/img/marcas/logo3.png";
 import logo4 from "@/img/marcas/logo4.png";
 import logo5 from "@/img/marcas/logo5.png";
 import logo6 from "@/img/marcas/logo6.png";
+import logo7 from "@/img/marcas/brasfit.png";
+import logo8 from "@/img/marcas/kanaflex.png";
+
 
 export default function Marcas() {
     return (
@@ -18,6 +21,8 @@ export default function Marcas() {
                 <Image src={logo1} alt="Logo 1" />
                 <Image src={logo5} alt="Logo 5" />
                 <Image src={logo3} alt="Logo 3" />
+                <Image src={logo7} alt="Logo 7" />
+                <Image style={{ width: '13%', height: '100%' }} src={logo8} alt="Logo 8" />
             </div>
         </div>
     );

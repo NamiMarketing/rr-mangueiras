@@ -47,6 +47,9 @@ export default function Home() {
 <br/><br/>
 Atuamos com mangueiras de baixa, média, alta e super pressão há mais de três décadas,  mantendo parcerias com marcas líderes do setor e um portfólio amplo para atender desde a manutenção do dia a dia até as aplicações industriais mais exigentes.
             </p>
+            <Link href="/quem-somos">
+              <button className="yellowButton">Sobre nós</button>
+            </Link>
           </div>
           <div className={styles.tradicaoImage}>
             <Image src={tradicao} alt="Foto da Fachada da RR Mangueiras" />

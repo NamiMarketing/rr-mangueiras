@@ -198,10 +198,10 @@ export default function ProdutosClient({
                 <div className={styles.rowImagem}>
                   {produto.imagem && (
                     <Image
-                      src={urlFor(produto.imagem).width(320).height(320).fit("max").url()}
+                      src={urlFor(produto.imagem).width(400).fit("max").url()}
                       alt={produto.nome}
-                      width={320}
-                      height={320}
+                      width={400}
+                      height={400}
                       className={styles.rowImg}
                     />
                   )}

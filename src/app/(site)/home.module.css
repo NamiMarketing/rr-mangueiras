@@ -40,7 +40,7 @@
 .tradicao{
     padding: 0rem 0 0;
     width: 85%;
-    max-width: 880px;
+    max-width: 1240px;
     margin: 16rem auto 0;
     position: relative;
     .tradicaoUp{
@@ -52,7 +52,7 @@
     }
     .tradicaoContent{
         display: flex;
-        align-items: center;
+        align-items: stretch;
         gap: 4rem;
         border-radius: 30px;
         justify-content: space-between;
@@ -63,7 +63,7 @@
             flex: 1;
             gap: 3rem;
             padding-left: 6em;
-            justify-content: space-around;
+            justify-content: center;
             h2{
                 font-size: 3rem;
                 line-height: 1.2;
@@ -77,19 +77,22 @@
                 color: var(--yellow);
             }
             p{
-                font-size: 1.6rem;
-                line-height: 1.3;
+                font-size: 2.2rem;
+                line-height: 1.5;
                 font-weight: 400;
                 letter-spacing: 0.4px;
                 color: var(--white);
                 text-align: left;
-                max-width: 38rem;
+                max-width: 56rem;
+            }
+            a{
+                align-self: flex-start;
             }
         }
         .tradicaoImage{
             display: flex;
             img{
-                height: 46rem;
+                height: 100%;
                 width: auto;
                 object-fit: cover;
             }
@@ -120,6 +123,12 @@
             grid-template-rows: 105px auto auto;
             gap: 3rem;
             width: 28rem;
+            img{
+                height: 90px;
+                width: auto;
+                align-self: end;
+                justify-self: start;
+            }
             .escolherCardText{
                 display: flex;
                 flex-direction: column;
@@ -465,8 +474,11 @@
                 align-items: center;
                 gap: 1.6rem;
                 img{
+                    height: auto;
                     max-height: 65px;
                     width: auto;
+                    align-self: center;
+                    justify-self: center;
                 }
                 .escolherCardText {
                     gap: 1.6rem;

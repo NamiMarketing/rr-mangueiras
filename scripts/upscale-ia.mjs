@@ -86,7 +86,11 @@ async function upscaleOne(file) {
 }
 
 async function main() {
-  const files = readdirSync(SRC).filter((f) => f.endsWith(".png")).sort();
+  const argFiles = process.argv.slice(2).filter((a) => a.endsWith(".png"));
+  const files =
+    argFiles.length > 0
+      ? argFiles
+      : readdirSync(SRC).filter((f) => f.endsWith(".png")).sort();
   console.log(`🤖 Upscale IA (Real-ESRGAN) de ${files.length} imagens...\n`);
   for (let i = 0; i < files.length; i++) {
     const f = files[i];

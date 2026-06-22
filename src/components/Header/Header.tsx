@@ -44,7 +44,7 @@ export default function Header() {
             <Link href="/produtos" className={styles.navLink}>PRODUTOS</Link>
             <Link href="/quem-somos" className={styles.navLink}>QUEM SOMOS</Link>
             <Link href="/contato" className={styles.navLink}>CONTATO</Link>
-            {/* <Link href="/marcas" className={styles.navLink}>MARCAS</Link> */}
+            <Link href="/marcas" className={styles.navLink}>MARCAS</Link>
             <div className={styles.searchContainer}>
               <input
                 type="text"

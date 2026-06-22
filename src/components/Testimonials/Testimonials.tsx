@@ -10,11 +10,6 @@ import "swiper/css/pagination";
 
 const testimonials = [
   {
-    id: 1,
-    text: "Recomendo!! Tem uma variedade enorme de mangueiras e conexões, adaptadores de tudo que é jeito. Local agradável, vendedores atenciosos que não medem esforços para dar uma solução a cada situação. Alguns lugares vendem peças, nessa loja eles vendem soluções. Voltarei muitas vezes.",
-    author: "Claudio Pereira",
-  },
-  {
     id: 2,
     text: "Atendimento e proatividade da equipe é algo a ser destacado. Sempre prontos a resolver e ajudar. Parabéns a todo time. Indico com certeza.",
     author: "Cleimar Piveta",
@@ -33,6 +28,11 @@ const testimonials = [
     id: 5,
     text: "Empresa muito confiável e com materiais de qualidade. Somos grandes parceiros de negócios há alguns anos.",
     author: "Enerpel Teleinformática",
+  },
+  {
+    id: 1,
+    text: "Recomendo!! Tem uma variedade enorme de mangueiras e conexões, adaptadores de tudo que é jeito. Local agradável, vendedores atenciosos que não medem esforços para dar uma solução a cada situação. Alguns lugares vendem peças, nessa loja eles vendem soluções. Voltarei muitas vezes.",
+    author: "Claudio Pereira",
   },
 ];
 
