@@ -177,18 +177,19 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 8rem 1rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  gap: 5rem;
+  gap: 6rem;
 }
 
 .lojasNumber {
-  flex-shrink: 0;
+  display: block;
   color: var(--yellow);
-  font-size: 16rem;
+  font-size: 12rem;
   font-weight: 800;
-  line-height: 1;
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
 }
 
 .lojasText {
@@ -209,7 +210,7 @@
   font-size: 2rem;
   font-weight: 400;
   line-height: 2.8rem;
-  max-width: 60rem;
+  max-width: 52rem;
 }
 
 .lojasText p .cidade {
@@ -217,8 +218,16 @@
   font-weight: 700;
 }
 
-.lojasText a {
+.lojasCta {
   align-self: flex-start;
+  margin-top: 1rem;
+}
+
+/* ===== Mapa do Paraná ===== */
+.lojasMap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ===== Por que escolher ===== */
@@ -314,6 +323,15 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 6rem 5rem;
   }
+
+  .lojasInner {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .lojasMap {
+    order: -1;
+  }
 }
 
 @media (max-width: 700px) {
@@ -331,15 +349,13 @@
   }
 
   .lojasInner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2.5rem;
+    gap: 3rem;
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
 
   .lojasNumber {
-    font-size: 10rem;
+    font-size: 9rem;
   }
 
   .lojasText h2 {

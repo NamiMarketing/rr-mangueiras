@@ -10,7 +10,7 @@ import styles from "../produtos.module.css";
 import { urlFor } from "@/sanity/image";
 import destaqueAbracadeiras from "@/img/produtos/destaque-abracadeiras.png";
 import destaqueEngates from "@/img/produtos/destaque-engates.png";
-import destaqueMangueiraKpuc from "@/img/produtos/destaque-mangueira-kpuc.png";
+import destaqueMangueiraKpuc from "@/img/produtos/destaque-mangueira-puc.png";
 import destaqueGalvanizado from "@/img/produtos/destaque-galvanizado.png";
 import destaqueAcoInox from "@/img/produtos/destaque-aco-inox.png";
 import destaquePneumatica from "@/img/produtos/destaque-pneumatica.png"; 

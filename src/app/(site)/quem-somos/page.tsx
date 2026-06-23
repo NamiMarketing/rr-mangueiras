@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import MarcasCarousel from "@/components/MarcasCarousel/MarcasCarousel";
+import ParanaMap from "@/components/ParanaMap/ParanaMap";
 import hero from "@/img/quem-somos/hero.png";
 import equipe from "@/img/quem-somos/equipe.png";
 import icoExperiencia from "@/img/quem-somos/ico-experiencia.png";
@@ -97,18 +98,22 @@ export default function QuemSomos() {
 
       <section className={styles.lojas}>
         <div className={styles.lojasInner}>
-          <span className={styles.lojasNumber}>3</span>
           <div className={styles.lojasText}>
+            <span className={styles.lojasNumber}>3</span>
             <h2>Três unidades para atender você</h2>
             <p>
               Estamos presentes em <span className={styles.cidade}>Curitiba</span>,{" "}
               <span className={styles.cidade}>Colombo</span> e{" "}
-              <span className={styles.cidade}>Ponta Grossa</span>, com estrutura completa
-              e equipe pronta para oferecer a solução certa para o seu negócio.
+              <span className={styles.cidade}>Ponta Grossa</span>, no coração do Paraná, com
+              estrutura completa e equipe pronta para oferecer a solução certa para o seu negócio.
             </p>
-            <Link href="/contato">
+            <Link href="/contato" className={styles.lojasCta}>
               <button className="yellowButton">Conheça nossas lojas</button>
             </Link>
+          </div>
+
+          <div className={styles.lojasMap}>
+            <ParanaMap />
           </div>
         </div>
       </section>
