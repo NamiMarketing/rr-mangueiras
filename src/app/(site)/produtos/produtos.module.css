@@ -1,12 +1,14 @@
 .page {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 6rem 1rem 8rem;
+  /* sem padding-top: a barra de categorias nasce já no ponto de fixação
+     (top: 10rem), então não "desliza" ao rolar a página. */
+  padding: 0 1rem 8rem;
 }
 
-/* ===== Banner carrossel ===== */
+/* ===== Banner carrossel (ao final da página) ===== */
 .bannerSection {
-  margin-bottom: 7rem;
+  margin-top: 8rem;
 }
 
 .bannerInner {
@@ -99,9 +101,19 @@
   background-color: var(--medium-blue);
 }
 
-/* ===== Categorias (pílulas) ===== */
+/* ===== Categorias (pílulas) — fixas junto ao cabeçalho ===== */
 .categoriasSection {
+  position: sticky;
+  top: 10rem; /* altura do cabeçalho (.container do Header) */
+  z-index: 50;
+  background: var(--background);
+  /* Full-bleed: a barra ocupa 100vw (sem bordas laterais), mas o conteúdo
+     interno volta a alinhar com o restante da página via padding. */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0.8rem calc(50vw - 50%) 2.5rem;
   margin-bottom: 6rem;
+  box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.25);
 }
 
 .categoriasTitle {
@@ -111,7 +123,7 @@
   color: var(--dark-blue);
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .pills {
@@ -237,7 +249,17 @@
   }
 
   .bannerSection {
-    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }
+
+  /* No mobile as pílulas voltam ao fluxo normal (o grid fica alto demais
+     para ficar fixo sob o cabeçalho). */
+  .categoriasSection {
+    position: static;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    box-shadow: none;
   }
 
   .pills {

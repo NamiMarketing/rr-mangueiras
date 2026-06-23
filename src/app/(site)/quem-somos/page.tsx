@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+import MarcasCarousel from "@/components/MarcasCarousel/MarcasCarousel";
 import hero from "@/img/quem-somos/hero.png";
 import equipe from "@/img/quem-somos/equipe.png";
 import icoExperiencia from "@/img/quem-somos/ico-experiencia.png";
@@ -94,6 +95,22 @@ export default function QuemSomos() {
         </div>
       </section>
 
+      <section className={styles.lojas}>
+        <div className={styles.lojasInner}>
+          <span className={styles.lojasNumber}>3</span>
+          <div className={styles.lojasText}>
+            <h2>Três unidades para atender você</h2>
+            <p>
+              Estamos presentes em Curitiba, Colombo e Ponta Grossa, com estrutura completa
+              e equipe pronta para oferecer a solução certa para o seu negócio.
+            </p>
+            <Link href="/contato">
+              <button className="yellowButton">Conheça nossas lojas</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.escolher}>
         <div className={styles.escolherInner}>
           <h2 className={styles.escolherTitle}>Por que escolher a RR Mangueiras?</h2>
@@ -110,6 +127,8 @@ export default function QuemSomos() {
           </div>
         </div>
       </section>
+
+      <MarcasCarousel />
     </main>
   );
 }

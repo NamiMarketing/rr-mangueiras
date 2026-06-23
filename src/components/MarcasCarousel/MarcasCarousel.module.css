@@ -1,0 +1,71 @@
+.section {
+  background-color: var(--background);
+  width: 100%;
+  padding: 7rem 0;
+  overflow: hidden;
+}
+
+.title {
+  color: var(--medium-blue);
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.swiper {
+  width: 100%;
+}
+
+/* rolagem contínua (efeito esteira) — timing linear e sem pausas */
+.swiper :global(.swiper-wrapper) {
+  transition-timing-function: linear !important;
+  align-items: center;
+}
+
+.slide {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: auto;
+  height: 6.5rem;
+  max-width: 18rem;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .logo {
+    height: 4.5rem;
+    max-width: 13rem;
+  }
+}

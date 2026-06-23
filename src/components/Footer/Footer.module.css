@@ -89,27 +89,6 @@
   gap: 4rem;
 }
 
-.socialIcons {
-  display: flex;
-  gap: 2rem;
-}
-
-.socialIcons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.2s ease;
-}
-
-.socialIcons a:hover {
-  opacity: 0.85;
-}
-
-.socialIcons svg {
-  width: 5rem;
-  height: 5rem;
-}
-
 .credits {
   font-size: 1.8rem;
   color: var(--white, #ffffff);
@@ -168,10 +147,6 @@
   }
   .credits {
     font-size: 1.4rem;
-  }
-  .socialIcons svg {
-    width: 4rem;
-    height: 4rem;
   }
   .logoContainer {
     width: 23rem;

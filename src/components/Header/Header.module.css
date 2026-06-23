@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--background-secondary, #191a32);
+  background-color: var(--medium-blue, #003340);
   width: 100%;
   position: sticky;
   top: 0;
@@ -90,6 +90,13 @@
 
 .searchButton:hover {
   color: var(--yellow, #f8bb00);
+}
+
+.contactButton {
+  white-space: nowrap;
+  padding: 1.4rem 2.4rem;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
 }
 
 /* Mobile actions — oculto no desktop */

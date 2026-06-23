@@ -1,8 +1,9 @@
-/* ===== Hero ===== */
+/* ===== Hero (mesmo tamanho do banner da home) ===== */
 .hero {
   position: relative;
   width: 100%;
-  height: 65vh;
+  aspect-ratio: 1440 / 600;
+  max-height: 55vh;
   overflow: hidden;
 }
 
@@ -166,6 +167,54 @@
   line-height: 3.2rem;
 }
 
+/* ===== 3 lojas ===== */
+.lojas {
+  width: 100%;
+  background: linear-gradient(101.58deg, var(--medium-blue) 0%, var(--dark-blue) 100%);
+}
+
+.lojasInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.lojasNumber {
+  flex-shrink: 0;
+  color: var(--yellow);
+  font-size: 16rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.lojasText {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lojasText h2 {
+  color: var(--white);
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.lojasText p {
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+  max-width: 60rem;
+}
+
+.lojasText a {
+  align-self: flex-start;
+}
+
 /* ===== Por que escolher ===== */
 .escolher {
   background-color: var(--background);
@@ -231,9 +280,15 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 1200px) {
+  .hero {
+    aspect-ratio: 1 / 1;
+    max-height: none;
+  }
+
   .heroContent,
   .equipeContent,
   .introInner,
+  .lojasInner,
   .escolherInner {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -256,12 +311,38 @@
 }
 
 @media (max-width: 700px) {
+  .hero {
+    aspect-ratio: 36 / 40;
+  }
+
   .heroContent,
   .equipeContent,
   .introInner,
+  .lojasInner,
   .escolherInner {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lojasInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .lojasNumber {
+    font-size: 10rem;
+  }
+
+  .lojasText h2 {
+    font-size: 2.4rem;
+  }
+
+  .lojasText p {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
   }
 
   .heroContent h1 {

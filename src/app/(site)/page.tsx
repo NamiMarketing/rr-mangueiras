@@ -1,7 +1,7 @@
 import styles from "./home.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import banner from "@/img/banner.png";
+import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
 import heroLogo from "@/img/hero-logo.png";
 import curitiba from "@/img/curitiba.png";
 import colombo from "@/img/colombo.png";
@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main className="main-content">
       <section className={styles.hero}>
-        <Image src={banner} alt="Banner" className={styles.heroImage} />
+        <HeroCarousel />
         <div className={styles.heroBox}>
           <Image src={heroLogo} alt="Logo" />
           <p>Linha completa em mangueiras hidráulicas, conexões e componentes industriais.</p>
@@ -35,58 +35,6 @@ export default function Home() {
       <Destaques />
 
       <Categorias />
-
-      <section className={styles.tradicao}>
-        <Image src={tradicaoUp} className={styles.tradicaoUp} alt="Logo" />
-        <div className={styles.tradicaoContent}>
-          <div className={styles.tradicaoText}>
-
-            <p>
-              <b>A RR Mangueiras é uma empresa paranaense especializada na comercialização de mangueiras hidráulicas e industriais, conexões, terminais e válvulas para os mais variados segmentos do mercado.</b>
-
-<br/><br/>
-Atuamos com mangueiras de baixa, média, alta e super pressão há mais de três décadas,  mantendo parcerias com marcas líderes do setor e um portfólio amplo para atender desde a manutenção do dia a dia até as aplicações industriais mais exigentes.
-            </p>
-            <Link href="/quem-somos">
-              <button className="yellowButton">Sobre nós</button>
-            </Link>
-          </div>
-          <div className={styles.tradicaoImage}>
-            <Image src={tradicao} alt="Foto da Fachada da RR Mangueiras" />
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.escolher}>
-        <div className={styles.escolherTitle}>
-          <h2>Por que escolher a RR Mangueiras</h2>
-        </div>
-        <div className={styles.escolherGrid}>
-          <div className={styles.escolherCard}>
-            <Image src={competitivo} alt="ícone preço competitivo" />
-            <div className={styles.escolherCardText}>
-              <h4>Preço Competitivo</h4>
-              <p>O melhor custo benefício você encontra aqui.</p>
-            </div>
-          </div>
-          <div className={styles.escolherCard}>
-            <Image src={marcas} alt="ícone melhores marcas" />
-            <div className={styles.escolherCardText}>
-              <h4>Melhores marcas</h4>
-              <p>Produtos de fabricantes confiáveis do mercado.</p>
-            </div>
-          </div>
-          <div className={styles.escolherCard}>
-            <Image src={atendimento} alt="ícone atendimento ágil" />
-            <div className={styles.escolherCardText}>
-              <h4>Atendimento ágil</h4>
-              <p>Suporte rápido e eficiente para atender às necessidades de cada cliente.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Testimonials />
 
       <section className={styles.unidades}>
         <div className={styles.unidadesTitle}>
@@ -180,6 +128,58 @@ Atuamos com mangueiras de baixa, média, alta e super pressão há mais de três
               </div>
             </div>
             <button className="yellowButton">Ponta Grossa</button>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.escolher}>
+        <div className={styles.escolherTitle}>
+          <h2>Por que escolher a RR Mangueiras</h2>
+        </div>
+        <div className={styles.escolherGrid}>
+          <div className={styles.escolherCard}>
+            <Image src={competitivo} alt="ícone preço competitivo" />
+            <div className={styles.escolherCardText}>
+              <h4>Preço Competitivo</h4>
+              <p>O melhor custo benefício você encontra aqui.</p>
+            </div>
+          </div>
+          <div className={styles.escolherCard}>
+            <Image src={marcas} alt="ícone melhores marcas" />
+            <div className={styles.escolherCardText}>
+              <h4>Melhores marcas</h4>
+              <p>Produtos de fabricantes confiáveis do mercado.</p>
+            </div>
+          </div>
+          <div className={styles.escolherCard}>
+            <Image src={atendimento} alt="ícone atendimento ágil" />
+            <div className={styles.escolherCardText}>
+              <h4>Atendimento ágil</h4>
+              <p>Suporte rápido e eficiente para atender às necessidades de cada cliente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Testimonials />
+
+      <section className={styles.tradicao}>
+        <div className={styles.tradicaoContent}>
+          <Image src={tradicaoUp} className={styles.tradicaoUp} alt="Logo" />
+          <div className={styles.tradicaoText}>
+
+            <p>
+              <b>A RR Mangueiras é uma empresa paranaense especializada na comercialização de mangueiras hidráulicas e industriais, conexões, terminais e válvulas para os mais variados segmentos do mercado.</b>
+
+<br/><br/>
+Atuamos com mangueiras de baixa, média, alta e super pressão há mais de três décadas,  mantendo parcerias com marcas líderes do setor e um portfólio amplo para atender desde a manutenção do dia a dia até as aplicações industriais mais exigentes.
+            </p>
+            <Link href="/quem-somos">
+              <button className="yellowButton">Sobre nós</button>
+            </Link>
+          </div>
+          <div className={styles.tradicaoImage}>
+            <Image src={tradicao} alt="Foto da Fachada da RR Mangueiras" />
           </div>
         </div>
       </section>

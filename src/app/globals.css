@@ -17,6 +17,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: var(--background);
+  /* `clip` evita scroll horizontal de elementos full-bleed (100vw) sem quebrar
+     o position: sticky, ao contrário de `hidden`. */
+  overflow-x: clip;
 }
 
 *,

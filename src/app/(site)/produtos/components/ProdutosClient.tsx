@@ -78,13 +78,22 @@ export default function ProdutosClient({
   );
   const [selectedCategoria, setSelectedCategoria] = useState("");
 
+  // Apenas categorias que possuem ao menos um produto cadastrado — categorias
+  // vazias não são exibidas nas pílulas.
+  const categoriasAtivas = useMemo(() => {
+    const idsComProdutos = new Set(
+      produtos.map((p) => p.categoria?._id).filter(Boolean)
+    );
+    return categorias.filter((c) => idsComProdutos.has(c._id));
+  }, [categorias, produtos]);
+
   const handleSelectCategoria = (categoriaId: string) => {
     setSearchTerm("");
     setSelectedCategoria(categoriaId);
   };
 
   const handleSelectByName = (nome: string) => {
-    const cat = categorias.find(
+    const cat = categoriasAtivas.find(
       (c) => c.nome.toLowerCase() === nome.toLowerCase()
     );
     if (cat) handleSelectCategoria(cat._id);
@@ -93,7 +102,7 @@ export default function ProdutosClient({
   const isSearching = searchTerm.trim().length > 0;
 
   // Categoria efetiva: a selecionada, ou a primeira por padrão.
-  const categoriaAtiva = selectedCategoria || categorias[0]?._id || "";
+  const categoriaAtiva = selectedCategoria || categoriasAtivas[0]?._id || "";
 
   const produtosExibidos = useMemo(() => {
     if (isSearching) {
@@ -111,64 +120,15 @@ export default function ProdutosClient({
 
   const tituloLista = isSearching
     ? `Resultados para "${searchTerm}"`
-    : categorias.find((c) => c._id === categoriaAtiva)?.nome ?? "Produtos";
+    : categoriasAtivas.find((c) => c._id === categoriaAtiva)?.nome ?? "Produtos";
 
   return (
     <div className={styles.page}>
-      {/* ===== Carrossel de destaques (fixo) ===== */}
-      <section className={styles.bannerSection}>
-        <div className={styles.bannerInner}>
-          <div className={styles.bannerPrev} id="produtos-banner-prev" aria-label="Anterior">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={20}
-            slidesPerView={2}
-            navigation={{ prevEl: "#produtos-banner-prev", nextEl: "#produtos-banner-next" }}
-            pagination={{ el: "#produtos-banner-pagination", clickable: true }}
-            breakpoints={{
-              320: { slidesPerView: 1, spaceBetween: 12 },
-              768: { slidesPerView: 2, spaceBetween: 20 },
-            }}
-            className={styles.bannerSwiper}
-          >
-            {DESTAQUES.map((destaque) => (
-              <SwiperSlide key={destaque.alt}>
-                <button
-                  type="button"
-                  className={styles.bannerCard}
-                  onClick={() => handleSelectByName(destaque.categoria)}
-                  aria-label={destaque.alt}
-                >
-                  <Image
-                    src={destaque.image}
-                    alt={destaque.alt}
-                    className={styles.bannerImage}
-                    priority
-                  />
-                </button>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          <div className={styles.bannerNext} id="produtos-banner-next" aria-label="Próximo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-        <div className={styles.bannerPagination} id="produtos-banner-pagination" />
-      </section>
-
-      {/* ===== Categorias (pílulas) ===== */}
+      {/* ===== Categorias (pílulas) — fixas junto ao cabeçalho ===== */}
       <section className={styles.categoriasSection}>
         <h2 className={styles.categoriasTitle}>CATEGORIAS</h2>
         <div className={styles.pills}>
-          {categorias.map((cat) => (
+          {categoriasAtivas.map((cat) => (
             <button
               key={cat._id}
               type="button"
@@ -215,6 +175,54 @@ export default function ProdutosClient({
             ))}
           </div>
         )}
+      </section>
+
+      {/* ===== Carrossel de destaques (fixo) — ao final da página ===== */}
+      <section className={styles.bannerSection}>
+        <div className={styles.bannerInner}>
+          <div className={styles.bannerPrev} id="produtos-banner-prev" aria-label="Anterior">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={20}
+            slidesPerView={2}
+            navigation={{ prevEl: "#produtos-banner-prev", nextEl: "#produtos-banner-next" }}
+            pagination={{ el: "#produtos-banner-pagination", clickable: true }}
+            breakpoints={{
+              320: { slidesPerView: 1, spaceBetween: 12 },
+              768: { slidesPerView: 2, spaceBetween: 20 },
+            }}
+            className={styles.bannerSwiper}
+          >
+            {DESTAQUES.map((destaque) => (
+              <SwiperSlide key={destaque.alt}>
+                <button
+                  type="button"
+                  className={styles.bannerCard}
+                  onClick={() => handleSelectByName(destaque.categoria)}
+                  aria-label={destaque.alt}
+                >
+                  <Image
+                    src={destaque.image}
+                    alt={destaque.alt}
+                    className={styles.bannerImage}
+                  />
+                </button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className={styles.bannerNext} id="produtos-banner-next" aria-label="Próximo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+        </div>
+        <div className={styles.bannerPagination} id="produtos-banner-pagination" />
       </section>
     </div>
   );

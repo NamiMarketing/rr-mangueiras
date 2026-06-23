@@ -38,11 +38,11 @@
 }
 
 .tradicao{
-    padding: 0rem 0 0;
-    width: 85%;
-    max-width: 1240px;
-    margin: 16rem auto 0;
-    position: relative;
+    width: 100%;
+    padding: 16rem 0 12rem;
+    display: flex;
+    justify-content: center;
+    background-color: #eaeae6;
     .tradicaoUp{
         position: absolute;
         top: -95px;
@@ -51,6 +51,9 @@
         height: 140px;
     }
     .tradicaoContent{
+        position: relative;
+        width: 85%;
+        max-width: 1240px;
         display: flex;
         align-items: stretch;
         gap: 4rem;
@@ -285,10 +288,10 @@
     }
 
     .tradicao {
-        padding: 8rem 0 0;
-        width: 95%;
-        
+        padding: 8rem 0;
+
         .tradicaoContent {
+            width: 95%;
             flex-direction: column;
             gap: 3rem;
             .tradicaoText {
@@ -420,9 +423,7 @@
     }
 
     .tradicao {
-        padding: 5rem 0 0;
-        width: 90%;
-        margin: 3rem auto 0;
+        padding: 5rem 0 6rem;
         .tradicaoUp{
             top: 14px;
             right: -7px;
@@ -430,6 +431,7 @@
             height: auto;
         }
         .tradicaoContent {
+            width: 90%;
             gap: 4rem;
             .tradicaoText {
                 padding-left: 3rem;

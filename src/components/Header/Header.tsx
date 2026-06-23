@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import logoHeader from '../../img/logo.png';
+import WhatsAppModal from '../WhatsAppModal/WhatsAppModal';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -41,9 +42,9 @@ export default function Header() {
           </div>
 
           <nav className={styles.nav}>
-            <Link href="/produtos" className={styles.navLink}>PRODUTOS</Link>
             <Link href="/quem-somos" className={styles.navLink}>QUEM SOMOS</Link>
-            <Link href="/marcas" className={styles.navLink}>MARCAS</Link>
+            <Link href="/produtos" className={styles.navLink}>PRODUTOS</Link>
+            <Link href="/contato" className={styles.navLink}>LOJAS</Link>
             <Link href="/contato" className={styles.navLink}>CONTATO</Link>
             <div className={styles.searchContainer}>
               <input
@@ -61,6 +62,9 @@ export default function Header() {
                 </svg>
               </button>
             </div>
+            <WhatsAppModal>
+              <button className={`yellowButton ${styles.contactButton}`}>Fale conosco</button>
+            </WhatsAppModal>
           </nav>
 
           <div className={styles.mobileActions}>
@@ -109,10 +113,13 @@ export default function Header() {
           </div>
 
           <nav className={styles.overlayNav}>
-            <Link href="/produtos" className={styles.overlayLink} onClick={() => setIsOpen(false)}>PRODUTOS</Link>
             <Link href="/quem-somos" className={styles.overlayLink} onClick={() => setIsOpen(false)}>QUEM SOMOS</Link>
+            <Link href="/produtos" className={styles.overlayLink} onClick={() => setIsOpen(false)}>PRODUTOS</Link>
+            <Link href="/contato" className={styles.overlayLink} onClick={() => setIsOpen(false)}>LOJAS</Link>
             <Link href="/contato" className={styles.overlayLink} onClick={() => setIsOpen(false)}>CONTATO</Link>
-            {/* <Link href="/marcas" className={styles.overlayLink} onClick={() => setIsOpen(false)}>MARCAS</Link> */}
+            <WhatsAppModal>
+              <button className={`yellowButton ${styles.contactButton}`} onClick={() => setIsOpen(false)}>Fale conosco</button>
+            </WhatsAppModal>
           </nav>
 
           <div className={styles.overlayBottom}>
