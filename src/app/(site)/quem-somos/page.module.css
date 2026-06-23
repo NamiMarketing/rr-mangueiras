@@ -179,6 +179,7 @@
   padding: 8rem 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5rem;
 }
 
@@ -209,6 +210,11 @@
   font-weight: 400;
   line-height: 2.8rem;
   max-width: 60rem;
+}
+
+.lojasText p .cidade {
+  color: var(--yellow);
+  font-weight: 700;
 }
 
 .lojasText a {

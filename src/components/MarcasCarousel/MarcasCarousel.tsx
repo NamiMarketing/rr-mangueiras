@@ -1,11 +1,6 @@
 'use client';
 
 import Image, { type StaticImageData } from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, FreeMode } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/free-mode';
 
 import logo1 from '@/img/marcas/logo1.png';
 import logo2 from '@/img/marcas/logo2.png';
@@ -35,26 +30,26 @@ const marcas: Marca[] = [
 ];
 
 export default function MarcasCarousel() {
+  // Lista duplicada: o trilho desliza exatamente metade da largura,
+  // emendando a 2ª cópia na 1ª para um loop contínuo sem cortes.
+  const loop = [...marcas, ...marcas];
+
   return (
     <section className={styles.section}>
       <h2 className={styles.title}>Marcas que trabalhamos</h2>
-      <Swiper
-        modules={[Autoplay, FreeMode]}
-        slidesPerView="auto"
-        spaceBetween={64}
-        loop
-        freeMode
-        speed={4500}
-        allowTouchMove={false}
-        autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }}
-        className={styles.swiper}
-      >
-        {marcas.map((marca, index) => (
-          <SwiperSlide key={index} className={styles.slide}>
-            <Image src={marca.src} alt={marca.alt} className={styles.logo} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className={styles.marquee}>
+        <div className={styles.track}>
+          {loop.map((marca, index) => (
+            <div
+              key={index}
+              className={styles.item}
+              aria-hidden={index >= marcas.length}
+            >
+              <Image src={marca.src} alt={marca.alt} className={styles.logo} />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

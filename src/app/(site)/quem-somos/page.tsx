@@ -101,7 +101,9 @@ export default function QuemSomos() {
           <div className={styles.lojasText}>
             <h2>Três unidades para atender você</h2>
             <p>
-              Estamos presentes em Curitiba, Colombo e Ponta Grossa, com estrutura completa
+              Estamos presentes em <span className={styles.cidade}>Curitiba</span>,{" "}
+              <span className={styles.cidade}>Colombo</span> e{" "}
+              <span className={styles.cidade}>Ponta Grossa</span>, com estrutura completa
               e equipe pronta para oferecer a solução certa para o seu negócio.
             </p>
             <Link href="/contato">

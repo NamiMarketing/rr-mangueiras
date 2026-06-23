@@ -15,21 +15,28 @@
   margin-bottom: 5rem;
 }
 
-.swiper {
+/* janela que recorta o trilho */
+.marquee {
   width: 100%;
+  overflow: hidden;
 }
 
-/* rolagem contínua (efeito esteira) — timing linear e sem pausas */
-.swiper :global(.swiper-wrapper) {
-  transition-timing-function: linear !important;
+/* trilho com as duas cópias lado a lado, animado continuamente */
+.track {
+  display: flex;
+  width: max-content;
   align-items: center;
+  animation: marcasScroll 35s linear infinite;
 }
 
-.slide {
-  width: auto;
+/* cada item carrega seu próprio espaçamento (3.2rem de cada lado = 6.4rem
+   entre logos), garantindo emenda perfeita ao repetir a lista */
+.item {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 3.2rem;
 }
 
 .logo {
@@ -47,6 +54,22 @@
   opacity: 1;
 }
 
+@keyframes marcasScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* metade do trilho = exatamente uma cópia da lista */
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
+
 @media (max-width: 1200px) {
   .section {
     padding: 5rem 0;
@@ -62,6 +85,10 @@
   .title {
     font-size: 1.8rem;
     margin-bottom: 3rem;
+  }
+
+  .item {
+    padding: 0 2rem;
   }
 
   .logo {
