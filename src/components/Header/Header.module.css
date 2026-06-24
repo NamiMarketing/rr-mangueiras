@@ -47,51 +47,6 @@
   color: var(--yellow, #f8bb00);
 }
 
-.searchContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.searchInput {
-  background-color: rgba(255, 255, 255, 0.12);
-  border: none;
-  border-radius: 25px;
-  padding: 1.4rem 1.7rem;
-  color: var(--white, #ffffff);
-  width: 400px;
-  font-size: 1.5rem;
-  line-height: 100%;
-  outline: none;
-  transition: background-color 0.2s ease;
-}
-
-.searchInput:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.searchInput::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.searchButton {
-  position: absolute;
-  right: 15px;
-  background: none;
-  border: none;
-  color: var(--white, #ffffff);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-  transition: color 0.2s ease;
-}
-
-.searchButton:hover {
-  color: var(--yellow, #f8bb00);
-}
-
 .contactButton {
   white-space: nowrap;
   padding: 1.4rem 2.4rem;
@@ -124,11 +79,7 @@
 
 @media (max-width: 1200px) {
   .nav {
-    gap: 1.5rem;
-  }
-
-  .searchInput {
-    width: 250px;
+    gap: 3rem;
   }
 
   .container {

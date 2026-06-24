@@ -111,19 +111,19 @@
      interno volta a alinhar com o restante da página via padding. */
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  padding: 0.8rem calc(50vw - 50%) 2.5rem;
+  padding: 2.6rem calc(50vw - 50%) 2rem;
   margin-bottom: 6rem;
   box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.25);
 }
 
 .categoriasTitle {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: var(--dark-blue);
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .pills {
@@ -133,13 +133,13 @@
 }
 
 .pill {
-  height: 5.2rem;
+  height: 4.2rem;
   border-radius: 10px;
   border: 1px solid var(--medium-blue);
   background: var(--white);
   color: var(--medium-blue);
   font-family: inherit;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
   padding: 0 1.4rem;
