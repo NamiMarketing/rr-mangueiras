@@ -103,6 +103,7 @@ export default function ProdutosClient({
 
   // Categoria efetiva: a selecionada, ou a primeira por padrão.
   const categoriaAtiva = selectedCategoria || categoriasAtivas[0]?._id || "";
+  const categoriaAtivaObj = categoriasAtivas.find((c) => c._id === categoriaAtiva);
 
   const produtosExibidos = useMemo(() => {
     if (isSearching) {
@@ -117,6 +118,44 @@ export default function ProdutosClient({
     }
     return produtos.filter((p) => p.categoria._id === categoriaAtiva);
   }, [produtos, searchTerm, categoriaAtiva, isSearching]);
+
+  // Quando a categoria ativa tem subcategorias cadastradas (ex: Alimentícias
+  // e sanitárias → Mangueiras/Conexões/Válvulas), agrupa a lista em seções
+  // com cabeçalho, na ordem definida em categoria.subcategorias. Produtos sem
+  // subcategoria (ou com uma que não está mais cadastrada) caem num grupo
+  // final sem cabeçalho. Categorias sem subcategorias (Abraçadeiras, Tubos e
+  // conexões PPR) e buscas continuam como lista única, sem cabeçalho.
+  const grupos = useMemo(() => {
+    const subcategorias = !isSearching ? categoriaAtivaObj?.subcategorias ?? [] : [];
+    if (subcategorias.length === 0) {
+      return [{ nome: null as string | null, produtos: produtosExibidos }];
+    }
+
+    const porSubcategoria = new Map<string, Produto[]>();
+    for (const produto of produtosExibidos) {
+      if (!produto.subcategoria) continue;
+      const lista = porSubcategoria.get(produto.subcategoria) ?? [];
+      lista.push(produto);
+      porSubcategoria.set(produto.subcategoria, lista);
+    }
+
+    const resultado: { nome: string | null; produtos: Produto[] }[] = [];
+    for (const sub of subcategorias) {
+      const itens = porSubcategoria.get(sub.nome);
+      if (itens?.length) {
+        resultado.push({ nome: sub.nome, produtos: itens });
+        porSubcategoria.delete(sub.nome);
+      }
+    }
+
+    const nomesConhecidos = new Set(subcategorias.map((s) => s.nome));
+    const semGrupo = produtosExibidos.filter(
+      (p) => !p.subcategoria || !nomesConhecidos.has(p.subcategoria)
+    );
+    if (semGrupo.length > 0) resultado.push({ nome: null, produtos: semGrupo });
+
+    return resultado;
+  }, [produtosExibidos, categoriaAtivaObj, isSearching]);
 
   const tituloLista = isSearching
     ? `Resultados para "${searchTerm}"`
@@ -153,27 +192,37 @@ export default function ProdutosClient({
             <p>Tente selecionar outra categoria ou buscar por outro termo.</p>
           </div>
         ) : (
-          <div className={styles.lista}>
-            {produtosExibidos.map((produto) => (
-              <article key={produto._id} className={styles.row}>
-                <h3 className={styles.rowNome}>{produto.nome}</h3>
-                <div className={styles.rowImagem}>
-                  {produto.imagem && (
-                    <Image
-                      src={urlFor(produto.imagem).width(400).fit("max").url()}
-                      alt={produto.nome}
-                      width={400}
-                      height={400}
-                      className={styles.rowImg}
-                    />
-                  )}
-                </div>
-                {produto.descricao && (
-                  <p className={styles.rowDescricao}>{produto.descricao}</p>
-                )}
-              </article>
-            ))}
-          </div>
+          grupos.map((grupo, index) => (
+            <div
+              key={grupo.nome ?? `sem-grupo-${index}`}
+              className={styles.subcategoriaGroup}
+            >
+              {grupo.nome && (
+                <h2 className={styles.subcategoriaHeader}>{grupo.nome}</h2>
+              )}
+              <div className={styles.lista}>
+                {grupo.produtos.map((produto) => (
+                  <article key={produto._id} className={styles.row}>
+                    <h3 className={styles.rowNome}>{produto.nome}</h3>
+                    <div className={styles.rowImagem}>
+                      {produto.imagem && (
+                        <Image
+                          src={urlFor(produto.imagem).width(400).fit("max").url()}
+                          alt={produto.nome}
+                          width={400}
+                          height={400}
+                          className={styles.rowImg}
+                        />
+                      )}
+                    </div>
+                    {produto.descricao && (
+                      <p className={styles.rowDescricao}>{produto.descricao}</p>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))
         )}
       </section>
 
