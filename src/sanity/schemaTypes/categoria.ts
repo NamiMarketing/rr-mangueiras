@@ -18,7 +18,7 @@ export const categoria = defineType({
           { title: 'Linha Pneumática', value: 'Linha Pneumática' },
           { title: 'Linha Hidráulica', value: 'Linha Hidráulica' },
           { title: 'Linha Industrial', value: 'Linha Industrial' },
-          { title: 'Alimentícias e sanitárias', value: 'Alimentícias e sanitárias' },
+          { title: 'Mangueiras Alimentícias e sanitárias', value: 'Mangueiras Alimentícias e sanitárias' },
           { title: 'Mangueiras', value: 'Mangueiras' },
           { title: 'Válvulas', value: 'Válvulas' },
           { title: 'Engate', value: 'Engate' },

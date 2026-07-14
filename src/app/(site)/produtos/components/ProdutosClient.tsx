@@ -90,6 +90,11 @@ export default function ProdutosClient({
   const handleSelectCategoria = (categoriaId: string) => {
     setSearchTerm("");
     setSelectedCategoria(categoriaId);
+    // As pílulas são sticky; ao trocar de categoria a lista é substituída mas a
+    // rolagem fica onde estava. Voltamos ao topo para o usuário começar a ver a
+    // nova categoria desde o primeiro item. (Scroll instantâneo — o "smooth" é
+    // ignorado aqui por conta do layout sticky.)
+    window.scrollTo({ top: 0, behavior: "auto" });
   };
 
   const handleSelectByName = (nome: string) => {

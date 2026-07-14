@@ -294,6 +294,20 @@
     margin-bottom: 3rem;
   }
 
+  .subcategoriaHeader {
+  display: inline-block;
+  background: linear-gradient(90deg, #F8BB00 0%, #F4E3AC 70.62%, #F3F3F3 100%);
+  color: var(--dark-blue);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  padding: 1.5rem 3rem 1.5rem 2.2rem;
+  margin-bottom: 0rem;
+  margin-top: 2rem;
+  line-height: 1;
+}
+
   .row {
     grid-template-columns: 9rem 1fr;
     grid-template-areas:
