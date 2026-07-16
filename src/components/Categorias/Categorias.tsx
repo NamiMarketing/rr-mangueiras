@@ -11,29 +11,19 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
 import abracadeiras from "@/img/categorias/abracadeiras-home.png";
-import puc from "@/img/categorias/puc.png";
 import tubosConexoes from "@/img/categorias/tubos-conexoes.png";
-import linhaPneumatica from "@/img/categorias/linha-pneumatica.png";
-import linhaHidraulica from "@/img/categorias/linha-hidraulica.png";
-import linhaIndustrial from "@/img/categorias/linha-industrial.png";
-import linhaAlimenticia from "@/img/categorias/linha-alimenticia.png";
-import mangueiras from "@/img/categorias/mangueiras-home.png";
-import valvulas from "@/img/categorias/valvulas-home.png";
-import engate from "@/img/categorias/engate.png";
-import arComprimido from "@/img/categorias/ar-comprimido.png";
+import mangueiraAlimenticia from "@/img/categorias/mangueira-alimenticia.png";
+import engates from "@/img/categorias/engates-home.png";
+import conexoesGalvanizadas from "@/img/categorias/conexoes-galvanizadas.png";
+import automotiva from "@/img/categorias/estetica-automotiva.png";
 
 const categoriasData = [
   { id: 1, title: "Abraçadeiras", image: abracadeiras },
-  { id: 2, title: "PUC", image: puc },
-  { id: 3, title: "Tubos e Conexões", image: tubosConexoes },
-  { id: 4, title: "Linha Pneumática", image: linhaPneumatica },
-  { id: 5, title: "Linha Hidráulica", image: linhaHidraulica },
-  { id: 6, title: "Linha Industrial", image: linhaIndustrial },
-  { id: 7, title: "Linha Alimentícia", image: linhaAlimenticia },
-  { id: 8, title: "Mangueiras", image: mangueiras },
-  { id: 9, title: "Válvulas", image: valvulas },
-  { id: 10, title: "Engate", image: engate },
-  { id: 11, title: "Ar Comprimido", image: arComprimido },
+  { id: 2, title: "Tubos e Conexões PPR", image: tubosConexoes },
+  { id: 3, title: "Mangueiras Alimentícias", image: mangueiraAlimenticia },
+  { id: 4, title: "Conexões Galvanizadas e Aço Inox", image: conexoesGalvanizadas },
+  { id: 5, title: "Engates", image: engates },
+  { id: 6, title: "Estética Automotiva", image: automotiva },
 ];
 
 export default function Categorias() {
