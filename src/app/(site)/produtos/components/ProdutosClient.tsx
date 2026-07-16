@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -44,6 +44,7 @@ interface Subcategoria {
 interface Categoria {
   _id: string;
   nome: string;
+  slug?: string;
   subcategorias?: Subcategoria[];
 }
 
@@ -76,7 +77,25 @@ export default function ProdutosClient({
       ? new URLSearchParams(window.location.search).get("q") ?? ""
       : ""
   );
-  const [selectedCategoria, setSelectedCategoria] = useState("");
+  // Pré-seleciona a categoria via URL (?categoria=<slug>) — usado pelos cards
+  // da seção "Categorias" na home. Casa pelo slug (estável), não pelo nome.
+  const [selectedCategoria, setSelectedCategoria] = useState<string>(() => {
+    if (typeof window === "undefined") return "";
+    const slug = new URLSearchParams(window.location.search).get("categoria");
+    if (!slug) return "";
+    return categorias.find((c) => c.slug === slug)?._id ?? "";
+  });
+
+  // O inicializador acima só acerta em carregamento direto da URL. Numa
+  // navegação client-side (clique no Link da home), o componente monta antes
+  // de window.location refletir a nova URL, então relemos o parâmetro aqui —
+  // o efeito roda após o commit, quando window.location já está atualizado.
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get("categoria");
+    if (!slug) return;
+    const cat = categorias.find((c) => c.slug === slug);
+    if (cat) setSelectedCategoria(cat._id);
+  }, [categorias]);
 
   // Apenas categorias que possuem ao menos um produto cadastrado — categorias
   // vazias não são exibidas nas pílulas. Ordenadas alfabeticamente.

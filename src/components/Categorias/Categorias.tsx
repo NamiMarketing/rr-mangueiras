@@ -17,13 +17,15 @@ import engates from "@/img/categorias/engates-home.png";
 import conexoesGalvanizadas from "@/img/categorias/conexoes-galvanizadas.png";
 import automotiva from "@/img/categorias/estetica-automotiva.png";
 
+// `slug` casa com o slug da categoria no Sanity — usado para linkar direto
+// para /produtos com o filtro já selecionado.
 const categoriasData = [
-  { id: 1, title: "Abraçadeiras", image: abracadeiras },
-  { id: 2, title: "Tubos e Conexões PPR", image: tubosConexoes },
-  { id: 3, title: "Mangueiras Alimentícias", image: mangueiraAlimenticia },
-  { id: 4, title: "Conexões Galvanizadas e Aço Inox", image: conexoesGalvanizadas },
-  { id: 5, title: "Engates", image: engates },
-  { id: 6, title: "Estética Automotiva", image: automotiva },
+  { id: 1, title: "Abraçadeiras", image: abracadeiras, slug: "abracadeiras" },
+  { id: 2, title: "Conexões Galvanizadas e Aço Inox", image: conexoesGalvanizadas, slug: "conexoes-galvanizadas-e-de-aco-inox" },
+  { id: 3, title: "Engates", image: engates, slug: "engates" },
+  { id: 4, title: "Estética Automotiva", image: automotiva, slug: "estetica-automotiva" },
+  { id: 5, title: "Mangueiras Alimentícias e Sanitárias", image: mangueiraAlimenticia, slug: "mangueiras-alimenticias-e-sanitarias" },
+  { id: 6, title: "Tubos e Conexões PPR", image: tubosConexoes, slug: "tubos-e-conexoes-ppr" },
 ];
 
 export default function Categorias() {
@@ -50,12 +52,12 @@ export default function Categorias() {
         >
           {categoriasData.map((c) => (
             <SwiperSlide key={c.id} className={styles.slide}>
-              <div className={styles.card}>
+              <Link href={`/produtos?categoria=${c.slug}`} className={styles.card}>
                 <div className={styles.imageContainer}>
                   <Image src={c.image} alt={c.title} className={styles.productImage} />
                 </div>
                 <p className={styles.cardTitle}>{c.title}</p>
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
           

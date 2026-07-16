@@ -80,7 +80,7 @@ export default function Header() {
             <Link href="/contato" className={styles.overlayLink} onClick={() => setIsOpen(false)}>LOJAS</Link>
             <Link href="/contato" className={styles.overlayLink} onClick={() => setIsOpen(false)}>CONTATO</Link>
             <WhatsAppModal>
-              <button className={`yellowButton ${styles.contactButton}`} onClick={() => setIsOpen(false)}>Fale conosco</button>
+              <button className={`yellowButton ${styles.contactButton}`}>Fale conosco</button>
             </WhatsAppModal>
           </nav>
         </div>

@@ -44,14 +44,7 @@
   height: 6.5rem;
   max-width: 18rem;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.75;
   transition: filter 0.3s ease, opacity 0.3s ease;
-}
-
-.logo:hover {
-  filter: grayscale(0);
-  opacity: 1;
 }
 
 @keyframes marcasScroll {

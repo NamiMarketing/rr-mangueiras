@@ -4,6 +4,7 @@ import ProdutosClient from "./components/ProdutosClient";
 const CATEGORIAS_QUERY = `*[_type == "categoria"] | order(ordem asc, nome asc) {
   _id,
   nome,
+  "slug": slug.current,
   subcategorias[] {
     _key,
     nome
