@@ -7,13 +7,18 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import banner from '@/img/banner.png';
+import banner1 from '@/img/banner1.png';
+import banner2 from '@/img/banner2.png';
+import banner3 from '@/img/banner3.png';
+import banner4 from '@/img/banner4.png';
+import banner5 from '@/img/banner5.png';
+import banner6 from '@/img/banner6.png';
 import styles from './HeroCarousel.module.css';
 
-// Artes a definir — para adicionar novos banners ao carrossel, basta
-// importar a imagem e incluí-la neste array. As bolinhas (paginação)
-// são geradas automaticamente pela quantidade de slides.
-const slides: StaticImageData[] = [banner];
+// Para adicionar novos banners ao carrossel, basta importar a imagem e
+// incluí-la neste array. As bolinhas (paginação) são geradas automaticamente
+// pela quantidade de slides.
+const slides: StaticImageData[] = [banner1, banner2, banner3, banner4, banner5, banner6];
 
 export default function HeroCarousel() {
   const hasMultiple = slides.length > 1;
