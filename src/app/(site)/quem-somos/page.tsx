@@ -29,7 +29,7 @@ const beneficios: Beneficio[] = [
     icon: icoMarcas,
     title: "Melhores marcas",
     description:
-      "Distribuimos produtos de fabricantes reconhecidos nacional e internacionalmente, certificados pelas normas ISO 9001, ISO 14001 e IATF 16949.",
+      "Distribuímos produtos de fabricantes reconhecidos nacional e internacionalmente, certificados pelas normas ISO 9001, ISO 14001 e IATF 16949.",
   },
   {
     icon: icoPreco,
