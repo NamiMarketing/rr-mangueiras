@@ -17,6 +17,10 @@
   object-fit: cover;
 }
 
+.slideImageMobile {
+  display: none;
+}
+
 .swiper :global(.swiper-pagination) {
   bottom: 2.5rem;
   z-index: 3;
@@ -44,5 +48,13 @@
   .swiper :global(.swiper-pagination-bullet) {
     width: 10px;
     height: 10px;
+  }
+
+  .slideImageDesktop {
+    display: none;
+  }
+
+  .slideImageMobile {
+    display: block;
   }
 }

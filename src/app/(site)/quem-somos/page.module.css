@@ -370,6 +370,9 @@
   .heroContent h1 {
     font-size: 3.2rem;
   }
+  .intro {
+    min-height: unset;
+  }
 
   .introCurve {
     display: none;

@@ -79,12 +79,14 @@ export default function ProdutosClient({
   const [selectedCategoria, setSelectedCategoria] = useState("");
 
   // Apenas categorias que possuem ao menos um produto cadastrado — categorias
-  // vazias não são exibidas nas pílulas.
+  // vazias não são exibidas nas pílulas. Ordenadas alfabeticamente.
   const categoriasAtivas = useMemo(() => {
     const idsComProdutos = new Set(
       produtos.map((p) => p.categoria?._id).filter(Boolean)
     );
-    return categorias.filter((c) => idsComProdutos.has(c._id));
+    return categorias
+      .filter((c) => idsComProdutos.has(c._id))
+      .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
   }, [categorias, produtos]);
 
   const handleSelectCategoria = (categoriaId: string) => {

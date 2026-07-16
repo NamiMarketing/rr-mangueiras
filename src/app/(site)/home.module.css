@@ -394,21 +394,24 @@
         aspect-ratio: 36/40;
         .heroBox {
             left: 50%;
-            top: 50%;
+            top: unset;
+            bottom: 2rem;
             right: unset;
-            transform: translate(-50%, -50%);
-            width: 29.2rem;
-            padding: 5rem 3rem;
-            gap: 2rem;
-            border-radius: 20px;
+            transform: translate(-50%, 0%);
+            width: 90%;
+            padding: 2.4rem 2.3rem;
+            gap: 1.6rem;
+            border-radius: 16px;
+            align-items: center;
             img {
-                max-width: 180px;
+                max-width: 150px;
                 height: auto;
             }
             p {
-                font-size: 1.5rem;
-                line-height: 2.2rem;
-                width: 23rem;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                width: 30rem;
+                text-align: center;
             }
         }
     }
