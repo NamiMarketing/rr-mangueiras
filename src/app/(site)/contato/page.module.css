@@ -86,10 +86,11 @@
      }
      .icons{
         gap: 8px;
-        img{
-            width: 24px;
-            height: 24px;
+        img, svg{
+            width: 25px;
+            height: 25px;
         }
+
      }
     }
     .containerCard{
