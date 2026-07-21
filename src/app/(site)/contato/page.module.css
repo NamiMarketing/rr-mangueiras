@@ -14,6 +14,11 @@
     border-radius: 30px;
     max-width: 1240px;
     width: 1240px;
+    .image{
+        img{
+            display: block;
+        }
+    }
 }
 .containerCard:nth-child(even){
     flex-direction: row-reverse;
@@ -23,7 +28,7 @@
     flex-direction: column;
     gap: 2rem;
     color: var(--white);
-    padding: 6rem;
+    padding: 0rem 6rem;
 }
 .text h1{
     font-size: 4rem;

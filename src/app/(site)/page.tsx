@@ -104,7 +104,7 @@ export default function Home() {
             <Image src={pontaGrossa} alt="Unidade Ponta Grossa" />
             <div className={styles.unidadesCardText}>
               <p>Av. Pres. Kennedy, 3295 - Contorno, 84052-465</p>
-              <p>(42) 99932-0319</p>
+              <p>(42) 3227-1903</p>
               <div className={styles.cardIcons}>
                 <Link href="https://maps.app.goo.gl/qTeYcuagnENrkwyr8" target="_blank">
                   <Image src={address} alt="Endereço" />

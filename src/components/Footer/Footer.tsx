@@ -32,7 +32,7 @@ const unidades: Unidade[] = [
   {
     nome: 'UNIDADE PONTA GROSSA',
     endereco: 'Av. Pres. Kennedy, 3295 - Contorno, 84052-465',
-    telefone: '(42) 99932-0319',
+    telefone: '(42) 3227-1903',
     telHref: 'tel:+5542999320319',
     horarios: ['Segunda-Sexta: 08:00 - 18:00'],
     mapQuery: 'Av. Pres. Kennedy, 3295 - Contorno, Ponta Grossa - PR, 84052-465',
