@@ -1,7 +1,7 @@
 /**
  * Adiciona a categoria "Engates" (novo Figma, node 738:348) com seus 12
  * produtos, divididos em 2 subcategorias: Engate Rápido Universal (ERU) Mão
- * Amigo e Engates Camlock (ERT).
+ * Amigo e Engate Camlock (ERT).
  *
  * NÃO destrutivo: renomeia (patch) a categoria "Engate" vazia já existente
  * em vez de criar uma nova, e pula produtos cujo slug já exista (idempotente).
@@ -59,7 +59,7 @@ function slugify(text) {
 
 const NOME_ANTIGO = "Engate";
 const NOME_CATEGORIA = "Engates";
-const SUBCATEGORIAS = ["Engate Rápido Universal (ERU) Mão Amigo", "Engates Camlock (ERT)"];
+const SUBCATEGORIAS = ["Engate Rápido Universal (ERU) Mão Amigo", "Engate Camlock (ERT)"];
 
 async function renameOrCreateCategoria() {
   let doc = await client.fetch(`*[_type == "categoria" && nome == $nome][0]`, {
@@ -127,53 +127,53 @@ const PRODUTOS = [
     subcategoria: "Engate Rápido Universal (ERU) Mão Amigo",
     descricao: "Opções de diâmetros 1/2”, 3/4” e 1”, rosca NPT",
   },
-  // ── Engates Camlock (ERT) ──
+  // ── Engate Camlock (ERT) ──
   {
     nome: "ERT-A Adaptador Rosca Fêmea",
     arquivo: "05-ert-a-adaptador-rosca-femea.png",
-    subcategoria: "Engates Camlock (ERT)",
+    subcategoria: "Engate Camlock (ERT)",
     descricao: "Opções de Diâmetros: de 1/2”a 6” ( 5” exclusivamente em inox)",
   },
   {
     nome: "ERT-B Acoplador Rosca Macho",
     arquivo: "06-ert-b-acoplador-rosca-macho.png",
-    subcategoria: "Engates Camlock (ERT)",
+    subcategoria: "Engate Camlock (ERT)",
     descricao: "Pressão de trabalho: 1/2” até 4”: 150 PSI - 05” e 6”: 75 PSI",
   },
   {
     nome: "ERT-C Acoplador Espigão",
     arquivo: "07-ert-c-acoplador-espigao.png",
-    subcategoria: "Engates Camlock (ERT)",
+    subcategoria: "Engate Camlock (ERT)",
     descricao: "Opções de Diâmetros: de 1/2”a 6” ( 5” exclusivamente em inox)",
   },
   {
     nome: "ERT-D Acoplador Rosca Fêmea",
     arquivo: "08-ert-d-acoplador-rosca-femea.png",
-    subcategoria: "Engates Camlock (ERT)",
+    subcategoria: "Engate Camlock (ERT)",
     descricao: "Pressão de trabalho: 1/2” até 4”: 150 PSI - 05” e 6”: 75 PSI",
   },
   {
     nome: "ERT-E Adaptador Espigão",
     arquivo: "09-ert-e-adaptador-espigao.png",
-    subcategoria: "Engates Camlock (ERT)",
+    subcategoria: "Engate Camlock (ERT)",
     descricao: "Opções de Diâmetros: de 1/2”a 6” ( 5” exclusivamente em inox)",
   },
   {
     nome: "ERT-F Adaptador Rosca Macho",
     arquivo: "10-ert-f-adaptador-rosca-macho.png",
-    subcategoria: "Engates Camlock (ERT)",
+    subcategoria: "Engate Camlock (ERT)",
     descricao: "Pressão de trabalho: 1/2” até 4”: 150 PSI - 05” e 6”: 75 PSI",
   },
   {
     nome: "ERT-DC Acoplador Tampa",
     arquivo: "11-ert-dc-acoplador-tampa.png",
-    subcategoria: "Engates Camlock (ERT)",
+    subcategoria: "Engate Camlock (ERT)",
     descricao: "Opções de Diâmetros: de 1/2”a 6” ( 5” exclusivamente em inox)",
   },
   {
     nome: "ERT-DP Adaptador Tampão",
     arquivo: "12-ert-dp-adaptador-tampao.png",
-    subcategoria: "Engates Camlock (ERT)",
+    subcategoria: "Engate Camlock (ERT)",
     descricao: "Pressão de trabalho: 1/2” até 4”: 150 PSI - 05” e 6”: 75 PSI",
   },
 ];

@@ -146,13 +146,18 @@ export default function ProdutosClient({
   }, [produtos, searchTerm, categoriaAtiva, isSearching]);
 
   // Quando a categoria ativa tem subcategorias cadastradas (ex: Alimentícias
-  // e sanitárias → Mangueiras/Conexões/Válvulas), agrupa a lista em seções
-  // com cabeçalho, na ordem definida em categoria.subcategorias. Produtos sem
+  // e sanitárias → Conexões/Mangueiras/Válvulas), agrupa a lista em seções
+  // com cabeçalho, em ordem alfabética — a ordem do array no CMS depende de
+  // como foi arrastado no Studio, então ordenamos aqui. Produtos sem
   // subcategoria (ou com uma que não está mais cadastrada) caem num grupo
   // final sem cabeçalho. Categorias sem subcategorias (Abraçadeiras, Tubos e
   // conexões PPR) e buscas continuam como lista única, sem cabeçalho.
   const grupos = useMemo(() => {
-    const subcategorias = !isSearching ? categoriaAtivaObj?.subcategorias ?? [] : [];
+    const subcategorias = !isSearching
+      ? [...(categoriaAtivaObj?.subcategorias ?? [])].sort((a, b) =>
+          a.nome.localeCompare(b.nome, "pt-BR")
+        )
+      : [];
     if (subcategorias.length === 0) {
       return [{ nome: null as string | null, produtos: produtosExibidos }];
     }
