@@ -28,7 +28,7 @@ export default function Header() {
           <nav className={styles.nav}>
             <Link href="/quem-somos" className={styles.navLink}>QUEM SOMOS</Link>
             <Link href="/produtos" className={styles.navLink}>PRODUTOS</Link>
-            <Link href="/contato" className={styles.navLink}>LOJAS</Link>
+            <Link href="/lojas" className={styles.navLink}>LOJAS</Link>
             <Link href="/contato" className={styles.navLink}>CONTATO</Link>
             <WhatsAppModal>
               <button className={`yellowButton ${styles.contactButton}`}>Fale conosco</button>
