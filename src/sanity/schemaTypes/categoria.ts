@@ -25,6 +25,7 @@ export const categoria = defineType({
           { title: 'Ar Comprimido', value: 'Ar Comprimido' },
           { title: 'Estética automotiva', value: 'Estética automotiva' },
           { title: 'Conexões galvanizadas e de aço inox', value: 'Conexões galvanizadas e de aço inox' },
+          { title: 'Tubos flexíveis inox', value: 'Tubos flexíveis inox' },
         ],
       },
     }),
@@ -58,6 +59,14 @@ export const categoria = defineType({
               title: 'Nome da Subcategoria',
               type: 'string',
               validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'ordem',
+              title: 'Ordem',
+              type: 'number',
+              description:
+                'Ordem de exibição da subcategoria na página (menor primeiro). Deixe 0 para ordenar alfabeticamente.',
+              initialValue: 0,
             }),
           ],
           preview: {

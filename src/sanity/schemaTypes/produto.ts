@@ -65,6 +65,14 @@ export const produto = defineType({
       type: 'string',
       description: 'Subcategoria dentro da categoria (ex: Inox, Aço Carbono)',
     }),
+    defineField({
+      name: 'ordem',
+      title: 'Ordem',
+      type: 'number',
+      description:
+        'Ordem de exibição do produto dentro da categoria/subcategoria (menor primeiro). Deixe 0 para ordenar alfabeticamente.',
+      initialValue: 0,
+    }),
   ],
   preview: {
     select: {

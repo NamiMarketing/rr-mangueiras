@@ -7,11 +7,12 @@ const CATEGORIAS_QUERY = `*[_type == "categoria"] | order(ordem asc, nome asc) {
   "slug": slug.current,
   subcategorias[] {
     _key,
-    nome
+    nome,
+    ordem
   }
 }`;
 
-const PRODUTOS_QUERY = `*[_type == "produto"] | order(nome asc) {
+const PRODUTOS_QUERY = `*[_type == "produto"] | order(coalesce(ordem, 0) asc, nome asc) {
   _id,
   nome,
   slug,
@@ -19,6 +20,7 @@ const PRODUTOS_QUERY = `*[_type == "produto"] | order(nome asc) {
   tipo,
   descricao,
   imagem,
+  ordem,
   categoria-> {
     _id,
     nome

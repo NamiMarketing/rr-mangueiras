@@ -39,6 +39,7 @@ const DESTAQUES: Destaque[] = [
 interface Subcategoria {
   _key: string;
   nome: string;
+  ordem?: number;
 }
 
 interface Categoria {
@@ -147,15 +148,18 @@ export default function ProdutosClient({
 
   // Quando a categoria ativa tem subcategorias cadastradas (ex: Alimentícias
   // e sanitárias → Conexões/Mangueiras/Válvulas), agrupa a lista em seções
-  // com cabeçalho, em ordem alfabética — a ordem do array no CMS depende de
-  // como foi arrastado no Studio, então ordenamos aqui. Produtos sem
+  // com cabeçalho. A ordem do array no CMS depende de como foi arrastado no
+  // Studio, então ordenamos aqui: pelo campo `ordem` da subcategoria e, em
+  // caso de empate (o padrão, `ordem` = 0), alfabeticamente. Produtos sem
   // subcategoria (ou com uma que não está mais cadastrada) caem num grupo
   // final sem cabeçalho. Categorias sem subcategorias (Abraçadeiras, Tubos e
   // conexões PPR) e buscas continuam como lista única, sem cabeçalho.
   const grupos = useMemo(() => {
     const subcategorias = !isSearching
-      ? [...(categoriaAtivaObj?.subcategorias ?? [])].sort((a, b) =>
-          a.nome.localeCompare(b.nome, "pt-BR")
+      ? [...(categoriaAtivaObj?.subcategorias ?? [])].sort(
+          (a, b) =>
+            (a.ordem ?? 0) - (b.ordem ?? 0) ||
+            a.nome.localeCompare(b.nome, "pt-BR")
         )
       : [];
     if (subcategorias.length === 0) {
