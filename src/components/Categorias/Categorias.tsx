@@ -16,6 +16,7 @@ import mangueiraAlimenticia from "@/img/categorias/mangueira-alimenticia.png";
 import engates from "@/img/categorias/engates-home.png";
 import conexoesGalvanizadas from "@/img/categorias/conexoes-galvanizadas.png";
 import automotiva from "@/img/categorias/estetica-automotiva.png";
+import tubosFlexiveisInox from "@/img/categorias/tubos-flexiveis-inox.png";
 
 // `slug` casa com o slug da categoria no Sanity — usado para linkar direto
 // para /produtos com o filtro já selecionado.
@@ -26,6 +27,7 @@ const categoriasData = [
   { id: 4, title: "Estética Automotiva", image: automotiva, slug: "estetica-automotiva" },
   { id: 5, title: "Mangueiras Alimentícias e Sanitárias", image: mangueiraAlimenticia, slug: "mangueiras-alimenticias-e-sanitarias" },
   { id: 6, title: "Tubos e Conexões PPR", image: tubosConexoes, slug: "tubos-e-conexoes-ppr" },
+  { id: 7, title: "Tubos Flexíveis Inox", image: tubosFlexiveisInox, slug: "tubos-flexiveis-inox" },
 ];
 
 export default function Categorias() {
