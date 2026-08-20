@@ -10,10 +10,10 @@ import styles from "../produtos.module.css";
 import { urlFor } from "@/sanity/image";
 import destaqueAbracadeiras from "@/img/produtos/destaque-abracadeiras.png";
 import destaqueEngates from "@/img/produtos/destaque-engates.png";
-import destaqueMangueiraKpuc from "@/img/produtos/destaque-mangueira-puc.png";
+import destaqueMangueiraKpuc from "@/img/produtos/destaque-mangueira-kpuc.png";
 import destaqueGalvanizado from "@/img/produtos/destaque-galvanizado.png";
-import destaqueAcoInox from "@/img/produtos/destaque-aco-inox.png";
 import destaquePneumatica from "@/img/produtos/destaque-pneumatica.png"; 
+import destaqueVonixx from "@/img/produtos/destaque-vonixx.png"; 
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -33,7 +33,7 @@ const DESTAQUES: Destaque[] = [
   { image: destaqueEngates, alt: "Engates", categoria: "Engates" },
   { image: destaqueMangueiraKpuc, alt: "Mangueira KPU-C", categoria: "PUC" },
   { image: destaqueGalvanizado, alt: "Galvanizado", categoria: "Tubos e Conexões" },
-  { image: destaqueAcoInox, alt: "Aço Inox", categoria: "Tubos e Conexões" }
+  { image: destaqueVonixx, alt: "Vonixx", categoria: "Vonixx" }
 ];
 
 interface Subcategoria {
