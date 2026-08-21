@@ -4,6 +4,7 @@ import Link from "next/link";
 import MarcasCarousel from "@/components/MarcasCarousel/MarcasCarousel";
 import ParanaMap from "@/components/ParanaMap/ParanaMap";
 import hero from "@/img/quem-somos/hero.png";
+import heroMob from "@/img/quem-somos/hero-mob.png";
 import equipe from "@/img/quem-somos/equipe.png";
 import icoExperiencia from "@/img/quem-somos/ico-experiencia.png";
 import icoMarcas from "@/img/quem-somos/ico-marcas.png";
@@ -62,6 +63,7 @@ export default function QuemSomos() {
     <main>
       <section className={styles.hero}>
         <Image src={hero} alt="Equipe RR Mangueiras" className={styles.heroImage} priority />
+        <Image src={heroMob} alt="Equipe RR Mangueiras" className={styles.heroImageMob} priority />
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
           <h1>QUEM SOMOS</h1>

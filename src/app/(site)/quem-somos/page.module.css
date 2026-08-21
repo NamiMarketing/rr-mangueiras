@@ -2,8 +2,7 @@
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 1440 / 600;
-  max-height: 55vh;
+  aspect-ratio: 1440 / 500;
   overflow: hidden;
 }
 
@@ -14,6 +13,9 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+.heroImageMob{
+  display: none;
 }
 
 .heroOverlay {
@@ -299,7 +301,18 @@
     aspect-ratio: 1 / 1;
     max-height: none;
   }
-
+ .heroImageMob{
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .heroImage{
+    display: none;
+  }
   .heroContent,
   .equipeContent,
   .introInner,
