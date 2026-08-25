@@ -46,6 +46,8 @@ interface Categoria {
   _id: string;
   nome: string;
   slug?: string;
+  /** Controla o CSS da listagem. Ver `layoutCompacto`. */
+  layout?: "auto" | "padrao" | "compacto";
   subcategorias?: Subcategoria[];
 }
 
@@ -192,6 +194,23 @@ export default function ProdutosClient({
     return resultado;
   }, [produtosExibidos, categoriaAtivaObj, isSearching]);
 
+  // Catálogos como "Conexões e adaptadores" e "Válvulas industriais" são só
+  // nome + imagem. No layout padrão a coluna de descrição fica vazia e cada
+  // item ocupa uma faixa larga e vazada; o compacto troca para duas colunas
+  // com linhas curtas. A categoria manda (campo `layout` no Studio); em
+  // "auto" (ou vazio) inferimos pela ausência total de descrições.
+  // Busca sempre usa o layout padrão — mistura categorias.
+  const layoutCompacto = useMemo(() => {
+    if (isSearching) return false;
+    const escolha = categoriaAtivaObj?.layout;
+    if (escolha === "compacto") return true;
+    if (escolha === "padrao") return false;
+    return (
+      produtosExibidos.length > 0 &&
+      produtosExibidos.every((p) => !p.descricao?.trim())
+    );
+  }, [isSearching, categoriaAtivaObj, produtosExibidos]);
+
   const tituloLista = isSearching
     ? `Resultados para "${searchTerm}"`
     : categoriasAtivas.find((c) => c._id === categoriaAtiva)?.nome ?? "Produtos";
@@ -227,37 +246,46 @@ export default function ProdutosClient({
             <p>Tente selecionar outra categoria ou buscar por outro termo.</p>
           </div>
         ) : (
-          grupos.map((grupo, index) => (
-            <div
-              key={grupo.nome ?? `sem-grupo-${index}`}
-              className={styles.subcategoriaGroup}
-            >
-              {grupo.nome && (
-                <h2 className={styles.subcategoriaHeader}>{grupo.nome}</h2>
-              )}
-              <div className={styles.lista}>
-                {grupo.produtos.map((produto) => (
-                  <article key={produto._id} className={styles.row}>
-                    <h3 className={styles.rowNome}>{produto.nome}</h3>
-                    <div className={styles.rowImagem}>
-                      {produto.imagem && (
-                        <Image
-                          src={urlFor(produto.imagem).width(400).fit("max").url()}
-                          alt={produto.nome}
-                          width={400}
-                          height={400}
-                          className={styles.rowImg}
-                        />
+          // O DOM é o mesmo nos dois layouts — só as classes mudam, e o CSS
+          // reposiciona nome/imagem/descrição via grid-template-areas.
+          <div className={layoutCompacto ? styles.gruposCompactos : undefined}>
+            {grupos.map((grupo, index) => (
+              <div
+                key={grupo.nome ?? `sem-grupo-${index}`}
+                className={styles.subcategoriaGroup}
+              >
+                {grupo.nome && (
+                  <h2 className={styles.subcategoriaHeader}>{grupo.nome}</h2>
+                )}
+                <div className={styles.lista}>
+                  {grupo.produtos.map((produto) => (
+                    <article
+                      key={produto._id}
+                      className={`${styles.row} ${
+                        layoutCompacto ? styles.rowCompacta : ""
+                      }`}
+                    >
+                      <h3 className={styles.rowNome}>{produto.nome}</h3>
+                      <div className={styles.rowImagem}>
+                        {produto.imagem && (
+                          <Image
+                            src={urlFor(produto.imagem).width(400).fit("max").url()}
+                            alt={produto.nome}
+                            width={400}
+                            height={400}
+                            className={styles.rowImg}
+                          />
+                        )}
+                      </div>
+                      {produto.descricao && (
+                        <p className={styles.rowDescricao}>{produto.descricao}</p>
                       )}
-                    </div>
-                    {produto.descricao && (
-                      <p className={styles.rowDescricao}>{produto.descricao}</p>
-                    )}
-                  </article>
-                ))}
+                    </article>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))
+            ))}
+          </div>
         )}
       </section>
 

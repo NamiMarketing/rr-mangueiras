@@ -5,6 +5,7 @@ const CATEGORIAS_QUERY = `*[_type == "categoria"] | order(ordem asc, nome asc) {
   _id,
   nome,
   "slug": slug.current,
+  layout,
   subcategorias[] {
     _key,
     nome,

@@ -26,6 +26,8 @@ export const categoria = defineType({
           { title: 'Estética automotiva', value: 'Estética automotiva' },
           { title: 'Conexões galvanizadas e de aço inox', value: 'Conexões galvanizadas e de aço inox' },
           { title: 'Tubos flexíveis inox', value: 'Tubos flexíveis inox' },
+          { title: 'Conexões e adaptadores', value: 'Conexões e adaptadores' },
+          { title: 'Válvulas industriais', value: 'Válvulas industriais' },
         ],
       },
     }),
@@ -35,6 +37,22 @@ export const categoria = defineType({
       type: 'number',
       description: 'Define a ordem de exibição das categorias (menor primeiro).',
       initialValue: 0,
+    }),
+    defineField({
+      name: 'layout',
+      title: 'Layout da listagem',
+      type: 'string',
+      description:
+        'Como os produtos aparecem na página de produtos. "Compacto" é para catálogos sem descrição: só nome e imagem, em duas colunas. Em "Automático" a página decide sozinha — vira compacto quando nenhum produto da categoria tem descrição.',
+      options: {
+        list: [
+          { title: 'Automático', value: 'auto' },
+          { title: 'Padrão — nome, imagem e descrição', value: 'padrao' },
+          { title: 'Compacto — duas colunas, sem descrição', value: 'compacto' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'auto',
     }),
     defineField({
       name: 'slug',

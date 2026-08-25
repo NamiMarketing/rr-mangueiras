@@ -231,6 +231,71 @@
   color: var(--black);
 }
 
+/* ===== Layout compacto (catálogos sem descrição) =====
+   Usado por categorias como "Conexões e adaptadores" e "Válvulas
+   industriais", em que o item é só nome + imagem. No layout padrão a coluna
+   de descrição ficaria vazia e cada item viraria uma faixa larga e vazada;
+   aqui as linhas encurtam e os grupos correm em duas colunas.
+
+   `columns` dá o fluxo em cascata do Figma: cada grupo cai inteiro na coluna
+   mais curta, então as duas colunas terminam com alturas parecidas sem que a
+   ordem dos grupos precise ser fixada na mão. */
+.gruposCompactos {
+  columns: 2;
+  column-gap: 6rem;
+}
+
+.gruposCompactos .subcategoriaGroup {
+  break-inside: avoid;
+  margin-bottom: 5rem;
+}
+
+/* Em coluna, o espaçamento tem de vir por baixo: uma margem no topo empurraria
+   o primeiro grupo da 2ª coluna e desalinharia as duas cabeças. */
+.gruposCompactos .subcategoriaGroup + .subcategoriaGroup {
+  margin-top: 0;
+}
+
+.gruposCompactos .subcategoriaHeader {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  padding: 1.5rem 4rem 1.5rem 2.5rem;
+}
+
+.rowCompacta {
+  grid-template-columns: minmax(0, 1fr) 11rem;
+  grid-template-areas:
+    "nome img"
+    "nota img";
+  align-items: center;
+  gap: 0 2rem;
+  padding: 1.6rem 0;
+}
+
+.rowCompacta .rowNome {
+  grid-area: nome;
+  font-size: 2.5rem;
+  align-self: end;
+}
+
+/* Nota curta do catálogo (ex: "Disponível com sedes de vedação metálica").
+   Ocupa a linha de baixo do mesmo bloco de texto, sem abrir coluna nova. */
+.rowCompacta .rowDescricao {
+  grid-area: nota;
+  font-size: 1.9rem;
+  font-style: italic;
+  font-weight: 400;
+  align-self: start;
+  color: var(--dark-blue);
+}
+
+.rowCompacta .rowImagem {
+  grid-area: img;
+  width: 11rem;
+  height: 9rem;
+}
+
 /* ===== Empty state ===== */
 .emptyState {
   text-align: center;
@@ -333,6 +398,44 @@
   .rowDescricao {
     grid-area: desc;
     font-size: 1.5rem;
+  }
+
+  /* Compacto no mobile: uma coluna só. As áreas do `.row` acima ("nome nome" /
+     "img desc") não existem aqui, então o compacto precisa redeclarar as suas
+     — sem isto a nota cairia numa área inexistente e o grid se desmontaria. */
+  .gruposCompactos {
+    columns: 1;
+  }
+
+  .gruposCompactos .subcategoriaGroup {
+    margin-bottom: 3rem;
+  }
+
+  .gruposCompactos .subcategoriaHeader {
+    font-size: 1.8rem;
+    padding: 1.3rem 2.5rem 1.3rem 2rem;
+  }
+
+  .rowCompacta {
+    grid-template-columns: minmax(0, 1fr) 8rem;
+    grid-template-areas:
+      "nome img"
+      "nota img";
+    gap: 0 1.5rem;
+    padding: 1.4rem 0;
+  }
+
+  .rowCompacta .rowNome {
+    font-size: 1.7rem;
+  }
+
+  .rowCompacta .rowDescricao {
+    font-size: 1.4rem;
+  }
+
+  .rowCompacta .rowImagem {
+    width: 8rem;
+    height: 7rem;
   }
 }
 
