@@ -1,0 +1,305 @@
+{
+  "subcategorias": [
+    {
+      "nome": "Terminais hidráulicos",
+      "pai": null,
+      "ordem": 1
+    },
+    {
+      "nome": "Adaptadores hidráulicos",
+      "pai": null,
+      "ordem": 2
+    },
+    {
+      "nome": "Conexões hidráulicas DIN",
+      "pai": null,
+      "ordem": 3
+    },
+    {
+      "nome": "Tubos de aço de carbono",
+      "pai": null,
+      "ordem": 4
+    },
+    {
+      "nome": "Abraçadeiras para tubos de aço",
+      "pai": null,
+      "ordem": 5
+    },
+    {
+      "nome": "Válvulas de alta pressão",
+      "pai": null,
+      "ordem": 6
+    },
+    {
+      "nome": "Manômetros",
+      "pai": null,
+      "ordem": 7
+    },
+    {
+      "nome": "Engate rápido hidráulico",
+      "pai": null,
+      "ordem": 8
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "Terminal Giratório Fêmea e Macho Fixo JIC 37",
+      "arquivo": "01-terminal-giratorio-femea-e-macho-fixo-jic-37.png",
+      "subcategoria": "Terminais hidráulicos",
+      "ordem": 1
+    },
+    {
+      "nome": "Terminal Giratório Fêmea e Macho Fixo ORFS",
+      "arquivo": "02-terminal-giratorio-femea-e-macho-fixo-orfs.png",
+      "subcategoria": "Terminais hidráulicos",
+      "ordem": 2
+    },
+    {
+      "nome": "Terminal Giratório Fêmea e Macho Fixo BSP",
+      "arquivo": "03-terminal-giratorio-femea-e-macho-fixo-bsp.png",
+      "subcategoria": "Terminais hidráulicos",
+      "ordem": 3
+    },
+    {
+      "nome": "Terminal Giratório Fêmea DKO Métrico Linhas Leve e Pesada",
+      "arquivo": "04-terminal-giratorio-femea-dko-metrico-linhas-leve-e.png",
+      "subcategoria": "Terminais hidráulicos",
+      "ordem": 4
+    },
+    {
+      "nome": "Terminal Fixo Macho NPTF",
+      "arquivo": "05-terminal-fixo-macho-nptf.png",
+      "subcategoria": "Terminais hidráulicos",
+      "ordem": 5
+    },
+    {
+      "nome": "Terminal Fixo Macho Metrico Séries Leve e Pesada",
+      "arquivo": "06-terminal-fixo-macho-metrico-series-leve-e-pesada.png",
+      "subcategoria": "Terminais hidráulicos",
+      "ordem": 6
+    },
+    {
+      "nome": "Adaptador Reto Macho BSPP ED",
+      "arquivo": "07-adaptador-reto-macho-bspp-ed.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 1
+    },
+    {
+      "nome": "Adaptador Reto Fêmea NPTF x Fêmea NPTF",
+      "arquivo": "08-adaptador-reto-femea-nptf-x-femea-nptf.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 2
+    },
+    {
+      "nome": "Adaptador 90° Macho x Fêmea NPTF",
+      "arquivo": "09-adaptador-90-macho-x-femea-nptf.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 3
+    },
+    {
+      "nome": "Adaptador 45° UNF Macho Orientável x Macho ORFS",
+      "arquivo": "10-adaptador-45-unf-macho-orientavel-x-macho-orfs.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 4
+    },
+    {
+      "nome": "Adaptador Cruzeta Macho ORFS",
+      "arquivo": "11-adaptador-cruzeta-macho-orfs.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 5
+    },
+    {
+      "nome": "Adaptador Tee Macho ORFS",
+      "arquivo": "12-adaptador-tee-macho-orfs.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 6
+    },
+    {
+      "nome": "Adaptador Macho Métrico Vedação com Anel ED x Macho JIC",
+      "arquivo": "13-adaptador-macho-metrico-vedacao-com-anel-ed-x-mach.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 7
+    },
+    {
+      "nome": "Adaptador Reto Macho JIC Painel",
+      "arquivo": "14-adaptador-reto-macho-jic-painel.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 8
+    },
+    {
+      "nome": "Adaptador 90° Flange 6000 PSI",
+      "arquivo": "15-adaptador-90-flange-6000-psi.png",
+      "subcategoria": "Adaptadores hidráulicos",
+      "ordem": 9
+    },
+    {
+      "nome": "Anilhas B3 e B4",
+      "arquivo": "16-anilhas-b3-e-b4.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 1
+    },
+    {
+      "nome": "Conexão Redução Reta",
+      "arquivo": "17-conexao-reducao-reta.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 2
+    },
+    {
+      "nome": "Conexão Cruzeta Igual",
+      "arquivo": "18-conexao-cruzeta-igual.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 3
+    },
+    {
+      "nome": "Conexão Tee Igual",
+      "arquivo": "19-conexao-tee-igual.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 4
+    },
+    {
+      "nome": "Conexão Banjo Tee Rosca Métrica Orientável Vedação Anel ED",
+      "arquivo": "20-conexao-banjo-tee-rosca-metrica-orientavel-vedacao.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 5
+    },
+    {
+      "nome": "Conexão Macho Rosca NPT para Fêmea DKO",
+      "arquivo": "21-conexao-macho-rosca-npt-para-femea-dko.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 6
+    },
+    {
+      "nome": "Conexão Fêmea Reta Rosca Métrica",
+      "arquivo": "22-conexao-femea-reta-rosca-metrica.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 7
+    },
+    {
+      "nome": "Conexão Macho Reto Rosca UNF Vedação com Anel O'Ring",
+      "arquivo": "23-conexao-macho-reto-rosca-unf-vedacao-com-anel-o-ri.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 8
+    },
+    {
+      "nome": "Conexão Igual 90° Painel",
+      "arquivo": "24-conexao-igual-90-painel.png",
+      "subcategoria": "Conexões hidráulicas DIN",
+      "ordem": 9
+    },
+    {
+      "nome": "Tubos de aço de carbono",
+      "arquivo": "25-tubos-de-aco-de-carbono.png",
+      "subcategoria": "Tubos de aço de carbono",
+      "ordem": 1,
+      "descricao": "Fabricados em barras de 6 metros de comprimento sem costura, trefilados a frio e normalizados. Disponível nas seguintes dimensões: Espessuras de 1,00 mm à 6,00 mm e Diâmetro Externo de 10,00 mm à 75,00 mm."
+    },
+    {
+      "nome": "Série Standard",
+      "arquivo": "26-serie-standard.png",
+      "subcategoria": "Abraçadeiras para tubos de aço",
+      "ordem": 1
+    },
+    {
+      "nome": "Série Pesada",
+      "arquivo": "27-serie-pesada.png",
+      "subcategoria": "Abraçadeiras para tubos de aço",
+      "ordem": 2
+    },
+    {
+      "nome": "Série Dupla",
+      "arquivo": "28-serie-dupla.png",
+      "subcategoria": "Abraçadeiras para tubos de aço",
+      "ordem": 3
+    },
+    {
+      "nome": "Válvula Esfera 2 Vias – GB2",
+      "arquivo": "29-valvula-esfera-2-vias-gb2.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 1
+    },
+    {
+      "nome": "Válvula Esfera 2 Vias – GE2",
+      "arquivo": "30-valvula-esfera-2-vias-ge2.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 2
+    },
+    {
+      "nome": "Válvula Esfera 3 Vias – GE3",
+      "arquivo": "31-valvula-esfera-3-vias-ge3.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 3
+    },
+    {
+      "nome": "Válvula Esfera 3 Vias – GPK3",
+      "arquivo": "32-valvula-esfera-3-vias-gpk3.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 4
+    },
+    {
+      "nome": "Válvula Anti-retorno – GC2",
+      "arquivo": "33-valvula-anti-retorno-gc2.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 5
+    },
+    {
+      "nome": "Válvula 3 Vias – GPS",
+      "arquivo": "34-valvula-3-vias-gps.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 6
+    },
+    {
+      "nome": "Válvula Unidirecional Reguladora de Vazão com Retenção",
+      "arquivo": "35-valvula-unidirecional-reguladora-de-vazao-com-rete.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 7
+    },
+    {
+      "nome": "Válvula Bidirecional Reguladora de Vazão sem Retenção",
+      "arquivo": "36-valvula-bidirecional-reguladora-de-vazao-sem-reten.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 8
+    },
+    {
+      "nome": "Válvula Isoladora de Manômetro Reta",
+      "arquivo": "37-valvula-isoladora-de-manometro-reta.png",
+      "subcategoria": "Válvulas de alta pressão",
+      "ordem": 9
+    },
+    {
+      "nome": "Manômetro 63mm Caixa em Inox - Glicerina",
+      "arquivo": "38-manometro-63mm-caixa-em-inox-glicerina.png",
+      "subcategoria": "Manômetros",
+      "ordem": 1
+    },
+    {
+      "nome": "Manômetro 100mm Caixa Inox - Glicerina",
+      "arquivo": "39-manometro-100mm-caixa-inox-glicerina.png",
+      "subcategoria": "Manômetros",
+      "ordem": 2
+    },
+    {
+      "nome": "Manômetro 100mm Total Inox - Glicerina",
+      "arquivo": "40-manometro-100mm-total-inox-glicerina.png",
+      "subcategoria": "Manômetros",
+      "ordem": 3
+    },
+    {
+      "nome": "Engate Rápido ISO-A",
+      "arquivo": "41-engate-rapido-iso-a.png",
+      "subcategoria": "Engate rápido hidráulico",
+      "ordem": 1
+    },
+    {
+      "nome": "Engate Rápido ISO-B",
+      "arquivo": "42-engate-rapido-iso-b.png",
+      "subcategoria": "Engate rápido hidráulico",
+      "ordem": 2
+    },
+    {
+      "nome": "Engate Rápido Face Plana",
+      "arquivo": "43-engate-rapido-face-plana.png",
+      "subcategoria": "Engate rápido hidráulico",
+      "ordem": 3
+    }
+  ]
+}

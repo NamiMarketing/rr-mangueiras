@@ -9,6 +9,7 @@ const CATEGORIAS_QUERY = `*[_type == "categoria"] | order(ordem asc, nome asc) {
   subcategorias[] {
     _key,
     nome,
+    pai,
     ordem
   }
 }`;

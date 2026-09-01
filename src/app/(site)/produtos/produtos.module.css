@@ -263,6 +263,39 @@
   padding: 1.5rem 4rem 1.5rem 2.5rem;
 }
 
+/* Cabeçalho do grupo maior (ex: "Conexões de latão" reunindo as três faixas
+   de Freio a Ar). Mesma faixa do cabeçalho de subcategoria — no Figma os dois
+   níveis têm o mesmo tratamento, empilhados. */
+.subcategoriaHeaderPai {
+  composes: subcategoriaHeader;
+  /* O cabeçalho de subcategoria é inline-block para a faixa encostar no texto.
+     Dois seguidos fluiriam lado a lado, então o pai vira bloco — mantendo a
+     largura colada ao texto — para o filho começar na linha de baixo. */
+  display: block;
+  width: fit-content;
+  margin-bottom: 0.6rem;
+}
+
+/* Entre o pai e o primeiro filho o respiro é curto (no Figma as duas faixas
+   quase se encostam); o intervalo grande fica antes do pai. */
+.subcategoriaHeaderPai + .subcategoriaHeader {
+  margin-top: 0;
+}
+
+/* Itens de um grupo compacto correm em duas colunas, com o cabeçalho ocupando
+   a largura toda — arranjo dos designs de Linha Pneumática e Linha Hidráulica.
+   (Diferente de `.gruposCompactos`, em que são os grupos inteiros que ficam
+   lado a lado.) */
+.listaCompacta {
+  display: block;
+  columns: 2;
+  column-gap: 6rem;
+}
+
+.listaCompacta .row {
+  break-inside: avoid;
+}
+
 .rowCompacta {
   grid-template-columns: minmax(0, 1fr) 11rem;
   grid-template-areas:
@@ -403,7 +436,8 @@
   /* Compacto no mobile: uma coluna só. As áreas do `.row` acima ("nome nome" /
      "img desc") não existem aqui, então o compacto precisa redeclarar as suas
      — sem isto a nota cairia numa área inexistente e o grid se desmontaria. */
-  .gruposCompactos {
+  .gruposCompactos,
+  .listaCompacta {
     columns: 1;
   }
 

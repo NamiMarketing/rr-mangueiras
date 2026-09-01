@@ -39,6 +39,8 @@ const DESTAQUES: Destaque[] = [
 interface Subcategoria {
   _key: string;
   nome: string;
+  /** Título maior que reúne várias subcategorias (ex: "Conexões de latão"). */
+  pai?: string;
   ordem?: number;
 }
 
@@ -46,7 +48,7 @@ interface Categoria {
   _id: string;
   nome: string;
   slug?: string;
-  /** Controla o CSS da listagem. Ver `layoutCompacto`. */
+  /** Controla o CSS da listagem. Ver `grupos`. */
   layout?: "auto" | "padrao" | "compacto";
   subcategorias?: Subcategoria[];
 }
@@ -156,7 +158,24 @@ export default function ProdutosClient({
   // subcategoria (ou com uma que não está mais cadastrada) caem num grupo
   // final sem cabeçalho. Categorias sem subcategorias (Abraçadeiras, Tubos e
   // conexões PPR) e buscas continuam como lista única, sem cabeçalho.
+  // Decide o layout de UM grupo. A categoria manda quando o campo `layout`
+  // está preenchido; em "auto" olhamos o próprio grupo: se a maioria dos itens
+  // tem descrição, vale o layout padrão (nome, imagem e descrição); senão o
+  // compacto. É a maioria, e não "algum", de propósito — num grupo onde só 2
+  // de 9 itens têm uma nota curta, abrir a coluna de descrição deixaria os
+  // outros 7 com um vão vazio; no compacto a nota vira uma linha em itálico.
+  const decidirCompacto = (
+    itens: Produto[],
+    escolha: Categoria["layout"]
+  ): boolean => {
+    if (escolha === "compacto") return true;
+    if (escolha === "padrao") return false;
+    const comDescricao = itens.filter((p) => p.descricao?.trim()).length;
+    return comDescricao * 2 <= itens.length;
+  };
+
   const grupos = useMemo(() => {
+    const escolha = isSearching ? "padrao" : categoriaAtivaObj?.layout;
     const subcategorias = !isSearching
       ? [...(categoriaAtivaObj?.subcategorias ?? [])].sort(
           (a, b) =>
@@ -164,8 +183,15 @@ export default function ProdutosClient({
             a.nome.localeCompare(b.nome, "pt-BR")
         )
       : [];
+    const monta = (nome: string | null, pai: string | null, itens: Produto[]) => ({
+      nome,
+      pai,
+      produtos: itens,
+      compacto: decidirCompacto(itens, escolha),
+    });
+
     if (subcategorias.length === 0) {
-      return [{ nome: null as string | null, produtos: produtosExibidos }];
+      return [monta(null, null, produtosExibidos)];
     }
 
     const porSubcategoria = new Map<string, Produto[]>();
@@ -176,11 +202,11 @@ export default function ProdutosClient({
       porSubcategoria.set(produto.subcategoria, lista);
     }
 
-    const resultado: { nome: string | null; produtos: Produto[] }[] = [];
+    const resultado = [];
     for (const sub of subcategorias) {
       const itens = porSubcategoria.get(sub.nome);
       if (itens?.length) {
-        resultado.push({ nome: sub.nome, produtos: itens });
+        resultado.push(monta(sub.nome, sub.pai?.trim() || null, itens));
         porSubcategoria.delete(sub.nome);
       }
     }
@@ -189,27 +215,18 @@ export default function ProdutosClient({
     const semGrupo = produtosExibidos.filter(
       (p) => !p.subcategoria || !nomesConhecidos.has(p.subcategoria)
     );
-    if (semGrupo.length > 0) resultado.push({ nome: null, produtos: semGrupo });
+    if (semGrupo.length > 0) resultado.push(monta(null, null, semGrupo));
 
     return resultado;
   }, [produtosExibidos, categoriaAtivaObj, isSearching]);
 
-  // Catálogos como "Conexões e adaptadores" e "Válvulas industriais" são só
-  // nome + imagem. No layout padrão a coluna de descrição fica vazia e cada
-  // item ocupa uma faixa larga e vazada; o compacto troca para duas colunas
-  // com linhas curtas. A categoria manda (campo `layout` no Studio); em
-  // "auto" (ou vazio) inferimos pela ausência total de descrições.
-  // Busca sempre usa o layout padrão — mistura categorias.
-  const layoutCompacto = useMemo(() => {
-    if (isSearching) return false;
-    const escolha = categoriaAtivaObj?.layout;
-    if (escolha === "compacto") return true;
-    if (escolha === "padrao") return false;
-    return (
-      produtosExibidos.length > 0 &&
-      produtosExibidos.every((p) => !p.descricao?.trim())
-    );
-  }, [isSearching, categoriaAtivaObj, produtosExibidos]);
+  // Arranjo herdado das primeiras categorias compactas (Conexões e adaptadores,
+  // Válvulas industriais): os grupos correm lado a lado em duas colunas. Só vale
+  // quando a categoria foi marcada explicitamente como "compacto" — nos designs
+  // mais novos os grupos ocupam a largura toda e são os itens que se dividem em
+  // duas colunas. Para unificar, basta trocar essas categorias para "Automático".
+  const gruposLadoALado =
+    !isSearching && categoriaAtivaObj?.layout === "compacto";
 
   const tituloLista = isSearching
     ? `Resultados para "${searchTerm}"`
@@ -248,21 +265,30 @@ export default function ProdutosClient({
         ) : (
           // O DOM é o mesmo nos dois layouts — só as classes mudam, e o CSS
           // reposiciona nome/imagem/descrição via grid-template-areas.
-          <div className={layoutCompacto ? styles.gruposCompactos : undefined}>
+          <div className={gruposLadoALado ? styles.gruposCompactos : undefined}>
             {grupos.map((grupo, index) => (
               <div
                 key={grupo.nome ?? `sem-grupo-${index}`}
                 className={styles.subcategoriaGroup}
               >
+                {/* Cabeçalho do grupo maior, impresso só na primeira
+                    subcategoria que pertence a ele. */}
+                {grupo.pai && grupo.pai !== grupos[index - 1]?.pai && (
+                  <h2 className={styles.subcategoriaHeaderPai}>{grupo.pai}</h2>
+                )}
                 {grupo.nome && (
                   <h2 className={styles.subcategoriaHeader}>{grupo.nome}</h2>
                 )}
-                <div className={styles.lista}>
+                <div
+                  className={`${styles.lista} ${
+                    grupo.compacto && !gruposLadoALado ? styles.listaCompacta : ""
+                  }`}
+                >
                   {grupo.produtos.map((produto) => (
                     <article
                       key={produto._id}
                       className={`${styles.row} ${
-                        layoutCompacto ? styles.rowCompacta : ""
+                        grupo.compacto ? styles.rowCompacta : ""
                       }`}
                     >
                       <h3 className={styles.rowNome}>{produto.nome}</h3>

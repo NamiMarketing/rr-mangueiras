@@ -1,0 +1,353 @@
+{
+  "subcategorias": [
+    {
+      "nome": "Mangueiras espirais",
+      "pai": null,
+      "ordem": 1
+    },
+    {
+      "nome": "Tubos Flexíveis",
+      "pai": null,
+      "ordem": 2
+    },
+    {
+      "nome": "Tubos odontológicos",
+      "pai": null,
+      "ordem": 3
+    },
+    {
+      "nome": "Conexões para Tubos Plásticos",
+      "pai": "Conexões de latão",
+      "ordem": 4
+    },
+    {
+      "nome": "Freio a Ar (Milímetro)",
+      "pai": "Conexões de latão",
+      "ordem": 5
+    },
+    {
+      "nome": "Freio a Ar (engate rápido)",
+      "pai": "Conexões de latão",
+      "ordem": 6
+    },
+    {
+      "nome": "Milímetro",
+      "pai": "Conexões plásticas",
+      "ordem": 7
+    },
+    {
+      "nome": "Conjunto Lubrefil",
+      "pai": null,
+      "ordem": 8
+    },
+    {
+      "nome": "Filtro regulador",
+      "pai": null,
+      "ordem": 9
+    },
+    {
+      "nome": "Manômetros",
+      "pai": null,
+      "ordem": 10
+    },
+    {
+      "nome": "Válvulas",
+      "pai": null,
+      "ordem": 11
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "Mangueiras Espirais em PU",
+      "arquivo": "01-mangueiras-espirais-em-pu.png",
+      "subcategoria": "Mangueiras espirais",
+      "ordem": 1,
+      "merged": true,
+      "descricao": "Produzidas em poliuretano, espiralados no formato helicoidal, em diferentes comprimentos e bitolas, conforme a necessidade do cliente. São a melhor opção para aplicações que exigem alta flexibilidade e retratilidade, adaptando-se perfeitamente a instalações com espaço reduzido."
+    },
+    {
+      "nome": "Tubos PU",
+      "arquivo": "01-tubos-pu.png",
+      "subcategoria": "Tubos Flexíveis",
+      "ordem": 1,
+      "merged": true,
+      "descricao": "Produzidos em poliuretano. Indicados para sistemas pneumáticos, automação industrial, robótica, instrumentação, dosadores e aplicações industriais com limitação de espaço ou necessidade de elevada flexibilidade dinâmica."
+    },
+    {
+      "nome": "Tubos PA6",
+      "arquivo": "01-tubos-pa6.png",
+      "subcategoria": "Tubos Flexíveis",
+      "ordem": 2,
+      "merged": true,
+      "descricao": "Produzidos em poliamida, conhecidos como Nylon. Com excelente desempenho e custo-benefício, é um dos materiais mais procurados para aplicações de baixa e média pressão para passagem de fluidos."
+    },
+    {
+      "nome": "Tubos PA12",
+      "arquivo": "01-tubos-pa12.png",
+      "subcategoria": "Tubos Flexíveis",
+      "ordem": 3,
+      "merged": true,
+      "descricao": "Produzidos em poliamida, conhecidos como Nylon. São adequados para uso em sistemas de freio a ar de caminhões, passagem de combustível e lubrificante, além de instrumentação e sistemas pneumáticos."
+    },
+    {
+      "nome": "Tubos PEBD",
+      "arquivo": "01-tubos-pebd.png",
+      "subcategoria": "Tubos Flexíveis",
+      "ordem": 4,
+      "merged": true,
+      "descricao": "São produzidos em polietileno de baixa densidade. São adequados para condução de fluidos sob baixa pressão, condução de produtos químicos, condução de gases, utilização em ambientes agressivos, indústria alimentícia, farmacêutica e de bebidas."
+    },
+    {
+      "nome": "Tubos PFA (Teflon™)",
+      "arquivo": "01-tubos-pfa-teflon.png",
+      "subcategoria": "Tubos Flexíveis",
+      "ordem": 5,
+      "merged": true,
+      "descricao": "O PFA (Perfluoroalkoxy) é um fluoropolímero de alto desempenho, totalmente fluorado e processável por fusão, desenvolvido para aplicações críticas que exigem elevada resistência química, alta pureza e excelente estabilidade térmica."
+    },
+    {
+      "nome": "Tubo Suctor Odontológico",
+      "arquivo": "01-tubo-suctor-odontologico.png",
+      "subcategoria": "Tubos odontológicos",
+      "ordem": 1,
+      "merged": true,
+      "descricao": "Produzido em PVC atóxico e flexível, responsável pela sucção de líquidos endodônticos."
+    },
+    {
+      "nome": "Tubo Dupla Pedal Odontológico",
+      "arquivo": "01-tubo-dupla-pedal-odontologico.png",
+      "subcategoria": "Tubos odontológicos",
+      "ordem": 2,
+      "merged": true,
+      "descricao": "Tubo de 2 vias, produzido em poliuretano, responsável pelo acionamento de ar, conectando o pedal a cadeira."
+    },
+    {
+      "nome": "Tubo Tripla Seringa Odontológico",
+      "arquivo": "01-tubo-tripla-seringa-odontologico.png",
+      "subcategoria": "Tubos odontológicos",
+      "ordem": 3,
+      "merged": true,
+      "descricao": "Tubo de 3 vias, produzido em poliuretano, responsável por limpar, secar, irrigar e umedecer o campo operatório intra ou extrabucal, permitindo uma melhor visualização dos dentes e facilitando os procedimentos."
+    },
+    {
+      "nome": "Porca e Anilha 4002",
+      "arquivo": "10-porca-e-anilha-4002.png",
+      "subcategoria": "Conexões para Tubos Plásticos",
+      "ordem": 1
+    },
+    {
+      "nome": "União 4003",
+      "arquivo": "11-uniao-4003.png",
+      "subcategoria": "Conexões para Tubos Plásticos",
+      "ordem": 2
+    },
+    {
+      "nome": "União Macho 4004",
+      "arquivo": "12-uniao-macho-4004.png",
+      "subcategoria": "Conexões para Tubos Plásticos",
+      "ordem": 3
+    },
+    {
+      "nome": "União Fêmea 4005",
+      "arquivo": "13-uniao-femea-4005.png",
+      "subcategoria": "Conexões para Tubos Plásticos",
+      "ordem": 4
+    },
+    {
+      "nome": "Cotovelo Macho 4007",
+      "arquivo": "14-cotovelo-macho-4007.png",
+      "subcategoria": "Conexões para Tubos Plásticos",
+      "ordem": 5
+    },
+    {
+      "nome": "Cotovelo Fêmea 4008",
+      "arquivo": "15-cotovelo-femea-4008.png",
+      "subcategoria": "Conexões para Tubos Plásticos",
+      "ordem": 6
+    },
+    {
+      "nome": "Tee União 4009",
+      "arquivo": "16-tee-uniao-4009.png",
+      "subcategoria": "Conexões para Tubos Plásticos",
+      "ordem": 7
+    },
+    {
+      "nome": "União para Painel 4046",
+      "arquivo": "17-uniao-para-painel-4046.png",
+      "subcategoria": "Conexões para Tubos Plásticos",
+      "ordem": 8
+    },
+    {
+      "nome": "Anilha 2101",
+      "arquivo": "18-anilha-2101.png",
+      "subcategoria": "Freio a Ar (Milímetro)",
+      "ordem": 1
+    },
+    {
+      "nome": "Porca 2102",
+      "arquivo": "25-porca-2102.png",
+      "subcategoria": "Freio a Ar (Milímetro)",
+      "ordem": 2
+    },
+    {
+      "nome": "União 2103",
+      "arquivo": "19-uniao-2103.png",
+      "subcategoria": "Freio a Ar (Milímetro)",
+      "ordem": 3
+    },
+    {
+      "nome": "União Macho 2104",
+      "arquivo": "20-uniao-macho-2104.png",
+      "subcategoria": "Freio a Ar (Milímetro)",
+      "ordem": 4
+    },
+    {
+      "nome": "Cotovelo Macho 2107",
+      "arquivo": "21-cotovelo-macho-2107.png",
+      "subcategoria": "Freio a Ar (Milímetro)",
+      "ordem": 5
+    },
+    {
+      "nome": "Tee União 2109",
+      "arquivo": "22-tee-uniao-2109.png",
+      "subcategoria": "Freio a Ar (Milímetro)",
+      "ordem": 6
+    },
+    {
+      "nome": "Insert 2114",
+      "arquivo": "23-insert-2114.png",
+      "subcategoria": "Freio a Ar (Milímetro)",
+      "ordem": 7
+    },
+    {
+      "nome": "Dreno 2193",
+      "arquivo": "24-dreno-2193.png",
+      "subcategoria": "Freio a Ar (Milímetro)",
+      "ordem": 8
+    },
+    {
+      "nome": "Alicate para Tubos 2600",
+      "arquivo": "26-alicate-para-tubos-2600.png",
+      "subcategoria": "Freio a Ar (engate rápido)",
+      "ordem": 1
+    },
+    {
+      "nome": "União 2603",
+      "arquivo": "27-uniao-2603.png",
+      "subcategoria": "Freio a Ar (engate rápido)",
+      "ordem": 2
+    },
+    {
+      "nome": "União Macho 2604",
+      "arquivo": "28-uniao-macho-2604.png",
+      "subcategoria": "Freio a Ar (engate rápido)",
+      "ordem": 3
+    },
+    {
+      "nome": "Cotovelo União 2606",
+      "arquivo": "29-cotovelo-uniao-2606.png",
+      "subcategoria": "Freio a Ar (engate rápido)",
+      "ordem": 4
+    },
+    {
+      "nome": "Cotovelo Macho 2607",
+      "arquivo": "30-cotovelo-macho-2607.png",
+      "subcategoria": "Freio a Ar (engate rápido)",
+      "ordem": 5
+    },
+    {
+      "nome": "Tee União 2609",
+      "arquivo": "31-tee-uniao-2609.png",
+      "subcategoria": "Freio a Ar (engate rápido)",
+      "ordem": 6
+    },
+    {
+      "nome": "Tee Macho Central 2610",
+      "arquivo": "33-tee-macho-central-2610.png",
+      "subcategoria": "Freio a Ar (engate rápido)",
+      "ordem": 7
+    },
+    {
+      "nome": "União de Anteparo 2618",
+      "arquivo": "32-uniao-de-anteparo-2618.png",
+      "subcategoria": "Freio a Ar (engate rápido)",
+      "ordem": 8
+    },
+    {
+      "nome": "União 8503",
+      "arquivo": "34-uniao-8503.png",
+      "subcategoria": "Milímetro",
+      "ordem": 1
+    },
+    {
+      "nome": "União Reta Macho 8504P",
+      "arquivo": "35-uniao-reta-macho-8504p.png",
+      "subcategoria": "Milímetro",
+      "ordem": 2
+    },
+    {
+      "nome": "Cotovelo Giratório 8507G",
+      "arquivo": "36-cotovelo-giratorio-8507g.png",
+      "subcategoria": "Milímetro",
+      "ordem": 3
+    },
+    {
+      "nome": "Tee União 8509",
+      "arquivo": "37-tee-uniao-8509.png",
+      "subcategoria": "Milímetro",
+      "ordem": 4
+    },
+    {
+      "nome": "Tee Central Giratório 8510",
+      "arquivo": "38-tee-central-giratorio-8510.png",
+      "subcategoria": "Milímetro",
+      "ordem": 5
+    },
+    {
+      "nome": "União Redução 8533",
+      "arquivo": "39-uniao-reducao-8533.png",
+      "subcategoria": "Milímetro",
+      "ordem": 6
+    },
+    {
+      "nome": "Cotovelo 45° Giratório 8545G",
+      "arquivo": "40-cotovelo-45-giratorio-8545g.png",
+      "subcategoria": "Milímetro",
+      "ordem": 7
+    },
+    {
+      "nome": "Conexão Y União 8549",
+      "arquivo": "41-conexao-y-uniao-8549.png",
+      "subcategoria": "Milímetro",
+      "ordem": 8
+    },
+    {
+      "nome": "Conjunto Lubrefil",
+      "arquivo": "42-conjunto-lubrefil.png",
+      "subcategoria": "Conjunto Lubrefil",
+      "ordem": 1,
+      "descricao": "Filtra, regula e lubrifica o ar comprimido em sistemas pneumáticos. Ele garante que o ar utilizado esteja limpo, com pressão estável e lubrificação adequada, aumentando a eficiência e prolongando a vida útil dos componentes. O conjunto melhora o desempenho das ferramentas e prolonga drasticamente a vida útil dos equipamentos."
+    },
+    {
+      "nome": "Filtro regulador",
+      "arquivo": "43-filtro-regulador.png",
+      "subcategoria": "Filtro regulador",
+      "ordem": 1,
+      "descricao": "Regula a pressão do ar conforme especificação técnica do trabalho, além de reter a umidade do ar que se forma na rede de ar até o equipamento."
+    },
+    {
+      "nome": "Manômetros",
+      "arquivo": "44-manometros.png",
+      "subcategoria": "Manômetros",
+      "ordem": 1,
+      "descricao": "Utilizados para medição de pontos com pressão dinâmica, pulsação ou com vibrações elevadas. Produzida de acordo com as Normas DIN EN 837 – 1, DIN EN 837 – 2 e ASME B40.100, assegurando a mais alta performance e com confiabilidade e economia. Disponíveis nas séries: Caixa de Plástico (ABS), seco, com saída vertical ou saída traseira central, com a medida da rosca e opções de pressão de 0 a 16 BAR ou 0 a 230 PSI, de acordo com sua necessidade."
+    },
+    {
+      "nome": "Válvulas",
+      "arquivo": "45-valvulas.png",
+      "subcategoria": "Válvulas",
+      "ordem": 1,
+      "descricao": "Controlam o fluxo de ar comprimido. Trabalhamos com diferentes opções de vias (portas de conexão) e número de posições."
+    }
+  ]
+}

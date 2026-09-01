@@ -79,6 +79,13 @@ export const categoria = defineType({
               validation: (rule) => rule.required(),
             }),
             defineField({
+              name: 'pai',
+              title: 'Subcategoria pai',
+              type: 'string',
+              description:
+                'Opcional. Agrupa esta subcategoria sob um título maior (ex: "Conexões de latão" reunindo "Freio a Ar (Milímetro)" e "Freio a Ar (engate rápido)"). Escreva o mesmo texto em todas as subcategorias do grupo. Deixe vazio se ela não pertence a nenhum.',
+            }),
+            defineField({
               name: 'ordem',
               title: 'Ordem',
               type: 'number',
@@ -90,6 +97,7 @@ export const categoria = defineType({
           preview: {
             select: {
               title: 'nome',
+              subtitle: 'pai',
             },
           },
         },
