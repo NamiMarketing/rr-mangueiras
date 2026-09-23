@@ -1,40 +1,10 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useSyncExternalStore } from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import type { StaticImageData } from "next/image";
 import type { SanityImageSource } from "@sanity/image-url";
 import styles from "../produtos.module.css";
 import { urlFor } from "@/sanity/image";
-import destaqueAbracadeiras from "@/img/produtos/destaque-abracadeiras.png";
-import destaqueEngates from "@/img/produtos/destaque-engates.png";
-import destaqueMangueiraKpuc from "@/img/produtos/destaque-mangueira-kpuc.png";
-import destaqueGalvanizado from "@/img/produtos/destaque-galvanizado.png";
-import destaquePneumatica from "@/img/produtos/destaque-pneumatica.png"; 
-import destaqueVonixx from "@/img/produtos/destaque-vonixx.png"; 
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-interface Destaque {
-  image: StaticImageData;
-  alt: string;
-  categoria: string;
-}
-
-// Carrossel de destaques fixo (imagens promocionais). `categoria` casa com o
-// nome de uma categoria do CMS para filtrar ao clicar (ignorado se não houver).
-const DESTAQUES: Destaque[] = [
-  { image: destaqueAbracadeiras, alt: "Abraçadeiras", categoria: "Abraçadeiras" },
-   { image: destaquePneumatica, alt: "Pneumática", categoria: "Pneumática" },
-  { image: destaqueEngates, alt: "Engates", categoria: "Engates" },
-  { image: destaqueMangueiraKpuc, alt: "Mangueira KPU-C", categoria: "PUC" },
-  { image: destaqueGalvanizado, alt: "Galvanizado", categoria: "Tubos e Conexões" },
-  { image: destaqueVonixx, alt: "Vonixx", categoria: "Vonixx" }
-];
 
 interface Subcategoria {
   _key: string;
@@ -76,31 +46,42 @@ export default function ProdutosClient({
   categorias,
   produtos,
 }: ProdutosClientProps) {
-  // Lê o termo de busca da URL (?q=) no cliente — compatível com export estático.
-  const [searchTerm, setSearchTerm] = useState<string>(() =>
-    typeof window !== "undefined"
-      ? new URLSearchParams(window.location.search).get("q") ?? ""
-      : ""
+  // A query string é um estado do navegador, não do React: numa navegação
+  // client-side o window.location ainda está defasado no primeiro render (medido:
+  // no render vem "", só no commit vira "?categoria=..."). useSyncExternalStore
+  // relê o snapshot após a montagem e re-renderiza se mudou, que é exatamente o
+  // que precisamos — sem setState dentro de efeito.
+  //
+  // Não usamos useSearchParams do next/navigation de propósito: ele exigiria um
+  // limite de Suspense e, com output:"export", jogaria a listagem inteira para
+  // client-side — o /produtos/index.html sairia com o <main> vazio, sem produto
+  // nenhum para indexação. (Testado: <article> e <h2> zerados.)
+  //
+  // subscribe é no-op porque nada muda a URL sem remontar esta página; o
+  // snapshot do servidor é "" para o HTML estático sair com a 1ª categoria.
+  const search = useSyncExternalStore(
+    () => () => {},
+    () => window.location.search,
+    () => ""
   );
-  // Pré-seleciona a categoria via URL (?categoria=<slug>) — usado pelos cards
-  // da seção "Categorias" na home. Casa pelo slug (estável), não pelo nome.
-  const [selectedCategoria, setSelectedCategoria] = useState<string>(() => {
-    if (typeof window === "undefined") return "";
-    const slug = new URLSearchParams(window.location.search).get("categoria");
+
+  const termoDaUrl = useMemo(
+    () => new URLSearchParams(search).get("q") ?? "",
+    [search]
+  );
+  // Casa pelo slug (estável), não pelo nome.
+  const categoriaDaUrl = useMemo(() => {
+    const slug = new URLSearchParams(search).get("categoria");
     if (!slug) return "";
     return categorias.find((c) => c.slug === slug)?._id ?? "";
-  });
+  }, [search, categorias]);
 
-  // O inicializador acima só acerta em carregamento direto da URL. Numa
-  // navegação client-side (clique no Link da home), o componente monta antes
-  // de window.location refletir a nova URL, então relemos o parâmetro aqui —
-  // o efeito roda após o commit, quando window.location já está atualizado.
-  useEffect(() => {
-    const slug = new URLSearchParams(window.location.search).get("categoria");
-    if (!slug) return;
-    const cat = categorias.find((c) => c.slug === slug);
-    if (cat) setSelectedCategoria(cat._id);
-  }, [categorias]);
+  // Assim que o usuário clica numa pílula, a escolha dele passa a mandar e a
+  // URL deixa de importar. null = ainda não escolheu nada na mão.
+  const [escolha, setEscolha] = useState<{ categoriaId: string; termo: string } | null>(null);
+
+  const selectedCategoria = escolha ? escolha.categoriaId : categoriaDaUrl;
+  const searchTerm = escolha ? escolha.termo : termoDaUrl;
 
   // Apenas categorias que possuem ao menos um produto cadastrado — categorias
   // vazias não são exibidas nas pílulas. Ordenadas alfabeticamente.
@@ -114,20 +95,13 @@ export default function ProdutosClient({
   }, [categorias, produtos]);
 
   const handleSelectCategoria = (categoriaId: string) => {
-    setSearchTerm("");
-    setSelectedCategoria(categoriaId);
+    // Escolher categoria zera a busca: a lista passa a ser a da categoria.
+    setEscolha({ categoriaId, termo: "" });
     // As pílulas são sticky; ao trocar de categoria a lista é substituída mas a
     // rolagem fica onde estava. Voltamos ao topo para o usuário começar a ver a
     // nova categoria desde o primeiro item. (Scroll instantâneo — o "smooth" é
     // ignorado aqui por conta do layout sticky.)
     window.scrollTo({ top: 0, behavior: "auto" });
-  };
-
-  const handleSelectByName = (nome: string) => {
-    const cat = categoriasAtivas.find(
-      (c) => c.nome.toLowerCase() === nome.toLowerCase()
-    );
-    if (cat) handleSelectCategoria(cat._id);
   };
 
   const isSearching = searchTerm.trim().length > 0;
@@ -313,54 +287,6 @@ export default function ProdutosClient({
             ))}
           </div>
         )}
-      </section>
-
-      {/* ===== Carrossel de destaques (fixo) — ao final da página ===== */}
-      <section className={styles.bannerSection}>
-        <div className={styles.bannerInner}>
-          <div className={styles.bannerPrev} id="produtos-banner-prev" aria-label="Anterior">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={20}
-            slidesPerView={2}
-            navigation={{ prevEl: "#produtos-banner-prev", nextEl: "#produtos-banner-next" }}
-            pagination={{ el: "#produtos-banner-pagination", clickable: true }}
-            breakpoints={{
-              320: { slidesPerView: 1, spaceBetween: 12 },
-              768: { slidesPerView: 2, spaceBetween: 20 },
-            }}
-            className={styles.bannerSwiper}
-          >
-            {DESTAQUES.map((destaque) => (
-              <SwiperSlide key={destaque.alt}>
-                <button
-                  type="button"
-                  className={styles.bannerCard}
-                  onClick={() => handleSelectByName(destaque.categoria)}
-                  aria-label={destaque.alt}
-                >
-                  <Image
-                    src={destaque.image}
-                    alt={destaque.alt}
-                    className={styles.bannerImage}
-                  />
-                </button>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          <div className={styles.bannerNext} id="produtos-banner-next" aria-label="Próximo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-        <div className={styles.bannerPagination} id="produtos-banner-pagination" />
       </section>
     </div>
   );
