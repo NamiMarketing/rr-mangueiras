@@ -1,203 +1,219 @@
-# Ajustes pendentes — RR Mangueiras
+# Checklist de ajustes — `src/file/Ajustes.xlsx`
 
-Lista de ajustes recebida em 22/09/2026. Cada item traz o que já foi verificado no
-código/nas imagens, o que é preciso para resolver e as dúvidas em aberto.
+Extraído das 8 abas da planilha (incluindo as 3 imagens de catálogo anotadas em
+vermelho, que são o conteúdo real das abas "Conexões em Latão" e "Adaptadores
+em Latão" — essas abas não têm texto nenhum).
 
-Legenda: `[ ]` a fazer · `[~]` bloqueado (depende de material externo) · `[x]` feito
+**Legenda**
 
----
-
-## 🔒 Aguardando a logo nova
-
-Três itens dependem do arquivo da logo atualizada. Enquanto ela não chega, nada
-aqui deve ser mexido — mudar a logo antiga de tamanho agora só gera retrabalho,
-porque as proporções da nova provavelmente serão outras.
-
-### [~] 1. Atualizar logo
-
-- Arquivo atual: `src/img/logo.png` (401×214, PNG).
-- Usado no cabeçalho (`src/components/Header/Header.tsx:6`) — no desktop e no
-  overlay do menu mobile.
-- Existe também `src/img/hero-logo.png` (381×40), usada em outro lugar — conferir
-  se ela também precisa ser trocada.
-- **Precisa:** arquivo da logo nova, de preferência em SVG ou PNG com
-  transparência e pelo menos 3× o tamanho de exibição.
-
-### [~] 2. Logo do cabeçalho está muito pequena
-
-- Hoje: `.logoContainer { width: 11rem }` (`src/components/Header/Header.module.css:21`),
-  ou seja 110px de largura dentro de um cabeçalho de 100px de altura.
-- No mobile cai para 7.5rem (`:106`) e no overlay 7rem (`:126`).
-- Ajuste é de uma linha, mas depende da proporção da logo nova.
-- **Faz par com o item 3 da seção "Cabeçalho"** — os dois mexem no mesmo layout e
-  devem ser feitos juntos, numa passada só.
-
-### [~] 3. Espaço em branco no cabeçalho das categorias de produtos: inserir logo dos dois lados
-
-- Entendimento: a barra "CATEGORIAS" da página de produtos
-  (`src/app/(site)/produtos/produtos.module.css:105`) é full-bleed (ocupa 100vw),
-  com o título centralizado — sobra espaço vazio à esquerda e à direita dele.
-  A ideia seria preencher esses dois vazios com a logo.
-- ⚠️ **Dúvida:** pode ser também a faixa amarela de subcategoria
-  (`.subcategoriaHeader`, `:182`), cujo degradê termina em cinza-claro e deixa um
-  vazio à direita. Confirmar com quem mandou a lista qual dos dois é.
-- **Precisa:** a logo nova + definição de qual cabeçalho.
+- `[x]` feito e conferido
+- `[ ]` a fazer
+- 📕 mexe no **catálogo PDF** — **parado até a equipe do catálogo entregar**.
+  Decisão do cliente: nada que envolva catálogo + site é tocado por enquanto.
+- 🚫 falta material (arte, foto ou texto) que ainda não temos
 
 ---
 
-## ✅ Podem ser feitos agora
+## Onde estamos
 
-### [ ] 4. Quem Somos — imagem do topo está estourada
+### Dá para fazer agora — só site, sem depender de ninguém
 
-- Arquivo: `src/img/quem-somos/hero.png` — **1024×576**.
-- A seção é full-bleed em `aspect-ratio: 1440/500`
-  (`src/app/(site)/quem-somos/page.module.css:2`), com `object-fit: cover`. Numa
-  tela de 1440px a imagem é esticada ~1,4× e ainda cortada na vertical: daí a
-  aparência estourada/pixelada.
-- Há uma versão mobile separada, `hero-mob.png` (360×400), usada abaixo de 1200px
-  (`:304`) — essa está proporcional e não precisa mexer.
-- ⚠️ **Dúvida — são dois problemas diferentes, e o ajuste muda conforme a resposta:**
-  - se "estourada" = **pixelada/serrilhada**, só resolve com o arquivo original em
-    resolução maior (ideal ≥ 2880×1000). Não dá para recuperar detalhe ampliando.
-  - se "estourada" = **muito ampliada / cortada demais** ("reduzir" = mostrar mais
-    da cena), resolve no CSS ajustando `aspect-ratio`/`object-position` — sem
-    arquivo novo.
+- **Geral, 4 itens de CSS/código**: bloquear download das imagens, logo do
+  cabeçalho, botão "Fale Conosco", logo dos dois lados nas categorias
+- **B2 — 2 renomeações**: `Luva` → `Luva Lisa`, `Niple Duplo` → `Niple Duplo Sextavado`
 
-### [ ] 5. Quem Somos — foto da loja e funcionários: deixar colorida
+### 📕 Parado até o catálogo
 
-- Arquivo: `src/img/quem-somos/equipe.png` (2302×967), usado em
-  `src/app/(site)/quem-somos/page.tsx:90`.
-- Verificado: a imagem **já está gravada em duotone azul** — o efeito está queimado
-  no PNG, não é filtro CSS. Não existe informação de cor para restaurar.
-- Sobre o azulado em cima da foto: há ainda um overlay em degradê no CSS
-  (`.equipeOverlay`, `page.module.css:137`) que escurece a foto para o texto branco
-  ficar legível. Quando a foto voltar a ser colorida, esse overlay precisa ser
-  reavaliado — provavelmente afinado, senão a cor não aparece.
-- **Precisa:** a foto original colorida. Pedir para a designer / para quem tirou.
+- **B5 — os 21 itens faltantes**: as fotos não existem fora das páginas do
+  catálogo coladas na planilha, onde cada produto tem ~150 px. Inútil para o site.
+- **B6 — 4 atualizações** (AA, TIA, UFA, UDRA) e **7 inclusões**, todas marcadas
+  "site + catálogo" na planilha
+- **B6 — tubos de aço carbono e descrições dos 3 manômetros**
+- **B2 — Bucha de Redução**: a planilha diz "INCLUIR NO CATÁLOGO E NO SITE"
+- **B3 — ERT-C**: no site já está; falta só no catálogo
 
-### [ ] 6. Bloquear imagens (hoje dá para salvar todas as imagens dos produtos)
+### 🚫 Parado esperando material ou definição do cliente
 
-- Medidas possíveis, todas no front:
-  - bloquear menu de contexto (botão direito) sobre as imagens;
-  - `user-select: none` + `-webkit-touch-callout: none` (impede o "salvar imagem"
-    do toque longo no celular);
-  - `draggable={false}` / `pointer-events` para impedir arrastar a imagem para fora;
-  - opcionalmente uma camada transparente por cima da imagem, de forma que o clique
-    direito pegue a camada e não o `<img>`.
-- Pontos de aplicação: `.rowImg` em `produtos.module.css:220` (listagem) e a
-  página de produto `src/app/(site)/produtos/[slug]/`.
-- ⚠️ **Importante dizer ao cliente:** isso é **dissuasão, não proteção**. Qualquer
-  pessoa ainda consegue a imagem pelo print de tela ou pelo inspetor do navegador —
-  as URLs do CDN do Sanity são públicas por natureza. Se o objetivo for mesmo
-  impedir o reuso comercial, o caminho é marca d'água na imagem, não bloqueio no
-  site.
+- **B2 — as 10 fotos das galvanizadas**: tecnicamente destravado (o 403 do
+  acepilinox era só user-agent; com UA de navegador as fotos saem em 1000×1000),
+  mas **falta definir o escopo**. Cada página de produto do fornecedor tem
+  **4 imagens**, e o site hoje usa **1**. Em vários itens uma das 4 é justamente
+  a que já está no ar. Então não dá para saber se o cliente quer as 4, ou uma
+  outra no lugar da atual.
+  > ⚠️ As duas respostas têm custos bem diferentes. Trocar por outra é só rodar
+  > um script. **Passar a ter 4 por produto é mudança de schema**: hoje
+  > `produto.imagem` é uma imagem só (`type: 'image'`), teria de virar array, e
+  > a listagem renderiza 1 `<Image>` por item — precisaria de galeria. O lugar
+  > natural para isso seria a página de detalhe (`/produtos/[slug]`), não a
+  > linha da listagem.
 
-### [~] 7. Remover marca SUPREFLEX das mangueiras alimentícias
-
-> **Estado:** as 7 imagens já foram retocadas e aprovadas visualmente. Falta só
-> subir para o Sanity — aguardando confirmação, porque a escrita vai direto para
-> o dataset de produção.
-
-
-Verificadas as **12 imagens** da categoria, uma a uma. **7 têm a marca** — não só as
-mangueiras:
-
-| Subcategoria | Produto | Marca SUPREFLEX |
-|---|---|---|
-| Conexões | Engate INOX TC | **Sim** — laranja sobre capa azul |
-| Conexões | Engate Rápido INOX Macho | **Sim** — laranja sobre capa preta |
-| Conexões | Ponteira INOX BSP Roscada | **Sim** — laranja, cortada na borda |
-| Conexões | Ponteira INOX DIN | **Sim** — laranja sobre capa azul |
-| Conexões | Ponteira INOX RJT Fêmea e Macho | **Sim** — laranja sobre capa azul |
-| Conexões | Ponteira INOX SMS Fêmea e Macho | **Sim** — laranja, cortada na borda |
-| Mangueiras | Mangueira Atóxica **Pressão** | **Sim** — laranja sobre capa azul |
-| Mangueiras | Mangueira Atóxica Trama Dupla | Não (imagem já trocada) |
-| Mangueiras | Mangueira Atóxica Trama Simples | Não |
-| Válvulas | Válvula Borboleta com catraca/alavanca | Não |
-| Válvulas | Válvula Borboleta tipo Wafer | Não (só marcações de fundição: "PN16") |
-| Válvulas | Válvula de retenção | Não |
-
-**O ponto central:** as 6 imagens de "Conexões" não são fotos da conexão isolada —
-são renders de uma **mangueira SUPREFLEX com um terminal na ponta**. A marca não é
-um detalhe no canto: ela é grande, diagonal, atravessa o corpo da mangueira e ocupa
-boa parte do quadro. São renders de catálogo do próprio fabricante.
-
-Recortar não resolveria: em "Pressão" o texto entra cortado na borda e daria para
-aparar, mas nas conexões ele está no meio do corpo da mangueira. Pedir arte limpa
-ao fabricante também não, porque a marca *é* de quem fez o render. Então o caminho
-foi **reconstruir a superfície** por baixo do texto.
-
-**Feito.** As 7 imagens estão retocadas em `scripts/alimenticias-limpas/`, com as
-mesmas dimensões e transparência dos originais (que seguem intactos em
-`scripts/alimenticias-src/`). O script é `scripts/retocar-marca.mjs` — o cabeçalho
-dele explica o método e o porquê de cada exceção por imagem.
-
-    node scripts/retocar-marca.mjs            # processa tudo
-    node scripts/retocar-marca.mjs --mascara  # só as máscaras, para conferir
-
-Duas imagens precisaram de ajuste próprio, registrado no script: a **Pressão** tem
-tramas de cobre que caem no mesmo limiar de cor do logotipo (daí a detecção ficar
-restrita a um retângulo), e a **DIN** transplantava um brilho especular que virava
-um risco de luz (daí o limite de amplitude da textura).
-
-**Falta subir para o Sanity.** Não fiz porque a escrita vai direto para produção.
-Quando for, é trocar só o campo `imagem` destes 7 produtos, sem tocar em mais nada.
-
-⚠️ **Ainda vale confirmar o motivo do pedido:** se a RR revende SUPREFLEX, talvez a
-marca só incomodasse nas conexões (onde a mangueira "rouba" o produto anunciado) e
-não nas mangueiras. Se for o caso, é só não subir a da Pressão.
-
-- Aproveitar a passada: a **Trama Simples** está com imagem de só **256×200**,
-  contra ~1400px das vizinhas — aparece mais mole que as outras na listagem.
-
-### [ ] 8. Remover banners da aba produtos
-
-- Carrossel no fim da página:
-  `src/app/(site)/produtos/components/ProdutosClient.tsx:318–364`, CSS em
-  `produtos.module.css:9–102`.
-- ⚠️ **Atenção:** esses banners não são só decoração — cada um é um botão que
-  filtra a listagem por categoria (`handleSelectByName`). Remover tira também esse
-  atalho. As pílulas de categoria no topo continuam cobrindo a navegação, então na
-  prática não se perde acesso a nada.
-- Confirmar se é remover de vez ou só esconder por ora.
+- **Logo nova** (2 itens do Geral dependem dela)
+- **Engate rápido hidráulico**: precisa de fotos novas
+- **Descrições das conexões hidráulicas DIN**: a planilha só escreve
+  "ATUALIZAR TODAS AS DESCRIÇÕES", nunca traz o texto
+- **B2 — `União Assento Integral (Metal x Metal)` × `União com Assento Cônico em
+  Bronze`**: não é divergência de nome, parecem peças diferentes. Precisa de
+  alguém do cliente dizer qual vale.
 
 ---
 
-## Cabeçalho (fazer numa passada só)
+## A. Geral (site / código)
 
-### [ ] 9. Ajustar e aumentar o botão "Fale conosco" para o centro do cabeçalho
+- [ ] **Bloquear download das imagens** dos produtos (hoje dá pra salvar todas)
+- [x] **Remover a marca Supreflex** das mangueiras alimentícias — 7 das 12 imagens
+      da categoria trocadas por `scripts/trocar-imagens-alimenticias.mjs`, a partir
+      de `scripts/alimenticias-limpas/`. As outras 5 (2 mangueiras + 3 válvulas)
+      não tinham a marca e ficaram como estavam.
+- [x] **Remover os banners** da aba Produtos — carrossel e componente removidos
+      por você; a limpeza das sobras (3 imports `swiper/css` órfãos, a função
+      morta `handleSelectByName`, o bloco `.banner*` do CSS e a `@media 480px`
+      que só continha regra de banner) fechou o item. Também apagadas as 6
+      imagens `destaque-*` que ficaram sem referência.
+- [ ] **Aumentar a logo do cabeçalho** (está muito pequena)
+- [ ] **Botão "Fale Conosco"**: aumentar e mover para o centro do cabeçalho
+- [x] **Quem Somos**: imagem estourada — hero trocado e `object-fit: cover` no `.hero`
+- [x] **Quem Somos**: foto da loja e funcionários colorida — `equipe.jpeg` no lugar do
+      `equipe.png`, e o `.equipeOverlay` clareado (opacidade 0.85 → 0.2), que era o
+      que deixava a foto escurecida
+- [ ] **Cabeçalho das categorias de produtos**: preencher o espaço em branco com a logo dos dois lados
 
-- Hoje o botão é o último item do `<nav>`, colado à direita
-  (`Header.tsx:33-35`, `.contactButton` em `Header.module.css:50`).
-- Levar para o centro muda a estrutura do cabeçalho: hoje é
-  `logo | nav+botão` com `justify-content: space-between`. Para centralizar de
-  verdade vira uma grade de três colunas (`logo | nav | botão`) ou a nav se divide
-  em torno do botão.
-- Esse trabalho **encosta nos itens 2 e 3** (tamanho da logo): o espaço que a logo
-  maior ocupa define onde o botão cabe. Por isso os três devem sair juntos, quando
-  a logo nova chegar.
+### 🚫 Bloqueados por falta de arte
 
----
-
-## Verificar com o cliente antes de começar
-
-1. **Item 4** — "estourada" é pixelada (precisa de arquivo maior) ou ampliada
-   demais (ajuste de CSS)?
-2. **Item 5** — a foto colorida original existe? Sem ela o item não anda.
-3. **Item 3** — qual cabeçalho: a barra "CATEGORIAS" ou a faixa amarela de
-   subcategoria?
-4. **Item 8** — remover os banners de vez ou apenas ocultar?
-5. **Item 6** — alinhar a expectativa: bloqueio no site é dissuasão, não proteção.
-6. **Item 7** — são 7 imagens, sendo 6 renders de catálogo em que a marca é o
-   elemento principal. Retocar ou substituir por imagens novas?
+- 🚫 **Atualizar a logo** — arquivo novo ainda não disponível
 
 ---
 
-## Ordem sugerida
+## B. Conteúdo por categoria (Sanity)
 
-1. Item 8 — independente, rápido, sem depender de ninguém.
-2. Item 6 — depois de alinhar a expectativa.
-3. Item 7 — fazer um teste de retoque em uma imagem e mostrar antes de fechar as 7.
-4. Item 4 — assim que vier a resposta sobre o tipo do problema.
-5. Item 5 — assim que vier a foto colorida.
-6. Itens 1, 2, 3 e 9 juntos — quando a logo nova chegar.
+### B1. Tubos flexíveis inox — ✅ concluído
+
+- [x] Descrições novas (AISI 316L) de **IS-0, IS-1, IS-2** — já estão no Sanity
+
+> ⚠️ `scripts/seed-tubos-flexiveis-inox.mjs` ainda carrega as descrições **antigas
+> e curtas**. Ele não sobrescreve produto existente (só corrige `subcategoria`/`ordem`),
+> então não há risco imediato — mas o texto do script está defasado em relação ao Sanity.
+
+### B2. Conexões galvanizadas e de aço inox
+
+- [x] Descrições do site (coluna "DESCRIÇÃO SITE") — já estão no Sanity, todas as 10
+- [ ] **Trocar todas as fotos** — a planilha traz a URL de origem de cada item (loja.acepilinox.com.br)
+- [ ] **Incluir "Bucha de Redução"** — não existe no Sanity
+- [ ] Conferir 3 divergências de nome entre planilha e Sanity:
+  - planilha `Luva Lisa` × Sanity `Luva`
+  - planilha `Niple Duplo Sextavado` × Sanity `Niple Duplo`
+  - planilha `União Assento Integral (Metal x Metal) Rosca Fêmea` × Sanity `União com Assento Cônico em Bronze` — **parecem produtos diferentes**, não só nome
+- [x] `Curva Macho x Fêmea 90º` — descrição atualizada (manter no site) 📕 tirar do catálogo
+
+### B3. Engates — ✅ concluída
+
+- [x] Descrições dos 8 ERT e dos 4 ERU — já estão no Sanity
+- [x] **Fotos dos 8 ERT trocadas** — baixadas das URLs delcaflex da planilha
+      (1280×1024, PNG transparente) por `scripts/trocar-imagens-engates.mjs`.
+      Os 4 ERU ficaram como estavam; a planilha não manda trocar.
+- [x] `ERT-C Acoplador Espigão`: foto atualizada (entrou nas 8 acima) 📕 falta no catálogo
+
+### B4. Linha Pneumática — ✅ concluída
+
+Feito por `scripts/ajuste-codigo-no-inicio.mjs`, `scripts/ajuste-latao-pneumatica.mjs`,
+`scripts/incluir-8505-uniao-femea.mjs` e `scripts/ajuste-valvulas-manometros.mjs`:
+
+- [x] **Código no início do nome** — 62 produtos (`Anilha 1001` → `1001 Anilha`).
+      Os 13 itens que não são conexões (mangueiras, tubos, manômetros, válvulas) ficaram intactos.
+- [x] **Ordenar por código** — campo `ordem` preenchido com o próprio código
+- [x] **Latão movido** para "Conexões em Latão" — 24 produtos (4xxx, 21xx, 26xx)
+- [x] **Grupo "Conexões plásticas" → "Conexões Pneumáticas"**.
+      A **categoria segue "Linha Pneumática"**, de propósito: ela também guarda
+      mangueiras, tubos, manômetros e válvulas, que não são conexões.
+- [x] **Silenciadores 8554/8555/8556** movidos para a pneumática, em "Silenciadores"
+      (a página 17 do catálogo não os traz em "Torneiras e Drenos")
+- [x] **Incluir `8505 União Fêmea`** — criado em Linha Pneumática › Milímetro
+      por `scripts/incluir-8505-uniao-femea.mjs`, com `ordem` 8505. Sem descrição,
+      igual aos oito vizinhos da subcategoria.
+- [x] `Válvulas`: foto nova + descrição prefixada com "Válvulas: "
+- [x] `Manômetros`: foto nova sem fundo + descrição prefixada com "Manômetros: "
+      (a inicial virou minúscula: "Utilizados" → "utilizados")
+
+> Os slugs dos produtos **não** foram alterados, de propósito: slug é a URL de
+> `/produtos/[slug]` e mudá-lo quebraria links já publicados. Nome e slug ficam
+> divergentes, o que é esperado.
+
+### B5. Conexões / Adaptadores em Latão
+
+A categoria **"Conexões e adaptadores" virou "Conexões em Latão"** (slug
+`conexoes-em-latao`), reunindo todo o latão num lugar só, como nas páginas
+17/30/31. Nada no código apontava para o slug antigo. Ficou com 51 produtos em
+7 subcategorias, ordenadas por faixa de código:
+
+- [x] `Conexões latão - compressão` → **Compressão** (minúscula, não "COMPRESSÃO")
+- [x] `Conexões latão - bicos para mangueira` → **Bicos para Mangueira**
+- [x] `Conexões latão - drenos, silenciadores e torneiras` → **Torneiras e Drenos**
+- [x] `Conexões latão - adaptadores` → **Adaptadores em Latão**
+- [x] `Conexões para Tubos Plásticos` — nome já estava correto
+
+- [x] **Tirar o `text-transform: uppercase`** dos cabeçalhos de subcategoria
+      (anotação "Letra minúscula: Compressão" na página 30). Era o CSS que forçava
+      o caixa alta — o dado no Sanity já estava certo. Mudança em
+      `produtos.module.css`, nas duas ocorrências (desktop e mobile).
+      `.categoriasTitle` ("CATEGORIAS") segue em caixa alta, que é o certo.
+
+> ℹ️ Essa regra é **global**, vale para todas as categorias. Conferido: nenhuma
+> quebrou, porque todo nome de subcategoria já está gravado com a caixa correta.
+> De quebra corrigiu dois casos que estavam divergindo do Figma:
+> "Disponível nas configurações:" (Tubos flexíveis inox) e as siglas de
+> Válvulas industriais ("VEM - Válvulas de esfera monobloco", que antes saía
+> inteiro em maiúscula).
+
+> ⚠️ `produto.subcategoria` é uma **string solta**, casada por igualdade exata.
+> Renomear a subcategoria na categoria sem reescrever a string em cada produto
+> deixaria os 27 itens órfãos, fora de qualquer grupo. O script faz as duas coisas
+> na mesma transação.
+
+**Itens do catálogo que faltam no site — 21 no total** (conferido código a código):
+
+- [ ] **Adaptadores em Latão (p.31)** — 9 de 24 no site, **faltam 15**:
+      `6003A, 6007, 6008, 6009, 6011, 6012, 6033A, 6034, 6039, 6042, 6043, 6044, 6045, 6047, 6079`
+- [ ] **Torneiras e Drenos (p.17)** — 3 de 7 no site, **faltam 4**: `9164, 9165, 9310, 9330`
+- [ ] **Bicos para Mangueira (p.17)** — 6 de 8 no site, **faltam 2**: `7044, 7047`
+- [ ] Conferir `1010 Tee Macho Central` — está no site, mas **não aparece** na página 30 do catálogo
+
+Já completos: Compressão (8/8), Freio a Ar Milímetro (8/8), Freio a Ar engate
+rápido (8/8), Conexões p/ Tubos Plásticos (8/8).
+
+### B6. Linha Hidráulica
+
+- [ ] **Atualizar todas as descrições** das Conexões Hidráulicas DIN
+- [ ] `Anilhas B3 e B4 - AA` — atualizar 📕 (site + catálogo)
+- [ ] `Conexão Tee Igual - TIA` — atualizar 📕 (site + catálogo)
+- [ ] `Conexão Fêmea Reta Rosca Métrica - UFA` — atualizar 📕 (site + catálogo)
+- [ ] `Conexão Redução Reta - UDRA` — atualizar no site 📕 remover do catálogo
+- [ ] **Incluir no site** (7 itens): `Porca - PA`, `Conexão 90° Igual (Joelho) - JIA`,
+      `Conexão 90° Macho (Joelho) - JMA`, `Conexão 90° Macho Orientável (Joelho) - JOA`,
+      `Conexão Igual Reta - UDA`, `Conexão Macho Reto Rosca Métrica - UMA` 📕 (também no catálogo)
+- [ ] `TUBOS DE AÇO CARBONO E AÇO INOX`: atualizar descrição/categorias 📕
+- [x] **Manômetros**: "-" trocado por "com" no nome dos 3 ("Caixa Inox - Glicerina"
+      → "Caixa Inox com Glicerina"). O campo `descricao` deles é null; o texto que
+      aparece na listagem é o `nome`. 📕 o resto da descrição segue parado no catálogo.
+- [x] **Os 2 terminais girados 180°** por `scripts/ajuste-hidraulica.mjs`
+      (BSP e Métrico). No padrão da categoria a rosca fica em cima e o espigão
+      embaixo — as duas estavam invertidas. No BSP a imagem traz as duas peças
+      juntas, e ambas estavam de cabeça para baixo, então girar a imagem inteira
+      acertou as duas.
+- [ ] **Engate Rápido Hidráulico** (ISO-A, ISO-B, Face Plana): 🚫 fazer novas fotos
+
+---
+
+## C. Onde dá pra automatizar
+
+O que é repetitivo e cabe num script `scripts/seed-*.mjs` (mesmo padrão dos que já existem):
+
+1. **Renomear subcategorias** (B5) — `patch` em 4 subcategorias de uma categoria. Trivial.
+2. **Código para o início do nome + ordenar por código** (B4) — regex no nome
+   + preencher `ordem` com o próprio código. Pega ~45 itens de uma vez.
+3. **Mover produtos entre categorias** (B4) — trocar a `reference` de `categoria`.
+4. **Trocar fotos em lote** (B2, B3) — as URLs de origem estão na planilha;
+   dá pra baixar e subir via `client.assets.upload`, como o seed de tubos flexíveis já faz.
+5. **Incluir os 21 itens faltantes** (B5) + 7 da hidráulica (B6) — precisa de foto
+   e descrição de cada um; as fotos dos que faltam **não estão na planilha**
+   (só aparecem nas imagens do catálogo), então esse é o item que mais depende de material novo.
+
+O que **não** dá pra automatizar: tudo marcado 📕 (catálogo PDF) e os itens 🚫.

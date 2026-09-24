@@ -6,101 +6,6 @@
   padding: 0 1rem 8rem;
 }
 
-/* ===== Banner carrossel (ao final da página) ===== */
-.bannerSection {
-  margin-top: 8rem;
-}
-
-.bannerInner {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.bannerSwiper {
-  width: 100%;
-  overflow: hidden;
-}
-
-.bannerCard {
-  display: block;
-  width: 100%;
-  border: none;
-  padding: 0;
-  background: none;
-  cursor: pointer;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.bannerImage {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 615 / 300;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
-}
-
-.bannerPrev,
-.bannerNext {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
-  background-color: var(--white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  color: var(--dark-blue);
-  z-index: 10;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.bannerPrev {
-  left: -30px;
-}
-
-.bannerNext {
-  right: -30px;
-}
-
-.bannerPrev:hover,
-.bannerNext:hover {
-  background-color: var(--yellow);
-  color: var(--white);
-}
-
-.bannerPrev:global(.swiper-button-disabled),
-.bannerNext:global(.swiper-button-disabled) {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.bannerPagination {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-
-.bannerPagination :global(.swiper-pagination-bullet) {
-  width: 10px;
-  height: 10px;
-  background-color: var(--gray);
-  opacity: 1;
-  margin: 0 !important;
-  transition: background-color 0.3s ease;
-}
-
-.bannerPagination :global(.swiper-pagination-bullet-active) {
-  background-color: var(--medium-blue);
-}
-
 /* ===== Categorias (pílulas) — fixas junto ao cabeçalho ===== */
 .categoriasSection {
   position: sticky;
@@ -185,7 +90,6 @@
   color: var(--dark-blue);
   font-size: 3rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0;
   padding: 1.5rem 7rem 1.5rem 2.7rem;
   margin-bottom: 3rem;
@@ -352,21 +256,11 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .bannerPrev {
-    left: 0.5rem;
-  }
-  .bannerNext {
-    right: 0.5rem;
-  }
 }
 
 @media (max-width: 768px) {
   .page {
     padding: 4rem 1.6rem 6rem;
-  }
-
-  .bannerSection {
-    margin-top: 5rem;
   }
 
   /* No mobile as pílulas voltam ao fluxo normal (o grid fica alto demais
@@ -400,7 +294,6 @@
   color: var(--dark-blue);
   font-size: 2rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0;
   padding: 1.5rem 3rem 1.5rem 2.2rem;
   margin-bottom: 0rem;
@@ -473,10 +366,3 @@
   }
 }
 
-@media (max-width: 480px) {
-  .bannerPrev,
-  .bannerNext {
-    width: 40px;
-    height: 40px;
-  }
-}
