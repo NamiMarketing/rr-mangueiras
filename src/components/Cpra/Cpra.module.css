@@ -1,0 +1,138 @@
+/* Bloco CPRA — Figma 909:690, top 2649.
+   Mora dentro da listagem de produtos (categoria Mangueiras), entre dois grupos
+   de subcategoria, então herda a largura da coluna de conteúdo. */
+
+.bloco {
+  margin: 6rem 0;
+}
+
+/* Mesma faixa amarela dos cabeçalhos de subcategoria. Repetimos a regra em vez
+   de reaproveitar `.subcategoriaHeader` porque aquela classe é do CSS Module da
+   página de produtos e este componente é independente. */
+.titulo {
+  display: inline-block;
+  background: linear-gradient(90deg, #f8bb00 0%, #f4e3ac 70.62%, #f3f3f3 100%);
+  color: var(--dark-blue);
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding: 1.5rem 7rem 1.5rem 2.7rem;
+  margin-bottom: 3rem;
+  line-height: 1;
+}
+
+.intro {
+  font-size: 2rem;
+  line-height: 1.3;
+  color: var(--dark-blue);
+  margin-bottom: 5rem;
+  max-width: 125rem;
+}
+
+/* Seis colunas iguais, separadas por um fio amarelo que nasce transparente em
+   cima — é o "Separador" do design, um gradiente vertical de 1px. */
+.itens {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.item + .item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5.5rem;
+  width: 1px;
+  height: 15.4rem;
+  background: linear-gradient(180deg, rgba(248, 187, 0, 0) 0%, #f8bb00 100%);
+}
+
+/* Altura fixa para os seis ícones caírem na mesma linha de base, já que cada um
+   tem largura e altura próprias (de 21x33 a 44x33). */
+.icone {
+  height: 3.3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+}
+
+.itemTitulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  color: var(--medium-blue);
+  margin-bottom: 1.6rem;
+}
+
+/* O design quebra cada título em duas linhas fixas, não por largura. */
+.itemTitulo span {
+  display: block;
+}
+
+.itemTexto {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: var(--medium-blue);
+}
+
+@media (max-width: 1200px) {
+  .itens {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 4rem;
+  }
+  /* Em 3 colunas o fio só faz sentido dentro da linha: some no 1º de cada uma. */
+  .item:nth-child(3n + 1)::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .bloco {
+    margin: 4rem 0;
+  }
+
+  .titulo {
+    font-size: 2rem;
+    padding: 1.5rem 3rem 1.5rem 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .intro {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .itens {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3.5rem;
+  }
+
+  .item {
+    padding: 0 1rem;
+  }
+
+  .item:nth-child(3n + 1)::before {
+    display: block;
+  }
+
+  .item:nth-child(2n + 1)::before {
+    display: none;
+  }
+
+  .itemTitulo,
+  .itemTexto {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+}

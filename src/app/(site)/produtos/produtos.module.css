@@ -135,6 +135,20 @@
   color: var(--black);
 }
 
+/* Grupo em que nenhum item tem imagem — é o caso das mangueiras hidráulicas,
+   que no Figma (909:690) aparecem só com nome e descrição. Sem isto a coluna
+   de 13rem continuaria reservada e toda linha do grupo abriria um vão vazio.
+   O column-gap maior recoloca a descrição onde o design a posiciona. */
+.rowSemImagem {
+  grid-template-columns: 21rem 1fr;
+  column-gap: 8.6rem;
+}
+
+.rowSemImagem .rowImagem {
+  display: none;
+}
+
+
 /* ===== Layout compacto (catálogos sem descrição) =====
    Usado por categorias como "Conexões e adaptadores" e "Válvulas
    industriais", em que o item é só nome + imagem. No layout padrão a coluna
@@ -308,6 +322,14 @@
       "img desc";
     gap: 1.5rem 2rem;
     padding: 2.5rem 0;
+  }
+
+  .rowSemImagem {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nome"
+      "desc";
+    column-gap: 0;
   }
 
   .rowNome {

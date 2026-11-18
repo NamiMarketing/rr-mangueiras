@@ -1,0 +1,33 @@
+{
+  "no": "1018:558",
+  "titulo": "Adaptadores em latão",
+  "categoriaSanity": "Adaptadores em Latão",
+  "observacao": "Sem subcategorias e sem descrição no design: cada item é só nome + imagem. Imagens mapeadas por coluna (left) + linha (top).",
+  "assetPrefix": "https://www.figma.com/api/mcp/asset/c1df9f43-65bf-4ee8-be76-201ece4f3eb1",
+  "produtos": [
+    { "nome": "6035 Adaptador Fêmea x Macho", "asset": "6ea13.png" },
+    { "nome": "6023 Bujão Cabeça Sextavada", "asset": "4e800.png" },
+    { "nome": "6024 Bujão Cabeça Sextavada Interna", "asset": "15860.png" },
+    { "nome": "6045 Cotovelo 45° Forjado", "asset": "01731.png" },
+    { "nome": "6008 Cotovelo Fêmea", "asset": "235ff.png" },
+    { "nome": "6047 Cotovelo Fêmea 45°", "asset": "5771a.png" },
+    { "nome": "6007 Cotovelo Macho", "asset": "4bf1d.png" },
+    { "nome": "6041 Cotovelo Macho x Fêmea", "asset": "02ffb.png" },
+    { "nome": "6042 Cotovelo Macho x Fêmea Curto", "asset": "b9bdc.png" },
+    { "nome": "6043 Cruzeta com Rosca Fêmea", "asset": "29718.png" },
+    { "nome": "6034 Extensão", "asset": "da43f.png" },
+    { "nome": "6036 Extensão (Niple Longo)", "asset": "142a9.png" },
+    { "nome": "6003 Niple", "asset": "c9d0b.png" },
+    { "nome": "6033A Niple de Redução Orientável", "asset": "3f441.png" },
+    { "nome": "6003A Niple Orientável", "asset": "4bd35.png" },
+    { "nome": "6037 Redutora (Bucha de Redução)", "asset": "bac38.png" },
+    { "nome": "6079 Tampão Fêmea", "asset": "065a0.png" },
+    { "nome": "6009 Tee Fêmea", "asset": "9d1de.png" },
+    { "nome": "6011 Tee Fêmea x Macho Lateral", "asset": "0d4ec.png" },
+    { "nome": "6012 Tee Macho", "asset": "2a1d9.png" },
+    { "nome": "6044 União Desmontável com Rosca Fêmea", "asset": "85690.png" },
+    { "nome": "6005 União Fêmea", "asset": "04759.png" },
+    { "nome": "6046 União para Painel", "asset": "766b1.png" },
+    { "nome": "6039 União Redução Fêmea", "asset": "b1449.png" }
+  ]
+}

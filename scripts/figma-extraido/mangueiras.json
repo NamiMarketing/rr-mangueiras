@@ -1,0 +1,324 @@
+{
+ "no": "909:690",
+ "categoriaSanity": "Mangueiras",
+ "assetPrefix": "https://www.figma.com/api/mcp/asset/cb5e55b7-2b17-4fca-a6ec-aaddb2d5a28a",
+ "cpra": {
+  "intro": "Cada mangueira recebe uma etiqueta resistente, anti-rasgo, feita para continuar legível mesmo nas condições mais severas de trabalho. Com seu celular, você faz a leitura do QR CODE na etiqueta, e a ficha técnica da mangueira estará disponível em instantes.",
+  "itens": [
+   {
+    "icone": "Tag exclusiva",
+    "asset": "8b1fc.svg",
+    "titulo": "TAG EXCLUSIVA",
+    "texto": "Cada mangueira recebe uma TAG com código único de identificação."
+   },
+   {
+    "icone": "Controle por horímetro",
+    "asset": "bde81.svg",
+    "titulo": "CONTROLE POR HORÍMETRO",
+    "texto": "Acompanhe o tempo real de utilização da mangueira com precisão."
+   },
+   {
+    "icone": "Histórico completo",
+    "asset": "a67f9.svg",
+    "titulo": "HISTÓRICO COMPLETO",
+    "texto": "Registro de todas as trocas e inspeções ao longo da vida útil da mangueira."
+   },
+   {
+    "icone": "Aviso automático",
+    "asset": "0760b.svg",
+    "titulo": "AVISO AUTOMÁTICO",
+    "texto": "Receba alertas por e-mail quando a troca estiver próxima, evitando paradas."
+   },
+   {
+    "icone": "Reposição rápida",
+    "asset": "21943.svg",
+    "titulo": "REPOSIÇÃO RÁPIDA",
+    "texto": "Código interno que agiliza o processo de substituição da mangueira."
+   },
+   {
+    "icone": "Tecnologia que gera resultados",
+    "asset": "6f6dd.svg",
+    "titulo": "TECNOLOGIA QUE GERA RESULTADOS",
+    "texto": "O CPRA transforma o controle de mangueiras em informação estratégica para o seu negócio."
+   }
+  ]
+ },
+ "produtos": [
+  {
+   "nome": "R1 Alta Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 1 trama de aço. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R2 Alta Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 2 tramas de aço. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R3 Média Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 2 tramas de fibra sintética. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R4 Retorno Hidráulico",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de várias tramas de fibra sintética de alta resistência e uma espiral de aço. Para sucção e descarga de fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R5 Alta Pressão Reforçada",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 2 tramas de fibra sintética e 1 trama de aço de alta resistência intercaladas, e cobertura têxtil. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R6 Média Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 1 trama de fibra sintética. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R7 Alta Pressão Simples e Dupla",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 1 trama de poliéster, 1 ou 2 tramas de aço. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R7 Alta Pressão (não condutiva)",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Anti-estática, com reforço de 1 trama de poliéster. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R8 Alta Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 1 trama de aramida, suporta pressão de 3552 PSI no diâmetro de 1/2”. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R9 Alta Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 1 trama de aramida, suporta pressão de 5000 PSI no diâmetro de 1/2”. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R12 Alta Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 4 espirais de aço. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R13 Altíssima Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 4 ou 6 espirais de aço, suporta pressão de 5075 PSI no diâmetro de 1.1/2”. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R14 Alta Pressão P.T.F.E",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de trama de aço inox. Para fluidos hidráulicos à base de água, de petróleo ou sintéticos, gases e líquidos agressivos e a alta temperatura.",
+   "asset": null
+  },
+  {
+   "nome": "R15 Altíssima Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 4 ou 6 espirais de aço, suporta pressão de 6000 PSI no diâmetro de 1/2”. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "R17 Alta Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 1 ou 2 tramas de aço. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "4SP Super Alta Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 4 espirais de aço, suporta pressão de 4050 PSI no diâmetro de 1”. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "4SH Altíssima Pressão",
+   "subcategoria": "MANGUEIRAS HIDRÁULICAS",
+   "descricao": "Com reforço de 4 espirais de aço, suporta pressão de 5500 PSI no diâmetro de 1”. Para fluidos hidráulicos à base de petróleo.",
+   "asset": null
+  },
+  {
+   "nome": "Mangueira Airmaster 300PSI",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras 100% borracha para serviços pesados ar & água em siderúrgicas, mineração, pedreiras e estaleiros. Excelente para uso em marteletes e compressores.",
+   "asset": "4a1fc.png"
+  },
+  {
+   "nome": "Mangueira Multipurpose 300PSI",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras 100% borracha para aplicações industriais: retorno de óleo, óleo diesel e gasolina. Passagem de ar e água.",
+   "asset": "c179c.png"
+  },
+  {
+   "nome": "Mangueira Solda Simples e Dupla",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras 100% borracha para solda a oxigênio, acetileno e oxicorte.",
+   "asset": "af67a.png"
+  },
+  {
+   "nome": "Mangueira Fuel Pump Steel",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras para Bomba de Abastecimento de Combustível. Tubo interno sem costura, de borracha sintética resistente a gasolina, diesel e álcool. Reforço de 1 trama de aço de alta resistência.",
+   "asset": "d4e29.png"
+  },
+  {
+   "nome": "Mangueira Acqua 150PSI",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras de Mandril Rígido para Descarga Ar & Água em mineração, estaleiros, pedreiras e agricultura. Reforçada com tramas de fibra sintética.",
+   "asset": "214e9.png"
+  },
+  {
+   "nome": "Mangueira Acquatank 150PSI",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras de Mandril Rígido para Descarga & Sucção Ar & Água em mineração, estaleiros, pedreiras e agricultura. Reforçada com tramas de fibra sintética e espiral de aço.",
+   "asset": "8aa51.png"
+  },
+  {
+   "nome": "Mangueira Oiltank 150PSI",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras de Mandril Rígido para Descarga de Petróleos, gasolina, diesel e óleos, com até 40% de conteúdo aromático, com característica anti-estática. Reforçada com tramas de fibra sintética.",
+   "asset": "cc86f.png"
+  },
+  {
+   "nome": "Mangueira Autotank 150PSI",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras de Mandril Rígido para Descarga & Sucção de Petróleos, gasolina, diesel e óleos, até 40% de conteúdo aromático, com característica anti-estática. Reforçada com tramas de fibra sintética e espiral de aço.",
+   "asset": "8a908.png"
+  },
+  {
+   "nome": "Mangueira Jateamento de Areia 175PSI",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras de Mandril Rígido para Jateamento de Areia e Abrasivos. Reforçada com tramas de fibra sintética com cabo anti-estático.",
+   "asset": "0b37f.png"
+  },
+  {
+   "nome": "Mangueira Vapor Saturado 208°C",
+   "subcategoria": "MANGUEIRAS INDUSTRIAIS",
+   "descricao": "Mangueiras para Vapor Saturado 208°C com 2 tramas de aço de alta tenacidade. Utilizada em refinarias, petroquímicas e siderurgias.",
+   "asset": "11973.png"
+  },
+  {
+   "nome": "Sucção e Descarga Leve Azul",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida em PVC flexível transparente, reforçada com espiral de PVC rígido na cor azul. Indicada para serviços de sucção e descarga de água, tais como: limpeza de galerias subterrâneas, agricultura, caminhões-pipa. Opções de diâmetros de 1/2” a 6”.",
+   "asset": "88c75.png"
+  },
+  {
+   "nome": "Sucção e Descarga Leve Marrom",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida em PVC flexível na cor marrom, reforçada com espiral de PVC rígido na cor cinza. Indicada para serviços de sucção e descarga de produtos derivados do petróleo e grande variedade de produtos químicos. Opções de diâmetros de 1” a 8”.",
+   "asset": "dab68.png"
+  },
+  {
+   "nome": "Sucção e Descarga Pesada Laranja",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida em PVC flexível transparente, reforçada com espiral de PVC rígido na cor laranja. Indicada para sucção e descarga de água, líquidos, pastosos, cascalhos, mineração e garimpo. Opções de diâmetros de 2” a 12”.",
+   "asset": "ab392.png"
+  },
+  {
+   "nome": "Vácuo Ar Leve Cinza",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida em PVC flexível cinza, reforçada com espiral de PVC cinza. Indicada para serviços de exaustão de ar. Ótima flexibilidade. Opções de diâmetros de 1/2” a 10”.",
+   "asset": "fce52.png"
+  },
+  {
+   "nome": "Vácuo Ar Pesada Azul",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida em PVC flexível na cor azul, reforçada com espiral de PVC rígido na cor cinza. Indicada para serviços de aspiração industrial, como por exemplo, indústrias madeireira e têxtil. Possui boa flexibilidade e excelente resistência a partículas em suspensão. Opções de diâmetros de 1/2” a 10”.",
+   "asset": "ca5fd.png"
+  },
+  {
+   "nome": "PT 250 Trançada",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Tubo interno de PVC flexível transparente, reforçada com trança de poliéster e cobertura de PVC flexível transparente. Indicada para trabalhos em compressores e equipamentos de ar-comprimido, e condução de água. Opções de diâmetros de 1/4” a 1”.",
+   "asset": "e8497.png"
+  },
+  {
+   "nome": "PT 450 Agrícola",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida com tubo interno de PVC flexível verde, reforçada com fios de poliéster, e tubo externo de PVC flexível raiado na cor laranja. Indicada para serviços leves de pulverização. Opções de diâmetros de 5/16”, 3/8”, 1/2” e 3/4”",
+   "asset": "84168.png"
+  },
+  {
+   "nome": "Mangueira Flat",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida em PVC flexível e reforçada com fios de poliéster. Indicada para drenagem, condução e descarga de água em baixa pressão. Disponível nas cores Azul e Vermelha. Opções de diâmetros de 1.1/2” a 5”",
+   "asset": "a6a33.png"
+  },
+  {
+   "nome": "Mangueira Car Wash 680/1000 PSI",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida com tubo interno de PVC flexível preto, reforçado com malha de fios de poliéster fechada, e tubo externo de PVC flexível azul. Indicada para uso em máquina lavadora de autos. Possui excelente resistência a abrasão e pressão. Disponível em diâmetro de 1/2” para pressão de 1000PSI e 3/4” para pressão de 680PSI.",
+   "asset": "9d1bb.png"
+  },
+  {
+   "nome": "Mangueira Cristal PVC",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida em PVC Flexível translúcido. Indicada para aplicações diversas na passagem de líquidos. Opções de diâmetro de 1/8” até 2”, com parede de 0,8mm, 1mm, 1,5mm, 2mm, 3mm e 4mm.",
+   "asset": "0eb2b.png"
+  },
+  {
+   "nome": "Conduíte Preto",
+   "subcategoria": "MANGUEIRAS DE PVC",
+   "descricao": "Produzida em PVC flexível na cor preta auto-extinguível, reforçada com espiral de PVC rígido na cor cinza. Indicado para a passagem de fios e cabos elétricos. Possui parede interna lisa o que facilita a passagem dos fios e cabos. Apresenta alta resistência e excelente flexibilidade. Opções de diâmetros de 1/2” a 4”",
+   "asset": "4d9a5.png"
+  },
+  {
+   "nome": "Vácuo Ar PUC Cobreada",
+   "subcategoria": "MANGUEIRAS REFORÇADAS",
+   "descricao": "Produzida em PU (Poliuretano) Transparente com Espiral de Aço Cobreado. Indicada para Sucção e Condução de Abrasivos. Opções de diâmetros de 1.1/2” a 14”.",
+   "asset": "64012.png"
+  },
+  {
+   "nome": "Vácuo Ar PUZ Zincada",
+   "subcategoria": "MANGUEIRAS REFORÇADAS",
+   "descricao": "Produzida em PU (Poliuretano) Transparente com Espiral de Aço Zincado. Indicada para Sucção e Condução de Abrasivos. Opções de diâmetros de 1.1/2” a 10”.",
+   "asset": "dd9e6.png"
+  },
+  {
+   "nome": "Sucção e Descarga Atóxica Transparente",
+   "subcategoria": "MANGUEIRAS ATÓXICAS",
+   "descricao": "Produzida em PVC flexível transparente, reforçada com espiral de PVC rígido transparente, facilita a visualização, não transmite odores e não muda o sabor. Indicada para serviços de sucção e descarga de produtos alimentícios e bebidas. Opções de diâmetros de 3/4” a 6”.",
+   "asset": "d8828.png"
+  },
+  {
+   "nome": "Sucção e Descarga Atóxica Metal",
+   "subcategoria": "MANGUEIRAS ATÓXICAS",
+   "descricao": "Produzida com arame flexível transparente atóxico, com reforço de fio de aço zincado. Indicada para sucção e descarga em indústrias têxteis, gráficas e alimentícias. Opções de diâmetros de 3/8” a 2”.",
+   "asset": "0769e.png"
+  },
+  {
+   "nome": "PT 275 Mangueira Cristal Trançada",
+   "subcategoria": "MANGUEIRAS ATÓXICAS",
+   "descricao": "Produzida em PVC flexível atóxico de alta pureza, conta com reforço interno trançado em fios de poliéster de alta tenacidade e cobertura externa em PVC atóxico. Disponível no diâmetro 3/16” e nas cores: Cristal (translúcida), amarela (translúcida), verde (translúcida), azul (translúcida), branca (leitosa).",
+   "asset": "80093.png"
+  },
+  {
+   "nome": "Mangueira Ordenhadeira",
+   "subcategoria": "MANGUEIRAS ATÓXICAS",
+   "descricao": "Produzida em PVC flexível atóxico transparente com tarja azul. Indicada na ordenha e manuseio de laticínios e condução de produtos alimentícios, sem alterar suas características (odor e sabor). Opções de diâmetros de 13mm a 25mm.",
+   "asset": "2686e.png"
+  },
+  {
+   "nome": "Mangueira Vapor Frigorífico",
+   "subcategoria": "MANGUEIRAS ATÓXICAS",
+   "descricao": "Produzida em PVC flexível e aditivos especiais para resistência à baixa e alta temperatura, reforçada com uma camada de fios de poliester. Indicada para lavagem e higienização de Frigoríficos e industrias alimentícias, possui excelente resistência a abrasão e pressão. Disponível em diâmetros de 1/2” e 3/4”, projetadas para suportar uma pressão de trabalho de 300 psi (21 bar).",
+   "asset": "8c269.png"
+  },
+  {
+   "nome": "Mangueira de Silicone",
+   "subcategoria": "MANGUEIRAS ATÓXICAS",
+   "descricao": "Por suas propriedades atóxicas, inodoras e de fácil esterilização, atende a indústria alimentícia e diversas áreas da saúde. Disponível na cor leitosa, e diversos diâmetros.",
+   "asset": "f0acf.png"
+  }
+ ]
+}

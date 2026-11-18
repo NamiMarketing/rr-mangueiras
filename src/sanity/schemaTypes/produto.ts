@@ -47,10 +47,13 @@ export const produto = defineType({
       name: 'imagem',
       title: 'Imagem',
       type: 'image',
+      description:
+        'Opcional. Alguns grupos são só nome + descrição (ex: as mangueiras ' +
+        'hidráulicas R1..4SH), e a listagem fecha a coluna de imagem quando ' +
+        'nenhum item do grupo tem uma.',
       options: {
         hotspot: true,
       },
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'categoria',

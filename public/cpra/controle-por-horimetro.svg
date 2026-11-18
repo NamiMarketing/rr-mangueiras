@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="29" height="33" viewBox="0 0 29 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#195;&#141;cone &#226;&#128;&#148; Controle por hor&#195;&#173;metro" clip-path="url(#clip0_0_61)">
+<path id="Vector" d="M15 4V8M18 4V8M7 10L5 7L8 5L11 8M24 8L27 6L29 9L26 11M11 1H22V4H11V1Z" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke="#F8BB00"/>
+<path id="Vector_2" d="M29 20C29 26.6274 23.6274 32 17 32C10.3726 32 5 26.6274 5 20C5 13.3726 10.3726 8 17 8C23.6274 8 29 13.3726 29 20Z" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke="#F8BB00"/>
+<path id="Vector_3" d="M27 20C27 25.5228 22.5228 30 17 30C11.4772 30 7 25.5228 7 20C7 14.4772 11.4772 10 17 10C22.5228 10 27 14.4772 27 20Z" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke="#F8BB00"/>
+<path id="Vector_4" d="M17 10V12M17 28V30M7 20H9M25 20H27M17 14V20L22 25" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke="#F8BB00"/>
+</g>
+<defs>
+<clipPath id="clip0_0_61">
+<rect width="29" height="33" fill="white"/>
+</clipPath>
+</defs>
+</svg>

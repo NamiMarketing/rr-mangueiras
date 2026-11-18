@@ -1,10 +1,15 @@
 "use client";
 
-import { useState, useMemo, useSyncExternalStore } from "react";
+import { Fragment, useState, useMemo, useSyncExternalStore } from "react";
 import Image from "next/image";
 import type { SanityImageSource } from "@sanity/image-url";
 import styles from "../produtos.module.css";
 import { urlFor } from "@/sanity/image";
+import Cpra from "@/components/Cpra/Cpra";
+
+// O bloco CPRA é institucional e existe só na categoria Mangueiras: o Figma
+// (909:690) o coloca entre o grupo das hidráulicas e o das industriais.
+const CPRA_DEPOIS_DE = "Mangueiras Hidráulicas";
 
 interface Subcategoria {
   _key: string;
@@ -162,6 +167,10 @@ export default function ProdutosClient({
       pai,
       produtos: itens,
       compacto: decidirCompacto(itens, escolha),
+      // Nenhum item com imagem (ex: as mangueiras hidráulicas, que no design
+      // são só nome + descrição). Sem isso a coluna de imagem ficaria aberta
+      // e vazia em todas as linhas do grupo.
+      semImagem: itens.length > 0 && itens.every((p) => !p.imagem),
     });
 
     if (subcategorias.length === 0) {
@@ -241,10 +250,8 @@ export default function ProdutosClient({
           // reposiciona nome/imagem/descrição via grid-template-areas.
           <div className={gruposLadoALado ? styles.gruposCompactos : undefined}>
             {grupos.map((grupo, index) => (
-              <div
-                key={grupo.nome ?? `sem-grupo-${index}`}
-                className={styles.subcategoriaGroup}
-              >
+              <Fragment key={grupo.nome ?? `sem-grupo-${index}`}>
+              <div className={styles.subcategoriaGroup}>
                 {/* Cabeçalho do grupo maior, impresso só na primeira
                     subcategoria que pertence a ele. */}
                 {grupo.pai && grupo.pai !== grupos[index - 1]?.pai && (
@@ -263,7 +270,7 @@ export default function ProdutosClient({
                       key={produto._id}
                       className={`${styles.row} ${
                         grupo.compacto ? styles.rowCompacta : ""
-                      }`}
+                      } ${grupo.semImagem ? styles.rowSemImagem : ""}`}
                     >
                       <h3 className={styles.rowNome}>{produto.nome}</h3>
                       <div className={styles.rowImagem}>
@@ -284,6 +291,8 @@ export default function ProdutosClient({
                   ))}
                 </div>
               </div>
+                {grupo.nome === CPRA_DEPOIS_DE && <Cpra />}
+              </Fragment>
             ))}
           </div>
         )}

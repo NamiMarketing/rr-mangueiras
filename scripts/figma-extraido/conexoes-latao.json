@@ -1,0 +1,299 @@
+{
+ "no": "866:456",
+ "titulo": "Conexões em latão",
+ "categoriaSanity": "Conexões em Latão",
+ "observacao": "Sem descrição no design: nome + imagem. Ordem visual é duas colunas, mas por código fica sequencial.",
+ "assetPrefix": "https://www.figma.com/api/mcp/asset/8c6f81cc-fef4-4ac3-bbfa-9cb06f5b7f93",
+ "produtos": [
+  {
+   "nome": "1001 Anilha",
+   "subcategoria": "Compressão",
+   "codigo": "1001",
+   "asset": "a50cc.png"
+  },
+  {
+   "nome": "1005 União Fêmea",
+   "subcategoria": "Compressão",
+   "codigo": "1005",
+   "asset": "7bd7e.png"
+  },
+  {
+   "nome": "1002 Porca",
+   "subcategoria": "Compressão",
+   "codigo": "1002",
+   "asset": "4aa5d.png"
+  },
+  {
+   "nome": "1007 Cotovelo Macho",
+   "subcategoria": "Compressão",
+   "codigo": "1007",
+   "asset": "a0d8d.png"
+  },
+  {
+   "nome": "1003 União",
+   "subcategoria": "Compressão",
+   "codigo": "1003",
+   "asset": "e26d3.png"
+  },
+  {
+   "nome": "1008 Cotovelo Fêmea",
+   "subcategoria": "Compressão",
+   "codigo": "1008",
+   "asset": "baed0.png"
+  },
+  {
+   "nome": "1004 União Macho",
+   "subcategoria": "Compressão",
+   "codigo": "1004",
+   "asset": "da59d.png"
+  },
+  {
+   "nome": "1009 Tee União",
+   "subcategoria": "Compressão",
+   "codigo": "1009",
+   "asset": "16431.png"
+  },
+  {
+   "nome": "2101 Anilha",
+   "subcategoria": "Freio a Ar (Milímetro)",
+   "codigo": "2101",
+   "asset": "8793b.png"
+  },
+  {
+   "nome": "2102 Porca",
+   "subcategoria": "Freio a Ar (Milímetro)",
+   "codigo": "2102",
+   "asset": "592f0.png"
+  },
+  {
+   "nome": "2107 Cotovelo Macho",
+   "subcategoria": "Freio a Ar (Milímetro)",
+   "codigo": "2107",
+   "asset": "e4e5c.png"
+  },
+  {
+   "nome": "2109 Tee União",
+   "subcategoria": "Freio a Ar (Milímetro)",
+   "codigo": "2109",
+   "asset": "5204a.png"
+  },
+  {
+   "nome": "2193 Dreno",
+   "subcategoria": "Freio a Ar (Milímetro)",
+   "codigo": "2193",
+   "asset": "3d343.png"
+  },
+  {
+   "nome": "2103 União",
+   "subcategoria": "Freio a Ar (Milímetro)",
+   "codigo": "2103",
+   "asset": "5204a.png"
+  },
+  {
+   "nome": "2114 Insert",
+   "subcategoria": "Freio a Ar (Milímetro)",
+   "codigo": "2114",
+   "asset": "f35dc.png"
+  },
+  {
+   "nome": "2104 União Macho",
+   "subcategoria": "Freio a Ar (Milímetro)",
+   "codigo": "2104",
+   "asset": "07939.png"
+  },
+  {
+   "nome": "2600 Alicate para Tubos",
+   "subcategoria": "Freio a Ar (engate rápido)",
+   "codigo": "2600",
+   "asset": "53eb2.png"
+  },
+  {
+   "nome": "2609 Tee União",
+   "subcategoria": "Freio a Ar (engate rápido)",
+   "codigo": "2609",
+   "asset": "0ab13.png"
+  },
+  {
+   "nome": "2607 Cotovelo Macho",
+   "subcategoria": "Freio a Ar (engate rápido)",
+   "codigo": "2607",
+   "asset": "edee1.png"
+  },
+  {
+   "nome": "2603 União",
+   "subcategoria": "Freio a Ar (engate rápido)",
+   "codigo": "2603",
+   "asset": "d9606.png"
+  },
+  {
+   "nome": "2606 Cotovelo União",
+   "subcategoria": "Freio a Ar (engate rápido)",
+   "codigo": "2606",
+   "asset": "b8695.png"
+  },
+  {
+   "nome": "2618 União de Anteparo",
+   "subcategoria": "Freio a Ar (engate rápido)",
+   "codigo": "2618",
+   "asset": "f11c8.png"
+  },
+  {
+   "nome": "2610 Tee Macho Central",
+   "subcategoria": "Freio a Ar (engate rápido)",
+   "codigo": "2610",
+   "asset": "47a59.png"
+  },
+  {
+   "nome": "2604 União Macho",
+   "subcategoria": "Freio a Ar (engate rápido)",
+   "codigo": "2604",
+   "asset": "a0841.png"
+  },
+  {
+   "nome": "4008 Cotovelo Fêmea",
+   "subcategoria": "Conexões para Tubos Plásticos",
+   "codigo": "4008",
+   "asset": "a5708.png"
+  },
+  {
+   "nome": "4003 União",
+   "subcategoria": "Conexões para Tubos Plásticos",
+   "codigo": "4003",
+   "asset": "e562d.png"
+  },
+  {
+   "nome": "4007 Cotovelo Macho",
+   "subcategoria": "Conexões para Tubos Plásticos",
+   "codigo": "4007",
+   "asset": "c5bf6.png"
+  },
+  {
+   "nome": "4005 União Fêmea",
+   "subcategoria": "Conexões para Tubos Plásticos",
+   "codigo": "4005",
+   "asset": "7c7cd.png"
+  },
+  {
+   "nome": "4002 Porca e Anilha",
+   "subcategoria": "Conexões para Tubos Plásticos",
+   "codigo": "4002",
+   "asset": "d3371.png"
+  },
+  {
+   "nome": "4004 União Macho",
+   "subcategoria": "Conexões para Tubos Plásticos",
+   "codigo": "4004",
+   "asset": "7c007.png"
+  },
+  {
+   "nome": "4009 Tee União",
+   "subcategoria": "Conexões para Tubos Plásticos",
+   "codigo": "4009",
+   "asset": "9c574.png"
+  },
+  {
+   "nome": "4046 União para Painel",
+   "subcategoria": "Conexões para Tubos Plásticos",
+   "codigo": "4046",
+   "asset": "47e8e.png"
+  },
+  {
+   "nome": "7005 Bico para Mangueira Fêmea",
+   "subcategoria": "Bicos para Mangueira",
+   "codigo": "7005",
+   "asset": "b77ff.png"
+  },
+  {
+   "nome": "7007 Cotovelo Macho para Mangueira",
+   "subcategoria": "Bicos para Mangueira",
+   "codigo": "7007",
+   "asset": "c6a45.png"
+  },
+  {
+   "nome": "7043 Bico para Mangueira Giratório",
+   "subcategoria": "Bicos para Mangueira",
+   "codigo": "7043",
+   "asset": "98b8a.png"
+  },
+  {
+   "nome": "7044 Nipe do Bico para Mangueira",
+   "subcategoria": "Bicos para Mangueira",
+   "codigo": "7044",
+   "asset": "ef625.png"
+  },
+  {
+   "nome": "7004 Bico para Mangueira Macho",
+   "subcategoria": "Bicos para Mangueira",
+   "codigo": "7004",
+   "asset": "79596.png"
+  },
+  {
+   "nome": "7009 Tee para Mangueira",
+   "subcategoria": "Bicos para Mangueira",
+   "codigo": "7009",
+   "asset": "5d4f4.png"
+  },
+  {
+   "nome": "7047 Cotovelo Macho para Bico Giratório",
+   "subcategoria": "Bicos para Mangueira",
+   "codigo": "7047",
+   "asset": "74509.png"
+  },
+  {
+   "nome": "7003 União para Mangueira",
+   "subcategoria": "Bicos para Mangueira",
+   "codigo": "7003",
+   "asset": "5c3b8.png"
+  },
+  {
+   "nome": "9320 Dreno tipo Agulha",
+   "subcategoria": "Torneiras e Drenos",
+   "codigo": "9320",
+   "asset": "82bc0.png"
+  },
+  {
+   "nome": "9165 Torneira Reta Fêmea x Fêmea",
+   "subcategoria": "Torneiras e Drenos",
+   "codigo": "9165",
+   "asset": "e3c50.png"
+  },
+  {
+   "nome": "9310 Dreno tipo Borboleta",
+   "subcategoria": "Torneiras e Drenos",
+   "codigo": "9310",
+   "asset": "efff1.png"
+  },
+  {
+   "nome": "9166 Torneira Reta Macho x Fêmea",
+   "subcategoria": "Torneiras e Drenos",
+   "codigo": "9166",
+   "asset": "fc833.png"
+  },
+  {
+   "nome": "9330 Dreno tipo Recartilhado",
+   "subcategoria": "Torneiras e Drenos",
+   "codigo": "9330",
+   "asset": "60d7d.png"
+  },
+  {
+   "nome": "9164 Torneira Reta Macho x Macho",
+   "subcategoria": "Torneiras e Drenos",
+   "codigo": "9164",
+   "asset": "3c80d.png"
+  },
+  {
+   "nome": "9266 Torneira Macho x Fêmea",
+   "subcategoria": "Torneiras e Drenos",
+   "codigo": "9266",
+   "asset": "1c28d.png"
+  }
+ ],
+ "decisoes": {
+  "removerDoSite": [
+   "1010 Tee Macho Central"
+  ],
+  "imagemPropria": {
+   "2103 União": "no 915:994"
+  }
+ }
+}
